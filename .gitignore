@@ -30,20 +30,14 @@ yarn-error.log*
 /playwright-report/
 /blob-report/
 /playwright/.cache/
-.hermes/
 
-# Local-only scratch / agent caches (intentionally non-portable)
-/IDEA.md
-/NostalgiaForInfinityX7.py
-/skills-lock.json
-/.agents/
-/.omc/
-/.playwright-mcp/
-/pairlist*.png
-/e2e/*.spec.ts-snapshots/
+# Tooling / runtime caches (not part of the frequi codebase)
+.omc/
+.agents/
+.playwright-mcp/
+backtest_queue/
 
-# E2E run output artifacts (local-only)
-/artifacts/
-
-# Hermes agent temp env files (random suffix)
-/hermes-verify-v1-env.*
+# Freqtrade runtime data — contains secrets (api_server.jwt_secret_key / password)
+# and live trade DB. Must never enter the repo. Matches both a directory and the
+# local symlink that points at the freqtrade repo's user_data/ tree.
+user_data

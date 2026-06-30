@@ -3,6 +3,24 @@ import type { Pairlist } from '@/types';
 
 const pairlistStore = usePairlistConfigStore();
 
+const pairlistTranslations: Record<string, { name: string; description: string }> = {
+  StaticPairList: { name: '静态交易对 (Static)', description: '使用配置中预设的静态交易对列表。' },
+  VolumePairList: { name: '交易量 (Volume)', description: '基于成交量动态生成交易对。' },
+  ProducerPairList: { name: '生产者 (Producer)', description: '从生产者获取交易对列表。' },
+  MarketCapPairList: { name: '市值 (MarketCap)', description: '基于市值排序动态生成交易对。' },
+  AgeFilter: { name: '上市时间过滤 (Age)', description: '过滤掉上市时间过短的新币。' },
+  VolatilityFilter: { name: '波动率过滤 (Volatility)', description: '过滤波动率过大或过小的交易对。' },
+  PerformanceFilter: { name: '表现过滤 (Performance)', description: '基于历史交易表现过滤交易对。' },
+  PrecisionFilter: { name: '精度过滤 (Precision)', description: '过滤掉不满足价格或数量精度的交易对。' },
+  PriceFilter: { name: '价格过滤 (Price)', description: '过滤价格过低或过高的交易对。' },
+  SpreadFilter: { name: '价差过滤 (Spread)', description: '过滤买卖价差过大的交易对。' },
+  ShuffleFilter: { name: '随机打乱 (Shuffle)', description: '将交易对列表的顺序随机打乱。' },
+  RangeStabilityFilter: { name: '区间稳定性过滤 (RangeStability)', description: '基于价格波动区间的稳定性进行过滤。' },
+  OffsetFilter: { name: '偏移过滤 (Offset)', description: '使用偏移量跳过列表前面的交易对。' },
+  FullTradesFilter: { name: '全周期交易过滤 (FullTrades)', description: '移除无法覆盖指定时间周期的交易对。' },
+  CorrelationsFilter: { name: '相关性过滤 (Correlations)', description: '过滤与特定币种高度相关的交易对。' }
+};
+
 defineProps<{
   index: number;
 }>();
@@ -16,47 +34,6 @@ function toggleVisible() {
     pairlist.value.showParameters = !pairlist.value.showParameters;
   }
 }
-
-// 配对列表翻译映射 (PairlistConfigurator.vue 必须保持完全一致)
-const pairlistTranslations: Record<string, { name: string; description: string }> = {
-  // Generators
-  StaticPairList: { name: '静态配对列表', description: '使用静态白名单' },
-  VolumePairList: { name: '成交量配对列表', description: '按成交量筛选交易对' },
-  CrossMarketPairList: { name: '跨市场配对列表', description: '使用其他市场的交易对' },
-  MarketCapPairList: { name: '市值配对列表', description: '按市值筛选交易对' },
-  ProducerPairList: { name: '主从配对列表', description: '从 Leader 数据获取配对列表' },
-  RemotePairList: { name: '远程配对列表', description: '从远程数据源获取配对列表' },
-
-  // Filters
-  AgeFilter: { name: '交易对年龄筛选', description: '按交易对上线时间筛选' },
-  DelistFilter: { name: '已下架交易对筛选', description: '过滤已下架或即将下架的交易对' },
-  FullTradesFilter: { name: '满仓交易槽位筛选', description: '基于交易槽位占用情况筛选' },
-  OffsetFilter: { name: '偏移筛选', description: '从列表中偏移/排除部分交易对' },
-  PairInformationFilter: { name: '配对基础信息筛选', description: '基于配对基础信息筛选' },
-  PercentChangePairList: { name: '百分比变化配对列表', description: '按百分比变化筛选' },
-  PerformanceFilter: { name: '业绩筛选', description: '基于历史盈亏表现筛选' },
-  PrecisionFilter: { name: '精度筛选', description: '按价格精度筛选' },
-  PriceFilter: { name: '价格筛选', description: '按价格范围筛选' },
-  RangeStabilityFilter: { name: '范围稳定性筛选', description: '按价格范围稳定性筛选' },
-  ShuffleFilter: { name: '随机排序', description: '随机排序交易对' },
-  SpreadFilter: { name: '价差筛选', description: '按买卖价差筛选' },
-  VolatilityFilter: { name: '波动率筛选', description: '按价格波动率筛选' },
-
-  // Deprecated (upstream 已移除, 保留以防代码引用)
-  MutualListFilter: { name: '互斥配对列表筛选', description: '按两个 pairlist 互相过滤(已弃用)' },
-  PairlistFilter: { name: '配对列表筛选', description: '使用另一个配对列表进行筛选(已弃用)' },
-  WhiteListFilter: { name: '白名单筛选', description: '白名单筛选(已弃用)' },
-};
-
-function translatePairlist(pl: Pairlist) {
-  const key = Object.keys(pairlistTranslations).find((k) => pl.name.includes(k));
-  if (key) {
-    return pairlistTranslations[key];
-  }
-  return { name: pl.name, description: pl.description };
-}
-
-const translatedPairlist = computed(() => translatePairlist(pairlist.value));
 </script>
 
 <template>
@@ -76,8 +53,8 @@ const translatedPairlist = computed(() => translatePairlist(pairlist.value));
           class="flex items-start flex-col user-select-none w-full"
           @click="toggleVisible"
         >
-          <span class="font-bold">{{ translatedPairlist.name }}</span>
-          <span class="text-sm">{{ translatedPairlist.description }}</span>
+          <span class="font-bold">{{ pairlistTranslations[pairlist.name]?.name || pairlist.name }}</span>
+          <span class="text-sm">{{ pairlistTranslations[pairlist.name]?.description || pairlist.description }}</span>
         </div>
       </div>
       <i-mdi-close

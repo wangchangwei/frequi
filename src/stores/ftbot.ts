@@ -1240,6 +1240,88 @@ export function createBotSubStore(botId: string, botName: string) {
       }
     }
 
+    const queueBacktestStatus = ref<'idle' | 'running' | 'done' | 'error'>('idle');
+    let queuePollInterval: ReturnType<typeof setInterval> | null = null;
+
+    async function startQueueBacktest(payload: BacktestPayload) {
+      // Clear any previous polling
+      if (queuePollInterval) {
+        clearInterval(queuePollInterval);
+        queuePollInterval = null;
+      }
+      queueBacktestStatus.value = 'idle';
+      backtestProgress.value = 0;
+      backtestRunning.value = true;
+
+      try {
+        await axios.post('/api/v1/queue_backtest', payload);
+        showAlert('队列回测已在后台启动', 'success');
+
+        // Start polling for status
+        queueBacktestStatus.value = 'running';
+        queuePollInterval = setInterval(async () => {
+          try {
+            const { data: status } = await axios.get('/api/v1/queue_backtest/status');
+            const { status: qStatus, progress, result_file, error } = status;
+
+            if (progress && progress.total > 0) {
+              backtestProgress.value = progress.current / progress.total;
+            }
+
+            if (qStatus === 'done') {
+              clearInterval(queuePollInterval!);
+              queuePollInterval = null;
+              queueBacktestStatus.value = 'done';
+              backtestRunning.value = false;
+              showAlert('队列回测完成，正在加载结果…', 'success');
+
+              // Load the result file
+              if (result_file) {
+                const filename = result_file.split('/').pop()?.replace('.json', '') || '';
+                await getBacktestHistory();
+                // Find the entry matching the result file
+                const entry = backtestHistoryList.value.find(
+                  (e) => e.filename && e.filename.includes(filename),
+                );
+                if (entry) {
+                  await getBacktestHistoryResult(entry);
+                }
+              } else {
+                await getBacktestHistory();
+              }
+            } else if (qStatus === 'error') {
+              clearInterval(queuePollInterval!);
+              queuePollInterval = null;
+              queueBacktestStatus.value = 'error';
+              backtestRunning.value = false;
+              showAlert(`队列回测失败: ${error || 'unknown error'}`, 'error');
+            }
+          } catch {
+            // Silently ignore polling errors
+          }
+        }, 2000);
+      } catch (err) {
+        console.error(err);
+        queueBacktestStatus.value = 'error';
+        backtestRunning.value = false;
+        showAlert('队列回测启动失败', 'error');
+      }
+    }
+
+    async function stopQueueBacktest() {
+      if (queuePollInterval) {
+        clearInterval(queuePollInterval);
+        queuePollInterval = null;
+      }
+      queueBacktestStatus.value = 'idle';
+      backtestRunning.value = false;
+      try {
+        await axios.delete('/api/v1/queue_backtest');
+      } catch {
+        // Ignore errors on stop
+      }
+    }
+
     async function pollBacktest() {
       const { data } = await api.get<BacktestStatus>('/backtest');
 
@@ -1553,6 +1635,7 @@ export function createBotSubStore(botId: string, botName: string) {
       backtestProgress,
       backtestStep,
       backtestTradeCount,
+      queueBacktestStatus,
       selectedBacktestResultKey,
       backtestHistory,
       backtestHistoryList,
@@ -1643,6 +1726,8 @@ export function createBotSubStore(botId: string, botName: string) {
       addBlacklist,
       deleteBlacklist,
       startBacktest,
+      startQueueBacktest,
+      stopQueueBacktest,
       pollBacktest,
       removeBacktest,
       updateBacktestRunning,

@@ -16,7 +16,7 @@ async function deleteBacktestResult(result: BacktestHistoryEntry) {
   if (
     await confirm({
       title: '删除结果',
-      message: `确定要从磁盘删除结果 ${result.filename} 吗?`,
+      message: `确定从磁盘上删除该结果文件 ${result.filename} 吗？`,
     })
   ) {
     botStore.activeBot.deleteBacktestHistoryResult(result);
@@ -58,16 +58,15 @@ const meta: TableMeta<BacktestHistoryEntry> = {
   <div>
     <UButton
       class="float-end"
-      title="Refresh"
-      aria-label="Refresh"
+      title="刷新"
+      aria-label="刷新"
       variant="outline"
       color="neutral"
       icon="mdi:refresh"
       @click="botStore.activeBot.getBacktestHistory"
     />
     <p>
-      Load Historic results from disk. You can click on multiple results to load all of them into
-      freqUI.
+      从磁盘加载历史结果。您可以点击多个结果将其全部加载到 freqUI 中。
     </p>
     <div v-if="botStore.activeBot.backtestHistoryList.length > 0" class="flex align-center">
       <UInput
@@ -75,7 +74,7 @@ const meta: TableMeta<BacktestHistoryEntry> = {
         v-model="filterText"
         type="text"
         placeholder="筛选结果"
-        title="Filter results"
+        title="筛选结果"
       />
     </div>
     <UTable
@@ -118,7 +117,7 @@ const meta: TableMeta<BacktestHistoryEntry> = {
           />
           <UButton
             v-if="isRowLoaded(row)"
-            title="从界面卸载此结果（将保留在磁盘上）"
+            title="从界面卸载此结果（该文件仍会保留在磁盘上）"
             icon="mdi:close"
             size="sm"
             variant="solid"

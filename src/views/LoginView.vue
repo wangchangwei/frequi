@@ -2,7 +2,7 @@
 
 <template>
   <div class="max-w-xl mx-auto p-4 my-5">
-    <DraggableContainer header="Bot Login" class="px-4 py-2">
+    <DraggableContainer header="登录 Freqtrade 机器人" class="px-4 py-2">
       <BotLogin />
     </DraggableContainer>
   </div>

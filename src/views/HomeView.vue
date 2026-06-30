@@ -4,27 +4,25 @@
       <BotList class="max-w-xl" />
     </div>
     <USeparator class="my-5" />
-    <div class="flex justify-center">
-      <AppIcon class="my-5 sm:w-80 sm:h-80 w-64 h-64" />
-    </div>
+    <AppIcon class="my-5 sm:w-80 sm:h-80 w-64 h-64" />
 
     <h1 class="font-bold text-2xl sm:text-4xl mb-4 transition-all">
-      Welcome to the <AppText class="text-2xl! sm:text-4xl!" />
+      欢迎使用 <AppText class="text-2xl! sm:text-4xl!" />
     </h1>
-    <div>此页面用于控制你的交易机器人。</div>
+    <div>此页面可让您管理和控制您的交易机器人。</div>
     <USeparator class="my-5" />
     <p class="mb-2">
-      If you need any help, please refer to the
+      如果您需要任何帮助，请参阅
       <a
         class="text-primary underline cursor-pointer"
-        href="#"
+        href="https://www.freqtrade.io/en/latest/"
         target="_blank"
       >
-        Documentation
+        Freqtrade 官方文档
       </a>
-      .
+      。
     </p>
 
-    <p class="mb-5">祝你使用愉快 - <i>Trading 团队</i></p>
+    <p class="mb-5">交易愉快！ - <i>Freqtrade 团队祝您一切顺利</i></p>
   </div>
 </template>

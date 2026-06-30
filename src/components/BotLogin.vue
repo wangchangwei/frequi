@@ -125,11 +125,10 @@ async function handleSubmit() {
     if (axios.isAxiosError(error) && error.response && error.response.status === 401) {
       nameState.value = false;
       pwdState.value = false;
-      errorMessage.value = '已连接到机器人，但登录失败，用户名或密码错误。';
+      errorMessage.value = '已成功连接到机器人，但是登录失败，用户名或密码错误。';
     } else {
       urlState.value = false;
-      errorMessage.value = `请确认机器人正在运行，Bot API 已启用，且 URL 可访问。
-您可以访问 ${auth.value.url}/api/v1/ping 来确认机器人 API 是否可访问。`;
+      errorMessage.value = `请验证机器人是否正在运行，Bot API 是否已启用且地址是否可达。\n您可以尝试在浏览器中打开并访问 ${auth.value.url}/api/v1/ping 以确保机器人 API 可达。`;
       if (auth.value.url !== window.location.origin) {
         errorMessageCORS.value = true;
       }
@@ -169,7 +168,7 @@ onMounted(() => {
     <UFormField class="mb-4" label="机器人名称">
       <UInput
         v-model="auth.botName"
-        placeholder="机器人名称"
+        placeholder="请输入机器人名称"
         class="mt-1 block w-full"
         @keydown.enter="handleOk"
       />
@@ -177,7 +176,7 @@ onMounted(() => {
     <UFormField
       class="mb-4"
       label="API 地址"
-      :error="urlState === false ? 'API 地址为必填项。' : undefined"
+      :error="urlState === false ? 'API 地址是必填项。' : undefined"
     >
       <UInput
         id="url-input"
@@ -198,12 +197,12 @@ onMounted(() => {
     <UFormField
       class="mb-4"
       label="用户名"
-      :error="nameState === false ? '用户名和密码为必填项。' : undefined"
+      :error="nameState === false ? '用户名和密码是必填项。' : undefined"
     >
       <UInput
         v-model="auth.username"
         required
-        placeholder="Username"
+        placeholder="Freqtrader"
         class="w-full"
         @keydown.enter="handleOk"
       />
@@ -231,11 +230,11 @@ onMounted(() => {
         <template #description>
           {{ errorMessage }}
           <span v-if="errorMessageCORS">
-            请同时检查机器人的 CORS 配置：
+            请同时检查您的机器人的 CORS 配置:
             <a
-              href="#"
+              href="https://www.freqtrade.io/en/latest/rest-api/#cors"
               class="text-blue-500 underline"
-              >CORS documentation</a
+              >Freqtrade CORS 配置文档</a
             >
           </span>
         </template>

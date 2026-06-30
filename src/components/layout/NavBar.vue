@@ -100,7 +100,6 @@ watch(
   },
 );
 
-// Navigation items array
 type NavItem = NavigationMenuItem & { visible?: boolean; mobileOnly?: boolean };
 
 const navItems = computed<NavItem[]>(() => [
@@ -111,7 +110,7 @@ const navItems = computed<NavItem[]>(() => [
     icon: 'i-mdi-currency-usd',
   },
   {
-    label: '仪表板',
+    label: '仪表盘',
     to: '/dashboard',
     visible: !botStore.canRunBacktest,
     icon: 'i-mdi-view-dashboard',
@@ -168,7 +167,7 @@ const navItems = computed<NavItem[]>(() => [
     icon: 'i-mdi-download',
   },
   {
-    label: '配对列表配置',
+    label: '交易对配置',
     to: '/pairlist_config',
     icon: 'i-mdi-format-list-numbered-rtl',
     visible:
@@ -210,7 +209,7 @@ const menuItems = computed<DropdownMenuItem[][]>(() => [
     ? [
         [
           {
-            label: '退出登录',
+            label: '登出',
             icon: 'i-mdi-logout',
             onSelect: clickLogout,
           },
@@ -222,7 +221,7 @@ const menuItems = computed<DropdownMenuItem[][]>(() => [
 function editBotLogin(botId: string) {
   const bot = botStore.botStores[botId];
   if (!bot) {
-    showAlert('机器人未找到', 'warning');
+    showAlert('Bot not found', 'warning');
     return;
   }
   const loginInfo: AuthStorageWithBotId = {
@@ -261,14 +260,14 @@ function editBotLogin(botId: string) {
           <div
             v-if="!settingsStore.confirmDialog"
             class="my-auto me-5 flex text-yellow-300"
-            title="确认对话框已停用，强制平仓将立即执行，请注意！"
+            title="Confirm dialog deactivated, Forced exits will be executed immediately. Be careful."
           >
             <i-mdi-run-fast />
             <i-mdi-alert />
           </div>
           <div class="hidden md:flex md:flex-nowrap items-center nav-item me-2">
             <span class="text-sm me-2" title="Bot name">
-              {{ (botStore.activeBot && botStore.activeBot.botName) || '未选择机器人' }}
+              {{ (botStore.activeBot && botStore.activeBot.botName) || 'No bot selected' }}
             </span>
             <BotEntry
               v-if="botStore.selectedBotObj"
@@ -296,7 +295,7 @@ function editBotLogin(botId: string) {
             color="neutral"
             @click="loginDialog({})"
             icon="mdi:login"
-            >登录
+            >Login
           </UButton>
         </div>
 
@@ -326,7 +325,7 @@ function editBotLogin(botId: string) {
                   orientation="vertical"
                 />
                 <USeparator class="my-2" />
-                <span>版本: {{ settingsStore.uiVersion }}</span>
+                <span>Version: {{ settingsStore.uiVersion }}</span>
 
                 <div class="flex flex-row items-center justify-center">
                   <ThemeSelect show-text />
@@ -334,7 +333,7 @@ function editBotLogin(botId: string) {
                 <USeparator class="my-2" />
                 <div class="flex flex-row items-center">
                   <span class="text-sm me-2" title="Bot name">
-                    {{ (botStore.activeBot && botStore.activeBot.botName) || '未选择机器人' }}
+                    {{ (botStore.activeBot && botStore.activeBot.botName) || 'No bot selected' }}
                   </span>
                   <BotEntry
                     v-if="botStore.selectedBotObj"

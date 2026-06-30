@@ -6,7 +6,7 @@ import type { SelectMenuItem } from '@nuxt/ui';
 const botStore = useBotStore();
 const pairlistStore = usePairlistConfigStore();
 const pairs = ref<string[]>(['BTC/USDT', 'ETH/USDT', '']);
-const timeframes = ref<string[]>(['5m', '1h']);
+const timeframes = ref<string[]>(['1m', '5m', '15m', '1h', '']);
 
 const timeSelection = ref({
   useCustomTimerange: false,
@@ -39,13 +39,16 @@ const advancedOptions = ref({
 
 // State to track the collapse status
 const isAdvancedOpen = ref(false);
+
+
+
 const candleTypes: SelectMenuItem[] = [
-  { label: 'Spot', value: 'spot' },
-  { label: 'Futures', value: 'futures' },
-  { label: 'Funding Rate', value: 'funding_rate' },
-  { label: 'Mark', value: 'mark' },
-  { label: 'Index', value: 'index' },
-  { label: 'Premium Index', value: 'premiumIndex' },
+  { label: '现货', value: 'spot' },
+  { label: '期货', value: 'futures' },
+  { label: '资金费率', value: 'funding_rate' },
+  { label: '标记价格', value: 'mark' },
+  { label: '指数价格', value: 'index' },
+  { label: '溢价指数', value: 'premiumIndex' },
 ];
 
 function addPairs(_pairs: string[]) {
@@ -97,7 +100,7 @@ async function startDownload() {
 <template>
   <div class="px-1 mx-auto w-full max-w-4xl lg:max-w-7xl">
     <BackgroundJobTracking class="mb-4" />
-    <DraggableContainer header="Downloading Data" class="mx-1 p-4">
+    <DraggableContainer header="下载历史数据" class="mx-1 p-4">
       <div class="flex mb-3 gap-3 flex-col">
         <div class="flex flex-col gap-3">
           <div class="flex flex-col lg:flex-row gap-3">
@@ -109,7 +112,7 @@ async function startDownload() {
                   <h5 class="text-start font-bold text-lg">模板交易对</h5>
                 </div>
                 <div class="flex gap-2">
-                  <BaseStringList v-model="pairs" placeholder="Pair" class="grow" />
+                  <BaseStringList v-model="pairs" placeholder="交易对" class="grow" />
                   <div class="flex flex-col gap-1">
                     <div class="flex flex-col gap-1">
                       <UButton
@@ -125,11 +128,11 @@ async function startDownload() {
                     <USeparator />
                     <UButton
                       :disabled="pairlistStore.whitelist.length === 0"
-                      title="Add all pairs from Pairlist Config - requires the pairlist config to have ran first."
+                      title="从交易对配置中添加所有交易对 - 需要先运行交易对配置。"
                       color="neutral"
                       @click="replacePairs(pairlistStore.whitelist)"
                     >
-                      使用交易对配置中的交易对
+                      使用交易对配置中的列表
                     </UButton>
                   </div>
                 </div>
@@ -139,11 +142,13 @@ async function startDownload() {
             <!-- Timeframes section -->
             <div class="flex-fill px-3">
               <div class="flex flex-col gap-2">
-                <h4 class="text-start font-bold text-lg">选择时间周期</h4>
-                <BaseStringList v-model="timeframes" placeholder="Timeframe" />
+                <h4 class="text-start font-bold text-lg">选择 K 线周期</h4>
+                <BaseStringList v-model="timeframes" placeholder="K 线周期" />
               </div>
             </div>
           </div>
+
+
 
           <!-- Time selection section -->
           <div class="px-3 border dark:border-neutral-700 border-neutral-300 p-2 rounded-sm">
@@ -162,7 +167,7 @@ async function startDownload() {
                 <label>下载天数:</label>
                 <UInputNumber
                   v-model="timeSelection.days"
-                  aria-label="Days to download"
+                  aria-label="下载天数"
                   :min="1"
                   :step="1"
                 />
@@ -170,12 +175,11 @@ async function startDownload() {
             </div>
           </div>
           <!-- Advanced options section -->
-          <BaseCollapsible title="Advanced options" v-model:open="isAdvancedOpen">
+          <BaseCollapsible title="高级选项" v-model:open="isAdvancedOpen">
             <UAlert
               color="info"
               class="my-2 py-2"
-              description="Advanced options (Erase data, Download trades, and Custom Exchange settings) will only
-              be applied when this section is expanded."
+              description="高级选项（清除现有数据、下载交易明细、自定义交易所）只有在此栏目展开时才会生效。"
             />
             <div
               class="mb-2 border dark:border-neutral-700 border-neutral-300 rounded-md p-2 text-start"
@@ -187,10 +191,10 @@ async function startDownload() {
                 v-model="advancedOptions.prepend_data"
                 class="mb-2"
                 v-if="botStore.activeBot.botFeatures.downloadDataPrepend"
-                >下载时预置数据</BaseCheckbox
+                >下载时向前追加数据</BaseCheckbox
               >
               <BaseCheckbox v-model="advancedOptions.downloadTrades" class="mb-2">
-                下载交易记录而非 OHLCV 数据
+                下载交易明细 (Trades) 而不是 K 线数据 (OHLCV)
               </BaseCheckbox>
               <div class="grid grid-cols md:grid-cols-2 items-center gap-2">
                 <USelectMenu
@@ -198,11 +202,11 @@ async function startDownload() {
                   v-if="botStore.activeBot.botFeatures.downloadDataCandleTypes"
                   v-model="advancedOptions.candleTypes"
                   :items="candleTypes"
-                  placeholder="选择蜡烛类型"
+                  placeholder="选择 K 线类型"
                   value-key="value"
                 />
                 <small
-                  >当未选择蜡烛类型时，freqtrade 会自动下载正常运行所需的蜡烛类型。</small
+                  >未选择任何类型时，Freqtrade 将自动下载常规运行所需的 K 线类型。</small
                 >
               </div>
             </div>

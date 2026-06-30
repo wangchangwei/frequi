@@ -30,12 +30,12 @@ const pairlistStore = usePairlistConfigStore();
       />
     </EditValue>
     <UButton
-      title="评估配对列表"
+      title="运行/测试交易对配置"
       :disabled="pairlistStore.evaluating || !pairlistStore.pairlistValid"
       variant="solid"
       @click="pairlistStore.startPairlistEvaluation()"
       :loading="pairlistStore.evaluating"
-      label="评估"
+      label="开始测试"
       icon="mdi:play-box-outline"
     />
   </div>

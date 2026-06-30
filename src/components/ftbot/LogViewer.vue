@@ -49,13 +49,13 @@ function scrollToBottom() {
         id="refresh-logs"
         color="neutral"
         size="sm"
-        title="Reload Logs"
+        title="重新加载日志"
         @click="refreshLogs"
         icon="mdi:refresh"
       />
       <UButton
         size="sm"
-        title="Scroll to bottom"
+        title="滚动到底部"
         color="neutral"
         @click="scrollToBottom"
         icon="mdi:arrow-down-thick"

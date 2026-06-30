@@ -1,0 +1,8 @@
+---
+services:
+  backtesting:
+    image: freqtradeorg/freqtrade:stable
+    restart: unless-stopped
+    volumes:
+      - "./user_data:/freqtrade/user_data"
+      - "./configs:/freqtrade/configs"

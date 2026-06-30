@@ -7,19 +7,19 @@ const layoutStore = useLayoutStore();
 
 const timezoneOptions = ['UTC', Intl.DateTimeFormat().resolvedOptions().timeZone];
 const openTradesOptions = [
-  { value: OpenTradeVizOptions.showPill, text: '在图标中显示药丸' },
-  { value: OpenTradeVizOptions.asTitle, text: '在标题中显示' },
-  { value: OpenTradeVizOptions.noOpenTrades, text: '不在标题栏显示交易' },
+  { value: OpenTradeVizOptions.showPill, text: '在图标中显示小圆点' },
+  { value: OpenTradeVizOptions.asTitle, text: '在标题中显示数量' },
+  { value: OpenTradeVizOptions.noOpenTrades, text: "不在标题中显示进行中的交易" },
 ];
 const colorPreferenceOptions = [
-  { value: ColorPreferences.GREEN_UP, text: '绿涨/红跌' },
-  { value: ColorPreferences.RED_UP, text: '红涨/绿跌' },
+  { value: ColorPreferences.GREEN_UP, text: '绿涨红跌 (国际主流)' },
+  { value: ColorPreferences.RED_UP, text: '红涨绿跌 (国内习惯)' },
 ];
 
 const resetDynamicLayout = () => {
   layoutStore.resetTradingLayout();
   layoutStore.resetDashboardLayout();
-  showAlert('Layouts have been reset.');
+  showAlert('布局已成功重置。');
 };
 </script>
 
@@ -27,7 +27,7 @@ const resetDynamicLayout = () => {
   <UCard class="mx-auto mt-3 p-4 max-w-4xl">
     <template #header><span class="text-2xl font-bold">FreqUI 设置</span></template>
     <div class="flex flex-col gap-4 text-start dark:text-neutral-300">
-      <p class="text-left">UI Version: {{ settingsStore.uiVersion }}</p>
+      <p class="text-left">UI 版本: {{ settingsStore.uiVersion }}</p>
 
       <div class="border border-neutral-400 rounded-sm p-4 space-y-4">
         <h4 class="text-xl font-semibold">界面设置</h4>
@@ -35,7 +35,7 @@ const resetDynamicLayout = () => {
         <BaseCheckbox v-model="layoutStore.layoutLocked" class="space-y-1">
           锁定动态布局
           <template #hint>
-            锁定动态布局，这样它们就不能再移动了。也可以在顶部导航栏设置。
+            锁定动态布局，防止误触移动位置。也可以在顶部导航栏进行快捷锁定。
           </template>
         </BaseCheckbox>
 
@@ -44,14 +44,14 @@ const resetDynamicLayout = () => {
             >重置布局</UButton
           >
           <small class="text-sm block text-neutral-600 dark:text-neutral-400"
-            >将动态布局重置为初始状态。</small
+            >将当前动态布局恢复到初始默认排列状态。</small
           >
         </div>
 
         <USeparator />
 
         <div class="space-y-1">
-          <label class="block text-sm">在标题栏显示交易</label>
+          <label class="block text-sm">在标题/页眉中显示进行中的交易数量</label>
           <USelect
             v-model="settingsStore.openTradesInTitle"
             :items="openTradesOptions"
@@ -60,36 +60,35 @@ const resetDynamicLayout = () => {
             class="w-full"
           />
           <small class="text-sm text-neutral-600 dark:text-neutral-400"
-            >决定是否可视化未平仓交易</small
+            >设置是否以及如何展示当前正在运行中的交易持仓数量</small
           >
         </div>
 
         <div class="space-y-1">
-          <label class="block text-sm">UTC 时区</label>
+          <label class="block text-sm">时区选择 (推荐 UTC)</label>
           <USelect v-model="settingsStore.timezone" :items="timezoneOptions" class="w-full" />
           <small class="text-sm text-neutral-600 dark:text-neutral-400"
-            >选择时区（建议使用 UTC，因为交易所通常在 UTC 时间工作）</small
+            >选择界面展示时间的时区（推荐使用 UTC，因为各大交易所和机器日志默认为 UTC）</small
           >
         </div>
 
         <BaseCheckbox v-model="settingsStore.backgroundSync" class="space-y-1">
-          后台同步
-          <template #hint> 当选择其他机器人时保持后台同步运行。 </template>
+          后台数据同步
+          <template #hint> 即使切换到其他机器人管理页面，仍保持此机器人的后台同步。 </template>
         </BaseCheckbox>
 
         <BaseCheckbox v-model="settingsStore.confirmDialog" class="space-y-1">
-          交易强退时显示确认对话框
+          手动强平交易时弹出确认窗口
           <template #hint
-            >强制退出交易时使用确认对话框。<br />
-            这也会在标题栏显示 <i-mdi-run-fast class="text-yellow-300 inline" />
-            <i-mdi-alert class="text-yellow-300 inline" />。
+            >当手动强制平仓 (Force Exit) 时弹出确认提示，防止手误误操作。<br />
+            开启后将在标题栏上方显示相应的安全警告图标。
           </template>
         </BaseCheckbox>
 
         <BaseCheckbox v-model="settingsStore.multiPaneButtonsShowText" class="space-y-1">
-          多窗格按钮显示文字
+          在多面板操作按钮上显示文字说明
           <template #hint
-            >在多窗格按钮上显示文字。如果禁用，则只显示图标。</template
+            >在多面板控制按钮上显示具体的文本说明。关闭后将仅显示图标。</template
           >
         </BaseCheckbox>
       </div>
@@ -98,34 +97,34 @@ const resetDynamicLayout = () => {
         <h4 class="text-lg font-semibold">图表设置</h4>
 
         <div class="space-y-1">
-          <label class="block text-sm">图表刻度侧</label>
+          <label class="block text-sm">图表坐标轴显示位置</label>
           <URadioGroup
             v-model="settingsStore.chartLabelSide"
             :items="[
-              { label: 'Left', value: 'left' },
-              { label: 'Right', value: 'right' },
+              { label: '左侧', value: 'left' },
+              { label: '右侧', value: 'right' },
             ]"
             orientation="horizontal"
           />
           <small class="text-sm text-neutral-600 dark:text-neutral-400">
-            刻度应该显示在右侧还是左侧？
+            K线价格坐标轴应该显示在左侧还是右侧？
           </small>
         </div>
 
         <BaseCheckbox v-model="settingsStore.useHeikinAshiCandles" class="space-y-1">
-          使用平均 K 线蜡烛
-          <template #hint>在图表中使用平均 K 线蜡烛</template>
+          使用平均足 (Heikin Ashi) K线
+          <template #hint>在图表中使用平均足 K线进行平滑展示，代替传统 K线</template>
         </BaseCheckbox>
 
         <BaseCheckbox v-model="settingsStore.useReducedPairCalls" class="space-y-1">
-          仅请求必要的列
+          仅请求必需的数据列 (Reduced Columns)
           <template #hint
-            >可以减少大型数据帧的传输大小。如果图表配置更改，可能需要额外的调用。</template
+            >这可以显著减小回测等大型 K线数据的网络传输体积。当绘图指标更改时，可能会触发二次网络请求。</template
           >
         </BaseCheckbox>
 
         <div>
-          <p>默认显示的蜡烛数量（默认为 250）</p>
+          <p>默认单屏显示的 K 线根数（默认 250 根）</p>
           <div class="flex flex-row gap-5 w-full items-center">
             <USlider
               v-model="settingsStore.chartDefaultCandleCount"
@@ -145,7 +144,7 @@ const resetDynamicLayout = () => {
         </div>
 
         <div class="space-y-1">
-          <label class="block">蜡烛颜色偏好</label>
+          <label class="block">K线涨跌颜色偏好</label>
           <div class="flex flex-row gap-5 items-center">
             <URadioGroup
               v-model="colorStore.colorPreference"
@@ -186,24 +185,24 @@ const resetDynamicLayout = () => {
         <h4 class="text-lg font-semibold">通知设置</h4>
         <div class="space-y-2">
           <BaseCheckbox v-model="settingsStore.notifications[FtWsMessageTypes.entryFill]">
-            入场通知
+            建仓/买入成交 (Entry Fill) 通知
           </BaseCheckbox>
           <BaseCheckbox v-model="settingsStore.notifications[FtWsMessageTypes.exitFill]">
-            出场通知
+            平仓/卖出成交 (Exit Fill) 通知
           </BaseCheckbox>
           <BaseCheckbox v-model="settingsStore.notifications[FtWsMessageTypes.entryCancel]">
-            入场取消通知
+            买入撤单 (Entry Cancel) 通知
           </BaseCheckbox>
           <BaseCheckbox v-model="settingsStore.notifications[FtWsMessageTypes.exitCancel]">
-            出场取消通知
+            卖出撤单 (Exit Cancel) 通知
           </BaseCheckbox>
         </div>
       </div>
 
       <div class="border rounded-sm border-neutral-400 p-4 space-y-4">
-        <h4 class="text-lg font-semibold">回测设置</h4>
+        <h4 class="text-lg font-semibold">回测参数设置</h4>
         <div>
-          <label for="backtestMetrics" class="block">回测指标</label>
+          <label for="backtestMetrics" class="block">回测明细分析指标</label>
           <USelectMenu
             multiple
             id="backtestMetrics"
@@ -215,7 +214,7 @@ const resetDynamicLayout = () => {
             display="chip"
           />
           <small class="text-sm text-neutral-600 dark:text-neutral-400"
-            >选择每对/每个标签应显示哪些指标。</small
+            >在“按交易对/标签”列表里展示额外的回测统计指标。</small
           >
         </div>
       </div>

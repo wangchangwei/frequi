@@ -76,7 +76,7 @@ const backtestTabs = computed(() => {
     tabs.push({
       slot: 'historic-results',
       value: BtRunModes.historicresults,
-      label: '加载结果',
+      label: '加载历史结果',
       icon: 'i-mdi-cloud-download',
       disabled: !botStore.activeBot.canRunBacktest,
     });
@@ -114,7 +114,7 @@ const backtestTabs = computed(() => {
   tabs.push({
     slot: 'visualize',
     value: BtRunModes.visualize,
-    label: '可视化结果',
+    label: '可视化图表',
     icon: 'i-mdi-chart-timeline-variant-shimmer',
     disabled: !hasBacktestResult.value,
   });
@@ -156,9 +156,9 @@ const backtestTabs = computed(() => {
       <!-- End Left bar -->
     </div>
     <div class="flex flex-col w-full">
-      <h2 class="ms-5 text-3xl font-bold">回测</h2>
+      <h2 class="ms-5 text-3xl font-bold">历史回测</h2>
       <p v-if="!botStore.activeBot.canRunBacktest">
-        机器人必须处于 webserver 模式才能运行回测。
+        机器人必须处于 webserver 模式才能启用回测功能。
       </p>
       <div class="w-full">
         <UTabs v-model="btFormMode" :items="backtestTabs">

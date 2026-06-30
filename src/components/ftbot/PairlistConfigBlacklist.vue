@@ -10,7 +10,7 @@ const configNames = computed(() =>
   <BaseCollapsible title="黑名单">
     <div class="pb-1 p-2">
       <div class="flex mb-4 items-center gap-2">
-        <span class="col-auto">从以下配置复制:</span>
+        <span class="col-auto">复制自:</span>
         <USelect v-model="copyFromConfig" size="sm" class="grow" :items="configNames" />
         <UButton
           title="复制"
