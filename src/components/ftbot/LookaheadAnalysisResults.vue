@@ -6,12 +6,12 @@ const props = defineProps<{
 }>();
 
 const tableColumns = [
-  { accessorKey: 'strategy', header: 'Strategy', meta: { class: { td: 'font-mono' } } },
-  { accessorKey: 'has_bias', header: 'Has bias' },
-  { accessorKey: 'total_signals', header: 'Total signals' },
-  { accessorKey: 'biased_entry_signals', header: 'Biased entry signals' },
-  { accessorKey: 'biased_exit_signals', header: 'Biased exit signals' },
-  { accessorKey: 'biased_indicators', header: 'Biased indicators' },
+  { accessorKey: 'strategy', header: '策略', meta: { class: { td: 'font-mono' } } },
+  { accessorKey: 'has_bias', header: '存在前瞻偏差' },
+  { accessorKey: 'total_signals', header: '总信号数' },
+  { accessorKey: 'biased_entry_signals', header: '受偏差影响的入场信号' },
+  { accessorKey: 'biased_exit_signals', header: '受偏差影响的出场信号' },
+  { accessorKey: 'biased_indicators', header: '受偏差影响的指标 (未来函数)' },
 ];
 
 const tableData = computed(() => [
@@ -33,24 +33,23 @@ const tableData = computed(() => [
       color="success"
       class="py-2"
       icon="i-mdi-check-circle"
-      title="No lookahead bias detected"
-      description="The strategy produced consistent signals across the analyzed timeranges."
+      title="未检测到前瞻偏差"
+      description="在所分析的时间范围内，策略生成的信号具有一致性。"
     />
     <UAlert
       v-else
       color="error"
       class="py-2"
       icon="i-mdi-alert"
-      title="Lookahead bias detected"
-      description="The strategy produced different signals depending on the available data. Backtest
-        results for this strategy are likely unreliable."
+      title="检测到前瞻偏差"
+      description="策略根据可用数据的不同生成了不同的信号。此策略的回测结果很可能是不可靠的。"
     />
 
     <div>
       <UTable :data="tableData" :columns="tableColumns">
         <template #has_bias-cell="{ row }">
           <UBadge :color="row.original.has_bias ? 'error' : 'success'" variant="subtle">
-            {{ row.original.has_bias ? 'Yes' : 'No' }}
+            {{ row.original.has_bias ? '是' : '否' }}
           </UBadge>
         </template>
         <template #biased_indicators-cell="{ row }">

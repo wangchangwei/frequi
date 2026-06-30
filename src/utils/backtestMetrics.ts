@@ -45,82 +45,82 @@ export function generateBacktestMetricRows(result: StrategyBacktestResult) {
       ? [
           { '___ ': '___' },
           {
-            'Long / Short': `${result.trade_count_long} / ${result.trade_count_short}`,
+            '多头 / 空头': `${result.trade_count_long} / ${result.trade_count_short}`,
           },
           {
-            'Total profit Long': `${formatPercent(
+            多头总利润: `${formatPercent(
               result.profit_total_long || 0,
             )} | ${formatPriceStake(result.profit_total_long_abs)}`,
           },
           {
-            'Total profit Short': `${formatPercent(
+            空头总利润: `${formatPercent(
               result.profit_total_short || 0,
             )} | ${formatPriceStake(result.profit_total_short_abs)}`,
           },
         ]
       : [];
 
-  const _b_append = ` (wallet balance)`;
+  const _b_append = ` (钱包余额)`;
   const walletBalanceMetrics = result.wallet_stats
     ? [
-        { '--- Wallet Balance metrics ---': '' },
+        { '--- 钱包余额指标 ---': '' },
         {
-          [`Max Drawdown${_b_append}`]: formatPercent(result.wallet_stats.max_drawdown_account),
+          [`最大回撤${_b_append}`]: formatPercent(result.wallet_stats.max_drawdown_account),
         },
         {
-          [`Max Drawdown abs${_b_append}`]: formatPriceStake(result.wallet_stats.max_drawdown_abs),
+          [`绝对最大回撤${_b_append}`]: formatPriceStake(result.wallet_stats.max_drawdown_abs),
         },
         {
-          [`Drawdown duration${_b_append}`]: result.wallet_stats.drawdown_duration ?? 'N/A',
+          [`回撤时长${_b_append}`]: result.wallet_stats.drawdown_duration ?? 'N/A',
         },
         {
-          [`Profit at Drawdown start | end${_b_append}`]: `${formatPriceStake(result.wallet_stats.max_drawdown_high)} | ${formatPriceStake(
+          [`回撤开始 | 结束时的利润${_b_append}`]: `${formatPriceStake(result.wallet_stats.max_drawdown_high)} | ${formatPriceStake(
             result.wallet_stats.max_drawdown_low,
           )}`,
         },
         // { 'Max Drawdown dates (wallet balance)': formatPercent(result.wallet_stats.max_drawdown_account) },
         {
-          [`Drawdown start${_b_append}`]: timestampms(result.wallet_stats?.drawdown_start_ts ?? 0),
+          [`回撤开始时间${_b_append}`]: timestampms(result.wallet_stats?.drawdown_start_ts ?? 0),
         },
-        { [`Drawdown end${_b_append}`]: timestampms(result.wallet_stats?.drawdown_end_ts ?? 0) },
+        { [`回撤结束时间${_b_append}`]: timestampms(result.wallet_stats?.drawdown_end_ts ?? 0) },
         {
-          [`Sortino${_b_append}`]: formatNumber(result.wallet_stats.sortino, 2),
-        },
-        {
-          [`Sharpe${_b_append}`]: formatNumber(result.wallet_stats.sharpe, 2),
+          [`索提诺比率${_b_append}`]: formatNumber(result.wallet_stats.sortino, 2),
         },
         {
-          [`Calmar${_b_append}`]: formatNumber(result.wallet_stats.calmar, 2),
+          [`夏普比率${_b_append}`]: formatNumber(result.wallet_stats.sharpe, 2),
+        },
+        {
+          [`卡玛比率${_b_append}`]: formatNumber(result.wallet_stats.calmar, 2),
         },
       ]
     : [];
 
   const tmp = [
     {
-      'Total Profit': `${formatPercent(result.profit_total)} | ${formatPriceStake(
+      总利润: `${formatPercent(result.profit_total)} | ${formatPriceStake(
         result.profit_total_abs,
       )}`,
     },
     {
-      CAGR: `${result.cagr ? formatPercent(result.cagr) : 'N/A'}`,
+      '年复合增长率 (CAGR)': `${result.cagr ? formatPercent(result.cagr) : 'N/A'}`,
     },
     {
-      Sortino: formatNumber(result.sortino, 2),
+      '索提诺比率 (Sortino)': formatNumber(result.sortino, 2),
     },
     {
-      Sharpe: formatNumber(result.sharpe, 2),
+      '夏普比率 (Sharpe)': formatNumber(result.sharpe, 2),
     },
     {
-      Calmar: formatNumber(result.calmar, 2),
+      '卡玛比率 (Calmar)': formatNumber(result.calmar, 2),
     },
     {
-      'System Quality Number (SQN)': formatNumber(result.sqn, 2),
+      '系统质量指数 (SQN)': formatNumber(result.sqn, 2),
     },
     {
-      'Mean profit p-value': formatNumber(result.p_value, 3),
+      '平均利润 p 值': formatNumber(result.p_value, 3),
     },
     {
-      [`Expectancy ${result.expectancy_ratio ? '(ratio)' : ''}`]: `${
+      [`期望值 ${result.expectancy_ratio ? '(比例)' : ''}`]: `${
         result.expectancy
           ? result.expectancy_ratio
             ? `${formatNumber(result.expectancy, 2)} (${formatNumber(result.expectancy_ratio, 2)})`
@@ -129,28 +129,28 @@ export function generateBacktestMetricRows(result: StrategyBacktestResult) {
       }`,
     },
     {
-      'Profit factor': formatNumber(result.profit_factor, 3),
+      利润因子: formatNumber(result.profit_factor, 3),
     },
     {
-      'Total trades / Daily Avg Trades': `${result.total_trades} / ${formatNumber(result.trades_per_day, 2)}`,
+      '总交易数 / 日均交易数': `${result.total_trades} / ${formatNumber(result.trades_per_day, 2)}`,
     },
     // { 'First trade': result.backtest_fi },
     // { 'First trade Pair': result.backtest_best_day },
     {
-      'Best day': `${formatPercent(result.backtest_best_day, 2)} | ${formatPriceStake(
+      单日最佳利润: `${formatPercent(result.backtest_best_day, 2)} | ${formatPriceStake(
         result.backtest_best_day_abs,
       )}`,
     },
     {
-      'Worst day': `${formatPercent(result.backtest_worst_day, 2)} | ${formatPriceStake(
+      单日最差利润: `${formatPercent(result.backtest_worst_day, 2)} | ${formatPriceStake(
         result.backtest_worst_day_abs,
       )}`,
     },
 
     {
-      'Win/Draw/Loss': `${pairSummary?.wins} / ${pairSummary?.draws} / ${pairSummary?.losses} ${
+      '胜 / 平 / 负': `${pairSummary?.wins} / ${pairSummary?.draws} / ${pairSummary?.losses} ${
         isNotUndefined(pairSummary?.winrate)
-          ? '(WR: ' +
+          ? '(胜率: ' +
             formatPercent(
               result.results_per_pair[result.results_per_pair.length - 1]?.winrate ?? 0,
               2,
@@ -160,84 +160,84 @@ export function generateBacktestMetricRows(result: StrategyBacktestResult) {
       }`,
     },
     {
-      'Days win/draw/loss': `${result.winning_days} / ${result.draw_days} / ${result.losing_days}`,
+      '获利天数 / 平局天数 / 亏损天数': `${result.winning_days} / ${result.draw_days} / ${result.losing_days}`,
     },
     {
       // TODO: min/max/avg trade duration should be aligned with the terminal output
-      'Min. Duration winners': humanizeDurationFromSeconds(result.winner_holding_min_s),
+      获利交易最短持仓时间: humanizeDurationFromSeconds(result.winner_holding_min_s),
     },
     {
-      'Avg. Duration winners': humanizeDurationFromSeconds(result.winner_holding_avg_s),
+      获利交易平均持仓时间: humanizeDurationFromSeconds(result.winner_holding_avg_s),
     },
     {
-      'Max. Duration winners': humanizeDurationFromSeconds(result.winner_holding_max_s),
+      获利交易最长持仓时间: humanizeDurationFromSeconds(result.winner_holding_max_s),
     },
     {
-      'Min. Duration Losers': humanizeDurationFromSeconds(result.loser_holding_min_s),
+      亏损交易最短持仓时间: humanizeDurationFromSeconds(result.loser_holding_min_s),
     },
     {
-      'Avg. Duration Losers': humanizeDurationFromSeconds(result.loser_holding_avg_s),
+      亏损交易平均持仓时间: humanizeDurationFromSeconds(result.loser_holding_avg_s),
     },
     {
-      'Max. Duration Losers': humanizeDurationFromSeconds(result.loser_holding_max_s),
+      亏损交易最长持仓时间: humanizeDurationFromSeconds(result.loser_holding_max_s),
     },
     {
-      'Max Consecutive Wins / Loss':
+      '最大连续获利 / 亏损次数':
         result.max_consecutive_wins === undefined
           ? 'N/A'
           : `${result.max_consecutive_wins} / ${result.max_consecutive_losses}`,
     },
-    { 'Rejected entry signals': result.rejected_signals },
+    { 拒绝的入场信号: result.rejected_signals },
     {
-      'Entry/Exit timeouts': `${result.timedout_entry_orders} / ${result.timedout_exit_orders}`,
+      '入场/出场超时': `${result.timedout_entry_orders} / ${result.timedout_exit_orders}`,
     },
     {
-      'Canceled Trade Entries': result.canceled_trade_entries ?? 'N/A',
+      取消的交易入场: result.canceled_trade_entries ?? 'N/A',
     },
     {
-      'Canceled Entry Orders': result.canceled_entry_orders ?? 'N/A',
+      取消的入场订单: result.canceled_entry_orders ?? 'N/A',
     },
     {
-      'Replaced Entry Orders': result.replaced_entry_orders ?? 'N/A',
+      替换的入场订单: result.replaced_entry_orders ?? 'N/A',
     },
 
     ...shortMetrics,
 
     { ___: '___' },
     {
-      'Min/Max balance (closed trades)': `${formatPriceStake(result.csum_min)} / ${formatPriceStake(result.csum_max)}`,
+      '最小/最大余额 (已结清交易)': `${formatPriceStake(result.csum_min)} / ${formatPriceStake(result.csum_max)}`,
     },
     {
-      'Min/Max balance (wallet balance)': `${formatPriceStake(result.wallet_stats?.low_balance)} / ${formatPriceStake(result.wallet_stats?.high_balance)}`,
+      '最小/最大余额 (钱包余额)': `${formatPriceStake(result.wallet_stats?.low_balance)} / ${formatPriceStake(result.wallet_stats?.high_balance)}`,
     },
-    { 'Market change': formatPercent(result.market_change) },
+    { 市场涨跌幅: formatPercent(result.market_change) },
     { '___  ': '___' },
     {
-      'Max Drawdown (Account)': formatPercent(result.max_drawdown_account),
+      '最大回撤 (账户)': formatPercent(result.max_drawdown_account),
     },
     {
-      'Max Drawdown ABS': formatPriceStake(result.max_drawdown_abs),
+      绝对最大回撤: formatPriceStake(result.max_drawdown_abs),
     },
     {
-      'Drawdown duration': result.drawdown_duration ?? 'N/A',
+      回撤时长: result.drawdown_duration ?? 'N/A',
     },
     {
-      'Profit at Drawdown start | end': `${formatPriceStake(result.max_drawdown_high)} | ${formatPriceStake(
+      '回撤开始 | 结束时的利润': `${formatPriceStake(result.max_drawdown_high)} | ${formatPriceStake(
         result.max_drawdown_low,
       )}`,
     },
-    { 'Drawdown start': timestampms(result.drawdown_start_ts) },
-    { 'Drawdown end': timestampms(result.drawdown_end_ts) },
+    { 回撤开始时间: timestampms(result.drawdown_start_ts) },
+    { 回撤结束时间: timestampms(result.drawdown_end_ts) },
     ...walletBalanceMetrics,
     { '___    ': '___' },
     {
-      'Best Pair': `${result.best_pair.key} ${formatPercent(result.best_pair.profit_total)}`,
+      最佳交易对: `${result.best_pair.key} ${formatPercent(result.best_pair.profit_total)}`,
     },
     {
-      'Worst Pair': `${result.worst_pair.key} ${formatPercent(result.worst_pair.profit_total)}`,
+      最差交易对: `${result.worst_pair.key} ${formatPercent(result.worst_pair.profit_total)}`,
     },
-    { 'Best single Trade': bestPair },
-    { 'Worst single Trade': worstPair },
+    { 最佳单笔交易: bestPair },
+    { 最差单笔交易: worstPair },
   ];
   return tmp;
 }
@@ -250,11 +250,24 @@ function formatTradingMode(result: StrategyBacktestResult) {
   if (!result.trading_mode || !result.margin_mode) {
     return {};
   }
-  const value =
-    result.trading_mode === 'spot'
-      ? capitalizeFirstLetter(result.trading_mode)
-      : `${capitalizeFirstLetter(result.margin_mode)} ${capitalizeFirstLetter(result.trading_mode)}`;
-  return { 'Trading Mode': value };
+  const modeMap: Record<string, string> = {
+    spot: '现货',
+    margin: '杠杆',
+    futures: '期货',
+  };
+  const marginMap: Record<string, string> = {
+    isolated: '逐仓',
+    cross: '全仓',
+  };
+
+  const mode = result.trading_mode.toLowerCase();
+  const margin = result.margin_mode.toLowerCase();
+
+  const translatedMode = modeMap[mode] || capitalizeFirstLetter(result.trading_mode);
+  const translatedMargin = marginMap[margin] || capitalizeFirstLetter(result.margin_mode);
+
+  const value = mode === 'spot' ? translatedMode : `${translatedMargin} ${translatedMode}`;
+  return { 交易模式: value };
 }
 
 export function generateBacktestSettingRows(result: StrategyBacktestResult) {
@@ -265,50 +278,50 @@ export function generateBacktestSettingRows(result: StrategyBacktestResult) {
   const tradingMode = formatTradingMode(result);
 
   return [
-    { 'Backtesting from': timestampms(result.backtest_start_ts) },
-    { 'Backtesting to': timestampms(result.backtest_end_ts) },
+    { 回测开始时间: timestampms(result.backtest_start_ts) },
+    { 回测结束时间: timestampms(result.backtest_end_ts) },
     ...(Object.keys(tradingMode).length !== 0 ? [tradingMode] : []),
     {
-      'BT execution time': humanizeDurationFromSeconds(
+      回测执行时间: humanizeDurationFromSeconds(
         result.backtest_run_end_ts - result.backtest_run_start_ts,
       ),
     },
-    { 'Max open trades': result.max_open_trades },
-    { Timeframe: result.timeframe },
-    { 'Timeframe Detail': result.timeframe_detail || 'N/A' },
-    { Timerange: result.timerange },
-    { Stoploss: formatPercent(result.stoploss, 2) },
-    { 'Trailing Stoploss': result.trailing_stop },
+    { 最大活跃交易数: result.max_open_trades },
+    { 时间周期: result.timeframe },
+    { 详细时间周期: result.timeframe_detail || 'N/A' },
+    { 时间范围: result.timerange },
+    { 止损比例: formatPercent(result.stoploss, 2) },
+    { 追踪止损: result.trailing_stop },
     {
-      'Trail only when offset is reached': result.trailing_only_offset_is_reached,
+      仅在达到偏移量时追踪: result.trailing_only_offset_is_reached,
     },
-    { 'Trailing Stop positive': formatNumber(result.trailing_stop_positive) },
+    { 正向追踪止损: formatNumber(result.trailing_stop_positive) },
     {
-      'Trailing stop positive offset': formatNumber(result.trailing_stop_positive_offset),
+      正向追踪止损偏移量: formatNumber(result.trailing_stop_positive_offset),
     },
-    { 'Custom Stoploss': result.use_custom_stoploss },
-    { ROI: JSON.stringify(result.minimal_roi) },
+    { 自定义止损: result.use_custom_stoploss },
+    { '投资回报率 (ROI)': JSON.stringify(result.minimal_roi) },
     {
-      'Use Exit Signal': result.use_exit_signal ?? result.use_sell_signal,
-    },
-    {
-      'Exit profit only': result.exit_profit_only ?? result.sell_profit_only,
+      使用出场信号: result.use_exit_signal ?? result.use_sell_signal,
     },
     {
-      'Exit profit offset': formatNumber(result.exit_profit_offset ?? result.sell_profit_offset),
-    },
-    { 'Enable protections': result.enable_protections },
-    {
-      'Starting balance': formatPriceStake(result.starting_balance),
+      仅限盈利出场: result.exit_profit_only ?? result.sell_profit_only,
     },
     {
-      'Final balance': formatPriceStake(result.final_balance),
+      出场盈利偏移量: formatNumber(result.exit_profit_offset ?? result.sell_profit_offset),
+    },
+    { 启用保护机制: result.enable_protections },
+    {
+      初始资金: formatPriceStake(result.starting_balance),
     },
     {
-      'Avg. stake amount': formatPriceStake(result.avg_stake_amount),
+      最终余额: formatPriceStake(result.final_balance),
     },
     {
-      'Total trade volume': formatPriceStake(result.total_volume),
+      平均开仓金额: formatPriceStake(result.avg_stake_amount),
+    },
+    {
+      总交易额: formatPriceStake(result.total_volume),
     },
   ];
 }
@@ -317,13 +330,13 @@ export function generateBacktestSettingRows(result: StrategyBacktestResult) {
  * selection happens through the settings page
  */
 export const availableBacktestMetrics = ref([
-  { field: 'sqn', header: 'SQN' },
-  { field: 'cagr', header: 'Cagr' },
-  { field: 'calmar', header: 'Calmar' },
-  { field: 'p_value', header: 'Mean profit p-value' },
-  { field: 'expectancy', header: 'Expectancy' },
-  { field: 'profit_factor', header: 'Profit Factor' },
-  { field: 'sharpe', header: 'Sharpe' },
-  { field: 'sortino', header: 'Sortino' },
-  { field: 'max_drawdown_account', header: 'Max Drawdown', is_ratio: true },
+  { field: 'sqn', header: '系统质量指数 (SQN)' },
+  { field: 'cagr', header: '年复合增长率 (CAGR)' },
+  { field: 'calmar', header: '卡玛比率 (Calmar)' },
+  { field: 'p_value', header: '平均利润 p 值' },
+  { field: 'expectancy', header: '期望值' },
+  { field: 'profit_factor', header: '利润因子' },
+  { field: 'sharpe', header: '夏普比率 (Sharpe)' },
+  { field: 'sortino', header: '索提诺比率 (Sortino)' },
+  { field: 'max_drawdown_account', header: '最大回撤', is_ratio: true },
 ]);

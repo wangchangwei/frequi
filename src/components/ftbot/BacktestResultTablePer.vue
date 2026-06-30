@@ -44,14 +44,14 @@ const perTagReason = computed(() => {
         key: `key[${i}]`,
         label: header,
         formatter: (value, item) =>
-          Array.isArray(value) ? value[i] : value || item['exit_reason'] || 'OTHER',
+          Array.isArray(value) ? value[i] : value || item['exit_reason'] || '其他',
       });
     }
   } else {
     firstFields.push({
       key: 'key',
       label: props.keyHeader,
-      formatter: (value, item) => (value || item['exit_reason'] || 'OTHER') as string,
+      formatter: (value, item) => (value || item['exit_reason'] || '其他') as string,
     });
   }
   return firstFields;
@@ -80,25 +80,25 @@ const tableColumns = computed(() => {
   });
 
   // Fixed metric columns
-  cols.push({ accessorKey: 'trades', header: 'Trades' });
+  cols.push({ accessorKey: 'trades', header: '交易数' });
   cols.push({
     id: 'profit_mean',
-    header: 'Avg Profit %',
+    header: '平均利润 %',
     cell: ({ row }) => formatPercent(row.original.profit_mean, 2),
   });
   cols.push({
     id: 'profit_total_abs',
-    header: `Tot Profit ${props.stakeCurrency}`,
+    header: `总利润 ${props.stakeCurrency}`,
     cell: ({ row }) => formatPrice(row.original.profit_total_abs, props.stakeCurrencyDecimals),
   });
   cols.push({
     id: 'profit_total',
-    header: 'Tot Profit %',
+    header: '总利润 %',
     cell: ({ row }) => formatPercent(row.original.profit_total, 2),
   });
-  cols.push({ accessorKey: 'wins', header: 'Wins' });
-  cols.push({ accessorKey: 'draws', header: 'Draws' });
-  cols.push({ accessorKey: 'losses', header: 'Losses' });
+  cols.push({ accessorKey: 'wins', header: '获利' });
+  cols.push({ accessorKey: 'draws', header: '平局' });
+  cols.push({ accessorKey: 'losses', header: '亏损' });
 
   // Dynamic additional metric columns
   metrics.value.forEach((col) => {
@@ -121,7 +121,7 @@ const tableColumns = computed(() => {
       <div class="flex flex-row w-full justify-between items-center text-">
         {{ title }}
         <div>
-          Shown metrics:
+          显示指标:
           <USelectMenu
             multiple
             id="backtestMetrics"
