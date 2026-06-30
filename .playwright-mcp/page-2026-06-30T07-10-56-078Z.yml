@@ -1,0 +1,101 @@
+- generic [active] [ref=f4e1]:
+  - generic [ref=f4e3]:
+    - banner [ref=f4e4]:
+      - generic [ref=f4e5]:
+        - link "Freqtrade logo FreqtradeUI" [ref=f4e6] [cursor=pointer]:
+          - /url: /
+          - generic "Freqtrade logo" [ref=f4e7]
+          - generic [ref=f4e8]: FreqtradeUI
+        - generic [ref=f4e9]:
+          - generic [ref=f4e10]:
+            - navigation [ref=f4e11]:
+              - list [ref=f4e13]:
+                - listitem [ref=f4e14]:
+                  - link "Chart" [ref=f4e123] [cursor=pointer]:
+                    - /url: /graph
+                    - img [ref=f4e16]
+                    - generic [ref=f4e18]: Chart
+                - listitem [ref=f4e19]:
+                  - link "Logs" [ref=f4e125] [cursor=pointer]:
+                    - /url: /logs
+                    - img [ref=f4e21]
+                    - generic [ref=f4e23]: Logs
+                - listitem [ref=f4e24]:
+                  - link "Backtest" [ref=f4e127] [cursor=pointer]:
+                    - /url: /backtest
+                    - img [ref=f4e26]
+                    - generic [ref=f4e28]: Backtest
+                - listitem [ref=f4e29]:
+                  - button "Analysis" [ref=f4e129] [cursor=pointer]:
+                    - img [ref=f4e130]
+                    - generic [ref=f4e132]: Analysis
+                    - img [ref=f4e134]
+                - listitem [ref=f4e136]:
+                  - link "Download Data" [ref=f4e137] [cursor=pointer]:
+                    - /url: /download_data
+                    - img [ref=f4e138]
+                    - generic [ref=f4e140]: Download Data
+                - listitem [ref=f4e141]:
+                  - link "Pairlist Config" [ref=f4e142] [cursor=pointer]:
+                    - /url: /pairlist_config
+                    - img [ref=f4e143]
+                    - generic [ref=f4e145]: Pairlist Config
+            - button "Toggle Night Mode" [ref=f4e34] [cursor=pointer]:
+              - img [ref=f4e35]
+          - generic [ref=f4e37]:
+            - generic [ref=f4e38]:
+              - generic "Bot name" [ref=f4e39]: freqtrade
+              - generic [ref=f4e148]:
+                - switch "Auto refresh for freqtrade" [checked] [ref=f4e151] [cursor=pointer]
+                - generic "Online" [ref=f4e152]:
+                  - img [ref=f4e153]
+              - generic "Confirm Dialog deactivated." [ref=f4e40]:
+                - generic "Auto Refresh for all bots" [ref=f4e41]:
+                  - generic [ref=f4e43]:
+                    - checkbox [checked] [ref=f4e45] [cursor=pointer]:
+                      - generic:
+                        - img
+                    - generic:
+                      - paragraph
+                - button "Auto Refresh all bots now" [ref=f4e46] [cursor=pointer]:
+                  - img [ref=f4e47]
+            - button "FT" [ref=f4e156] [cursor=pointer]:
+              - generic [ref=f4e158]: FT
+              - img [ref=f4e159]
+    - main [ref=f4e52]:
+      - generic [ref=f4e53]:
+        - generic [ref=f4e162]:
+          - heading "Available bots" [level=3] [ref=f4e163]
+          - list [ref=f4e164]:
+            - listitem "ftbot.0 - freqtrade - http://localhost:8080 -" [ref=f4e165]:
+              - img [ref=f4e166] [cursor=pointer]
+              - generic [ref=f4e168]:
+                - generic [ref=f4e169]: freqtrade
+                - generic [ref=f4e170]:
+                  - generic [ref=f4e171]:
+                    - switch "Auto refresh for freqtrade" [checked] [ref=f4e174] [cursor=pointer]
+                    - generic "Online" [ref=f4e175]:
+                      - img [ref=f4e176]
+                  - generic [ref=f4e178]:
+                    - button "Edit bot" [ref=f4e179] [cursor=pointer]:
+                      - img [ref=f4e180]
+                    - button "Delete bot" [ref=f4e182] [cursor=pointer]:
+                      - img [ref=f4e183]
+          - button "Add new Bot" [ref=f4e185] [cursor=pointer]:
+            - img [ref=f4e186]
+            - generic [ref=f4e188]: Add new Bot
+        - separator [ref=f4e54]
+        - generic "Freqtrade logo" [ref=f4e56]
+        - heading "Welcome to the FreqtradeUI" [level=1] [ref=f4e57]:
+          - text: Welcome to the
+          - generic [ref=f4e58]: FreqtradeUI
+        - generic [ref=f4e59]: This page allows you to control your trading bot.
+        - separator [ref=f4e60]
+        - paragraph [ref=f4e62]:
+          - text: If you need any help, please refer to the
+          - link "Freqtrade Documentation" [ref=f4e63] [cursor=pointer]:
+            - /url: https://www.freqtrade.io/en/latest/
+          - text: .
+        - paragraph [ref=f4e64]: Have fun - wishes you the Freqtrade team
+  - region "Notifications (F8)":
+    - list

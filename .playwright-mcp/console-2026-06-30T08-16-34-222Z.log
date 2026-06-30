@@ -1,0 +1,43 @@
+[     151ms] [LOG] add bot {botId: ftbot.0, botName: freqtrade, botUrl: http://localhost:8080, sortId: 0} @ http://localhost:3000/assets/index-CXSzRURc.js:27
+[     153ms] [LOG] botId ftbot.0 @ http://localhost:3000/assets/index-CXSzRURc.js:27
+[     155ms] [LOG] Starting automatic refresh. @ http://localhost:3000/assets/index-CXSzRURc.js:27
+[     156ms] [LOG] reset @ http://localhost:3000/assets/index-CXSzRURc.js:28
+[     220ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:8080/api/v1/show_config:0
+[     221ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:8080/api/v1/profit:0
+[     221ms] [LOG] Refreshing token... @ http://localhost:3000/assets/index-CXSzRURc.js:27
+[     223ms] [LOG] Refreshing token... @ http://localhost:3000/assets/index-CXSzRURc.js:27
+[     226ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:8080/api/v1/whitelist:0
+[     226ms] [LOG] Refreshing token... @ http://localhost:3000/assets/index-CXSzRURc.js:27
+[     227ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:8080/api/v1/balance:0
+[     227ms] [LOG] Refreshing token... @ http://localhost:3000/assets/index-CXSzRURc.js:27
+[     229ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:8080/api/v1/blacklist:0
+[     229ms] [LOG] Refreshing token... @ http://localhost:3000/assets/index-CXSzRURc.js:27
+[     229ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:8080/api/v1/trades?limit=500&offset=0:0
+[     230ms] [LOG] Refreshing token... @ http://localhost:3000/assets/index-CXSzRURc.js:27
+[     236ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:8080/api/v1/show_config:0
+[     237ms] [LOG] Refreshing token... @ http://localhost:3000/assets/index-CXSzRURc.js:27
+[     260ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://localhost:8080/api/v1/profit:0
+[     260ms] [LOG] AxiosError: Request failed with status code 503
+    at Ff (http://localhost:3000/assets/deepClone-CzjseqfJ.js:7:10317)
+    at XMLHttpRequest.g (http://localhost:3000/assets/deepClone-CzjseqfJ.js:7:16428) @ http://localhost:3000/assets/index-CXSzRURc.js:27
+[     355ms] TypeError: Cannot destructure property 'data' of '(intermediate value)' as it is undefined.
+    at He (http://localhost:3000/assets/index-CXSzRURc.js:28:80488)
+    at async Promise.all (index 1)
+    at async pe (http://localhost:3000/assets/index-CXSzRURc.js:28:75064)
+[     260ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://localhost:8080/api/v1/trades?limit=500&offset=0:0
+[     260ms] [LOG] AxiosError: Request failed with status code 503
+    at Ff (http://localhost:3000/assets/deepClone-CzjseqfJ.js:7:10317)
+    at XMLHttpRequest.g (http://localhost:3000/assets/deepClone-CzjseqfJ.js:7:16428) @ http://localhost:3000/assets/index-CXSzRURc.js:27
+[     262ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://localhost:8080/api/v1/whitelist:0
+[     262ms] [LOG] AxiosError: Request failed with status code 503
+    at Ff (http://localhost:3000/assets/deepClone-CzjseqfJ.js:7:10317)
+    at XMLHttpRequest.g (http://localhost:3000/assets/deepClone-CzjseqfJ.js:7:16428) @ http://localhost:3000/assets/index-CXSzRURc.js:27
+[     262ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://localhost:8080/api/v1/balance:0
+[     262ms] [LOG] AxiosError: Request failed with status code 503
+    at Ff (http://localhost:3000/assets/deepClone-CzjseqfJ.js:7:10317)
+    at XMLHttpRequest.g (http://localhost:3000/assets/deepClone-CzjseqfJ.js:7:16428) @ http://localhost:3000/assets/index-CXSzRURc.js:27
+[     264ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://localhost:8080/api/v1/blacklist:0
+[     264ms] [LOG] AxiosError: Request failed with status code 503
+    at Ff (http://localhost:3000/assets/deepClone-CzjseqfJ.js:7:10317)
+    at XMLHttpRequest.g (http://localhost:3000/assets/deepClone-CzjseqfJ.js:7:16428) @ http://localhost:3000/assets/index-CXSzRURc.js:27
+[     276ms] [LOG] refreshing_end @ http://localhost:3000/assets/index-CXSzRURc.js:27

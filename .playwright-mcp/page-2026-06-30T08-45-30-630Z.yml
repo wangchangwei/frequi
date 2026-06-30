@@ -1,0 +1,53 @@
+- generic [active] [ref=f2e1]:
+  - generic [ref=f2e3]:
+    - banner [ref=f2e4]:
+      - generic [ref=f2e5]:
+        - link "Freqtrade logo FreqtradeUI" [ref=f2e6] [cursor=pointer]:
+          - /url: /
+          - generic "Freqtrade logo" [ref=f2e7]
+          - generic [ref=f2e8]: FreqtradeUI
+        - generic [ref=f2e9]:
+          - generic [ref=f2e10]:
+            - navigation [ref=f2e11]:
+              - list [ref=f2e13]:
+                - listitem [ref=f2e14]:
+                  - link "交易" [ref=f2e15] [cursor=pointer]:
+                    - /url: /trade
+                    - img [ref=f2e16]
+                    - generic [ref=f2e18]: 交易
+                - listitem [ref=f2e19]:
+                  - link "仪表盘" [ref=f2e20] [cursor=pointer]:
+                    - /url: /dashboard
+                    - img [ref=f2e21]
+                    - generic [ref=f2e23]: 仪表盘
+                - listitem [ref=f2e24]:
+                  - link "图表" [ref=f2e25] [cursor=pointer]:
+                    - /url: /graph
+                    - img [ref=f2e26]
+                    - generic [ref=f2e28]: 图表
+                - listitem [ref=f2e29]:
+                  - link "日志" [ref=f2e30] [cursor=pointer]:
+                    - /url: /logs
+                    - img [ref=f2e31]
+                    - generic [ref=f2e33]: 日志
+            - button "Toggle Night Mode" [ref=f2e34] [cursor=pointer]:
+              - img [ref=f2e35]
+          - generic [ref=f2e37]:
+            - generic [ref=f2e38]:
+              - generic "Bot name" [ref=f2e39]: No bot selected
+              - generic "Confirm Dialog deactivated." [ref=f2e40]:
+                - generic "Auto Refresh for all bots" [ref=f2e41]:
+                  - generic [ref=f2e43]:
+                    - checkbox [checked] [ref=f2e45] [cursor=pointer]:
+                      - generic:
+                        - img
+                    - generic:
+                      - paragraph
+                - button "Auto Refresh all bots now" [ref=f2e46] [cursor=pointer]:
+                  - img [ref=f2e47]
+            - button "Login" [ref=f2e49] [cursor=pointer]:
+              - img [ref=f2e50]
+              - text: Login
+    - main [ref=f2e52]
+  - region "Notifications (F8)":
+    - list

@@ -1,0 +1,14 @@
+[       5ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[       5ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[      19ms] [LOG] reset  undefined @ http://localhost:4399/src/components/BotLogin.vue:146
+[      96ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[      96ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[      96ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[      96ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[     107ms] [LOG] reset  undefined @ http://localhost:4399/src/components/BotLogin.vue:146
+[     478ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[     478ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[     503ms] [LOG] reset  undefined @ http://localhost:4399/src/components/BotLogin.vue:146
+[    4443ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[    4443ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[    4468ms] [LOG] reset  undefined @ http://localhost:4399/src/components/BotLogin.vue:146

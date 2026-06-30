@@ -1,0 +1,72 @@
+- generic [active] [ref=f109e1]:
+  - generic [ref=f109e3]:
+    - banner [ref=f109e4]:
+      - generic [ref=f109e5]:
+        - link "Freqtrade logo FreqtradeUI" [ref=f109e6] [cursor=pointer]:
+          - /url: /
+          - generic "Freqtrade logo" [ref=f109e7]
+          - generic [ref=f109e8]: FreqtradeUI
+        - generic [ref=f109e9]:
+          - generic [ref=f109e10]:
+            - navigation [ref=f109e11]:
+              - list [ref=f109e13]:
+                - listitem [ref=f109e14]:
+                  - link "交易" [ref=f109e15] [cursor=pointer]:
+                    - /url: /trade
+                    - img [ref=f109e16]
+                    - generic [ref=f109e18]: 交易
+                - listitem [ref=f109e19]:
+                  - link "仪表盘" [ref=f109e20] [cursor=pointer]:
+                    - /url: /dashboard
+                    - img [ref=f109e21]
+                    - generic [ref=f109e23]: 仪表盘
+                - listitem [ref=f109e24]:
+                  - link "图表" [ref=f109e25] [cursor=pointer]:
+                    - /url: /graph
+                    - img [ref=f109e26]
+                    - generic [ref=f109e28]: 图表
+                - listitem [ref=f109e29]:
+                  - link "日志" [ref=f109e30] [cursor=pointer]:
+                    - /url: /logs
+                    - img [ref=f109e31]
+                    - generic [ref=f109e33]: 日志
+            - button "Toggle Night Mode" [ref=f109e34] [cursor=pointer]:
+              - img [ref=f109e35]
+          - generic [ref=f109e38]:
+            - generic "Bot name" [ref=f109e39]: No bot selected
+            - generic "Confirm Dialog deactivated." [ref=f109e40]:
+              - generic "Auto Refresh for all bots" [ref=f109e41]:
+                - generic [ref=f109e43]:
+                  - checkbox [checked] [ref=f109e45] [cursor=pointer]:
+                    - generic:
+                      - img
+                  - generic:
+                    - paragraph
+              - button "Auto Refresh all bots now" [ref=f109e46] [cursor=pointer]:
+                - img [ref=f109e47]
+    - main [ref=f109e49]:
+      - generic [ref=f109e51]:
+        - generic [ref=f109e53]: 登录 Freqtrade 机器人
+        - generic [ref=f109e55]:
+          - generic [ref=f109e56]:
+            - generic [ref=f109e59]: 机器人名称
+            - textbox "机器人名称" [ref=f109e62]:
+              - /placeholder: 请输入机器人名称
+          - generic [ref=f109e63]:
+            - generic [ref=f109e66]: API 地址
+            - textbox "API 地址" [ref=f109e69]: http://localhost:4399
+          - generic [ref=f109e70]:
+            - generic [ref=f109e73]: 用户名
+            - textbox "用户名" [ref=f109e76]:
+              - /placeholder: Freqtrader
+          - generic [ref=f109e77]:
+            - generic [ref=f109e80]: 密码
+            - textbox "密码" [ref=f109e83]
+          - generic [ref=f109e84]:
+            - button "重置" [ref=f109e85] [cursor=pointer]:
+              - generic [ref=f109e86]: 重置
+            - button "提交" [ref=f109e87] [cursor=pointer]:
+              - img [ref=f109e88]
+              - generic [ref=f109e90]: 提交
+  - region "Notifications (F8)":
+    - list

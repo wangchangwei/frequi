@@ -1,0 +1,184 @@
+- generic [active] [ref=f170e1]:
+  - generic [ref=f170e3]:
+    - banner [ref=f170e4]:
+      - generic [ref=f170e5]:
+        - link "Freqtrade logo FreqtradeUI" [ref=f170e6] [cursor=pointer]:
+          - /url: /
+          - generic "Freqtrade logo" [ref=f170e7]
+          - generic [ref=f170e8]: FreqtradeUI
+        - generic [ref=f170e9]:
+          - generic [ref=f170e10]:
+            - navigation [ref=f170e11]:
+              - list [ref=f170e13]:
+                - listitem [ref=f170e14]:
+                  - link "图表" [ref=f170e15] [cursor=pointer]:
+                    - /url: /graph
+                    - img [ref=f170e16]
+                    - generic [ref=f170e18]: 图表
+                - listitem [ref=f170e19]:
+                  - link "日志" [ref=f170e20] [cursor=pointer]:
+                    - /url: /logs
+                    - img [ref=f170e21]
+                    - generic [ref=f170e23]: 日志
+                - listitem [ref=f170e24]:
+                  - link "回测" [ref=f170e25] [cursor=pointer]:
+                    - /url: /backtest
+                    - img [ref=f170e26]
+                    - generic [ref=f170e28]: 回测
+                - listitem [ref=f170e29]:
+                  - button "分析" [ref=f170e30] [cursor=pointer]:
+                    - img [ref=f170e31]
+                    - generic [ref=f170e32]: 分析
+                    - img [ref=f170e34]
+                - listitem [ref=f170e36]:
+                  - link "下载数据" [ref=f170e37] [cursor=pointer]:
+                    - /url: /download_data
+                    - img [ref=f170e38]
+                    - generic [ref=f170e39]: 下载数据
+                - listitem [ref=f170e40]:
+                  - link "交易对配置" [ref=f170e41] [cursor=pointer]:
+                    - /url: /pairlist_config
+                    - img [ref=f170e42]
+                    - generic [ref=f170e43]: 交易对配置
+            - button "Toggle Night Mode" [ref=f170e44] [cursor=pointer]:
+              - img [ref=f170e45]
+          - generic [ref=f170e47]:
+            - generic [ref=f170e48]:
+              - generic "Bot name" [ref=f170e49]: freqtrade
+              - generic [ref=f170e52]:
+                - switch "Auto refresh for freqtrade" [checked] [ref=f170e55] [cursor=pointer]
+                - generic "Online" [ref=f170e56]:
+                  - img [ref=f170e57]
+              - generic "Confirm Dialog deactivated." [ref=f170e59]:
+                - generic "Auto Refresh for all bots" [ref=f170e60]:
+                  - generic [ref=f170e62]:
+                    - checkbox [checked] [ref=f170e64] [cursor=pointer]:
+                      - generic:
+                        - img
+                    - generic:
+                      - paragraph
+                - button "Auto Refresh all bots now" [ref=f170e65] [cursor=pointer]:
+                  - img [ref=f170e66]
+            - button "FT" [ref=f170e69] [cursor=pointer]:
+              - generic [ref=f170e71]: FT
+              - img [ref=f170e72]
+    - main [ref=f170e74]:
+      - generic [ref=f170e75]:
+        - button "Close" [ref=f170e78] [cursor=pointer]:
+          - img [ref=f170e79]
+        - generic [ref=f170e80]:
+          - heading "历史回测" [level=2] [ref=f170e81]
+          - generic [ref=f170e83]:
+            - tablist [ref=f170e84]:
+              - tab "加载历史结果" [ref=f170e86] [cursor=pointer]:
+                - img [ref=f170e87]
+                - generic [ref=f170e88]: 加载历史结果
+              - tab "运行回测" [selected] [ref=f170e89] [cursor=pointer]:
+                - img [ref=f170e90]
+                - generic [ref=f170e91]: 运行回测
+              - tab "分析结果" [disabled] [ref=f170e92]:
+                - img [ref=f170e93]
+                - generic [ref=f170e94]: 分析结果
+              - tab "可视化汇总" [disabled] [ref=f170e95]:
+                - img [ref=f170e96]
+                - generic [ref=f170e97]: 可视化汇总
+              - tab "可视化图表" [disabled] [ref=f170e98]:
+                - img [ref=f170e99]
+                - generic [ref=f170e100]: 可视化图表
+            - tabpanel "运行回测" [ref=f170e101]:
+              - generic [ref=f170e102]:
+                - text: 策略
+                - generic [ref=f170e104]:
+                  - button "Show popup" [ref=f170e105] [cursor=pointer]:
+                    - img [ref=f170e108]
+                  - button [ref=f170e111] [cursor=pointer]:
+                    - img [ref=f170e112]
+              - generic [ref=f170e114]:
+                - heading "回测参数设置" [level=3] [ref=f170e115]
+                - generic [ref=f170e116]: "K线周期:"
+                - combobox "K线周期:" [ref=f170e117] [cursor=pointer]:
+                  - generic: Use strategy default
+                  - img [ref=f170e119]
+                - generic [ref=f170e121]:
+                  - text: "细节K线周期:"
+                  - generic "细节K线周期（如 1m），用于高精度模拟K线内部的交易表现。如果不设置，则不启用此功能。" [ref=f170e122]:
+                    - img [ref=f170e123]
+                - combobox "细节K线周期:" [ref=f170e125] [cursor=pointer]:
+                  - generic: Use strategy default
+                  - img [ref=f170e127]
+                - generic [ref=f170e129]: "最大持仓单数:"
+                - group [ref=f170e130]:
+                  - spinbutton "最大持仓单数:" [ref=f170e131]
+                - generic [ref=f170e132]: "初始资金:"
+                - group [ref=f170e133]:
+                  - spinbutton "初始资金:" [ref=f170e134]
+                - generic [ref=f170e135]: "每单投资额:"
+                - generic [ref=f170e136]:
+                  - generic [ref=f170e139]:
+                    - checkbox "无限制" [ref=f170e141] [cursor=pointer]
+                    - generic [ref=f170e142]:
+                      - generic [ref=f170e143]: 无限制
+                      - paragraph
+                  - group [ref=f170e144]:
+                    - spinbutton "使用策略默认值" [ref=f170e145]
+                - generic [ref=f170e146]: "启用保护策略 (Protections):"
+                - generic [ref=f170e149]:
+                  - checkbox [ref=f170e151] [cursor=pointer]
+                  - generic:
+                    - paragraph
+                - generic [ref=f170e152]: "缓存回测结果:"
+                - generic [ref=f170e155]:
+                  - checkbox [checked] [ref=f170e157] [cursor=pointer]:
+                    - generic:
+                      - img
+                  - generic:
+                    - paragraph
+                - generic [ref=f170e158]:
+                  - generic [ref=f170e159]: "Enable FreqAI:"
+                  - generic "Assumes freqAI configuration is setup in the configuration, and the strategy is a freqAI strategy. Will fail if that's not the case." [ref=f170e160]:
+                    - img [ref=f170e161]
+                - generic [ref=f170e165]:
+                  - checkbox [ref=f170e167] [cursor=pointer]
+                  - generic:
+                    - paragraph
+                - separator [ref=f170e168]
+                - generic [ref=f170e170]:
+                  - generic [ref=f170e171]:
+                    - generic [ref=f170e172]:
+                      - generic [ref=f170e175]: Start Date
+                      - generic [ref=f170e177]:
+                        - textbox "Start Date" [ref=f170e178]:
+                          - /placeholder: yyyy-mm-dd
+                          - text: 2026-05-01
+                        - generic [ref=f170e179]:
+                          - button "Clear start date" [ref=f170e180] [cursor=pointer]:
+                            - img [ref=f170e181]
+                          - button [ref=f170e182] [cursor=pointer]:
+                            - img [ref=f170e183]
+                    - generic [ref=f170e184]:
+                      - generic [ref=f170e187]: End Date
+                      - generic [ref=f170e189]:
+                        - textbox "End Date" [ref=f170e190]:
+                          - /placeholder: yyyy-mm-dd
+                        - button [ref=f170e192] [cursor=pointer]:
+                          - img [ref=f170e193]
+                  - generic [ref=f170e194]: "Timerange: 20260501-"
+              - heading "回测控制" [level=3] [ref=f170e195]
+              - generic [ref=f170e196]:
+                - button "开始回测" [disabled] [ref=f170e197]:
+                  - img [ref=f170e198]
+                  - text: 开始回测
+                - button "开始队列回测" [disabled] [ref=f170e199]:
+                  - img [ref=f170e200]
+                  - text: 开始队列回测
+                - button "加载最新回测结果" [ref=f170e201] [cursor=pointer]:
+                  - img [ref=f170e202]
+                  - text: 加载最新回测结果
+                - button "停止回测" [disabled] [ref=f170e204]:
+                  - img [ref=f170e205]
+                  - text: 停止回测
+                - button "重置回测" [ref=f170e206] [cursor=pointer]:
+                  - img [ref=f170e207]
+                  - text: 重置回测
+  - region "Notifications (F8)":
+    - list

@@ -1,0 +1,67 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - link "Freqtrade logo FreqtradeUI" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - generic "Freqtrade logo" [ref=e7]
+          - generic [ref=e8]: FreqtradeUI
+        - generic [ref=e9]:
+          - generic [ref=e10]:
+            - navigation [ref=e11]:
+              - list [ref=e13]:
+                - listitem [ref=e14]:
+                  - link "Chart" [ref=e15] [cursor=pointer]:
+                    - /url: /graph
+                    - img [ref=e16]
+                    - generic [ref=e18]: Chart
+                - listitem [ref=e19]:
+                  - link "Logs" [ref=e20] [cursor=pointer]:
+                    - /url: /logs
+                    - img [ref=e21]
+                    - generic [ref=e23]: Logs
+                - listitem [ref=e24]:
+                  - link "Backtest" [ref=e25] [cursor=pointer]:
+                    - /url: /backtest
+                    - img [ref=e26]
+                    - generic [ref=e28]: Backtest
+                - listitem [ref=e29]:
+                  - button "Analysis" [ref=e30] [cursor=pointer]:
+                    - img [ref=e31]
+                    - generic [ref=e33]: Analysis
+                    - img [ref=e35]
+                - listitem [ref=e37]:
+                  - link "Download Data" [ref=e38] [cursor=pointer]:
+                    - /url: /download_data
+                    - img [ref=e39]
+                    - generic [ref=e41]: Download Data
+                - listitem [ref=e42]:
+                  - link "Pairlist Config" [ref=e43] [cursor=pointer]:
+                    - /url: /pairlist_config
+                    - img [ref=e44]
+                    - generic [ref=e46]: Pairlist Config
+            - button "Toggle Night Mode" [ref=e47] [cursor=pointer]:
+              - img [ref=e48]
+          - generic [ref=e50]:
+            - generic [ref=e51]:
+              - generic "Bot name" [ref=e52]: freqtrade
+              - generic [ref=e55]:
+                - switch "Auto refresh for freqtrade" [checked] [ref=e58] [cursor=pointer]
+                - generic "Online" [ref=e59]:
+                  - img [ref=e60]
+              - generic "Confirm Dialog deactivated." [ref=e62]:
+                - generic "Auto Refresh for all bots" [ref=e63]:
+                  - generic [ref=e65]:
+                    - checkbox [checked] [ref=e67] [cursor=pointer]:
+                      - generic:
+                        - img
+                    - generic:
+                      - paragraph
+                - button "Auto Refresh all bots now" [ref=e68] [cursor=pointer]:
+                  - img [ref=e69]
+            - button "FT" [ref=e72] [cursor=pointer]:
+              - generic [ref=e74]: FT
+              - img [ref=e75]
+    - main [ref=e77]
+  - region "Notifications (F8)":
+    - list

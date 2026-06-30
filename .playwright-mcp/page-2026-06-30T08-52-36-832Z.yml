@@ -1,0 +1,67 @@
+- generic [active] [ref=f140e1]:
+  - generic [ref=f140e3]:
+    - banner [ref=f140e4]:
+      - generic [ref=f140e5]:
+        - link "Freqtrade logo FreqtradeUI" [ref=f140e6] [cursor=pointer]:
+          - /url: /
+          - generic "Freqtrade logo" [ref=f140e7]
+          - generic [ref=f140e8]: FreqtradeUI
+        - generic [ref=f140e9]:
+          - generic [ref=f140e10]:
+            - navigation [ref=f140e11]:
+              - list [ref=f140e13]:
+                - listitem [ref=f140e14]:
+                  - link "交易" [ref=f140e15] [cursor=pointer]:
+                    - /url: /trade
+                    - img [ref=f140e16]
+                    - generic [ref=f140e18]: 交易
+                - listitem [ref=f140e19]:
+                  - link "仪表盘" [ref=f140e20] [cursor=pointer]:
+                    - /url: /dashboard
+                    - img [ref=f140e21]
+                    - generic [ref=f140e23]: 仪表盘
+                - listitem [ref=f140e24]:
+                  - link "图表" [ref=f140e25] [cursor=pointer]:
+                    - /url: /graph
+                    - img [ref=f140e26]
+                    - generic [ref=f140e28]: 图表
+                - listitem [ref=f140e29]:
+                  - link "日志" [ref=f140e30] [cursor=pointer]:
+                    - /url: /logs
+                    - img [ref=f140e31]
+                    - generic [ref=f140e33]: 日志
+            - button "Toggle Night Mode" [ref=f140e34] [cursor=pointer]:
+              - img [ref=f140e35]
+          - generic [ref=f140e37]:
+            - generic [ref=f140e38]:
+              - generic "Bot name" [ref=f140e39]: No bot selected
+              - generic "Confirm Dialog deactivated." [ref=f140e40]:
+                - generic "Auto Refresh for all bots" [ref=f140e41]:
+                  - generic [ref=f140e43]:
+                    - checkbox [checked] [ref=f140e45] [cursor=pointer]:
+                      - generic:
+                        - img
+                    - generic:
+                      - paragraph
+                - button "Auto Refresh all bots now" [ref=f140e46] [cursor=pointer]:
+                  - img [ref=f140e47]
+            - button "Login" [ref=f140e49] [cursor=pointer]:
+              - img [ref=f140e50]
+              - text: Login
+    - main [ref=f140e52]:
+      - generic [ref=f140e53]:
+        - separator [ref=f140e54]
+        - generic "Freqtrade logo" [ref=f140e56]
+        - heading "欢迎使用 FreqtradeUI" [level=1] [ref=f140e57]:
+          - text: 欢迎使用
+          - generic [ref=f140e58]: FreqtradeUI
+        - generic [ref=f140e59]: 此页面可让您管理和控制您的交易机器人。
+        - separator [ref=f140e60]
+        - paragraph [ref=f140e62]:
+          - text: 如果您需要任何帮助，请参阅
+          - link "Freqtrade 官方文档" [ref=f140e63] [cursor=pointer]:
+            - /url: https://www.freqtrade.io/en/latest/
+          - text: 。
+        - paragraph [ref=f140e64]: 交易愉快！ - Freqtrade 团队祝您一切顺利
+  - region "Notifications (F8)":
+    - list

@@ -1,0 +1,26 @@
+[      61ms] [LOG] add bot {botId: ftbot.0, botName: freqtrade, botUrl: http://localhost:8080, sortId: 0} @ http://localhost:3000/assets/index-CXSzRURc.js:27
+[      62ms] [LOG] botId ftbot.0 @ http://localhost:3000/assets/index-CXSzRURc.js:27
+[      62ms] [LOG] Starting automatic refresh. @ http://localhost:3000/assets/index-CXSzRURc.js:27
+[      62ms] [LOG] reset @ http://localhost:3000/assets/index-CXSzRURc.js:28
+[      81ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://localhost:8080/api/v1/trades?limit=500&offset=0:0
+[      82ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: X, config: Object} @ http://localhost:3000/assets/index-CXSzRURc.js:27
+[     145ms] AxiosError: Request failed with status code 503
+    at Ff (http://localhost:3000/assets/deepClone-CzjseqfJ.js:7:10317)
+    at XMLHttpRequest.g (http://localhost:3000/assets/deepClone-CzjseqfJ.js:7:16428)
+    at Fp.request (http://localhost:3000/assets/deepClone-CzjseqfJ.js:9:2125)
+    at async he (http://localhost:3000/assets/index-CXSzRURc.js:28:75340)
+    at async Promise.all (index 2)
+    at async pe (http://localhost:3000/assets/index-CXSzRURc.js:28:75064)
+[      84ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://localhost:8080/api/v1/balance:0
+[      85ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://localhost:8080/api/v1/profit:0
+[      85ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://localhost:8080/api/v1/blacklist:0
+[      85ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://localhost:8080/api/v1/whitelist:0
+[      94ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://localhost:8080/api/v1/blacklist:0
+[      95ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://localhost:8080/api/v1/whitelist:0
+[      98ms] [LOG] refreshing_end @ http://localhost:3000/assets/index-CXSzRURc.js:27
+[     147ms] AxiosError: Request failed with status code 503
+    at Ff (http://localhost:3000/assets/deepClone-CzjseqfJ.js:7:10317)
+    at XMLHttpRequest.g (http://localhost:3000/assets/deepClone-CzjseqfJ.js:7:16428)
+[     147ms] AxiosError: Request failed with status code 503
+    at Ff (http://localhost:3000/assets/deepClone-CzjseqfJ.js:7:10317)
+    at XMLHttpRequest.g (http://localhost:3000/assets/deepClone-CzjseqfJ.js:7:16428)

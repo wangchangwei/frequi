@@ -1,0 +1,1050 @@
+[     101ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[     101ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[     102ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[     103ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[     188ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[     252ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getProfit (http://localhost:4399/src/stores/ftbot.ts:491:22)
+    at async Promise.all (index 1)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[     259ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[     260ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[     260ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[     260ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[     260ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[     274ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[     573ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[     573ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[     574ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[     575ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[    1465ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[    1465ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[    1465ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[    1465ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[    1465ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[    1465ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[    1467ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getTrades (http://localhost:4399/src/stores/ftbot.ts:163:17)
+    at async Promise.all (index 2)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[    2446ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[    2962ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[    2962ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[    2963ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[    2963ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[    2999ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[    3019ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getProfit (http://localhost:4399/src/stores/ftbot.ts:491:22)
+    at async Promise.all (index 1)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[    3001ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[    3001ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[    3002ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[    3003ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[    3003ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[    3013ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[    4152ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[    4152ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[    4153ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[    4154ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[    4188ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[    4220ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getBlacklist (http://localhost:4399/src/stores/ftbot.ts:517:22)
+    at async Promise.all (index 6)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[    4191ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[    4192ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[    4192ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[    4193ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[    4193ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[    4203ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[    5360ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[    5360ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[    5362ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[    5362ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[    5472ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[    5473ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[    5473ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[    5473ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[    5473ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[    5473ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[    5488ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getBlacklist (http://localhost:4399/src/stores/ftbot.ts:517:22)
+    at async Promise.all (index 6)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[    5488ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[    8305ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[    8305ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[    8306ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[    8306ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[    8354ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[    8379ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getBlacklist (http://localhost:4399/src/stores/ftbot.ts:517:22)
+    at async Promise.all (index 6)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[    8357ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[    8359ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[    8366ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[    8366ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[    8366ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[    8370ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[    9665ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[    9665ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[    9666ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[    9666ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[    9693ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[    9693ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[    9734ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getTrades (http://localhost:4399/src/stores/ftbot.ts:163:17)
+    at async Promise.all (index 2)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[    9694ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[    9694ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[    9694ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[    9694ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[    9706ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[   10899ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[   10899ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[   10900ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[   10900ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[   11001ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[   11002ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[   11002ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[   11002ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[   11002ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[   11002ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[   11010ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getTrades (http://localhost:4399/src/stores/ftbot.ts:163:17)
+    at async Promise.all (index 2)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[   11023ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[   11632ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[   11632ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[   11633ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[   11633ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[   13043ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[   13045ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getProfit (http://localhost:4399/src/stores/ftbot.ts:491:22)
+    at async Promise.all (index 1)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[   13051ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[   13051ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[   13054ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[   13056ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[   13056ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[   13063ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[   15356ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[   15357ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[   15357ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[   15358ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[   15389ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[   15398ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getBlacklist (http://localhost:4399/src/stores/ftbot.ts:517:22)
+    at async Promise.all (index 6)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[   15391ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[   15392ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[   15393ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[   15393ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[   15394ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[   15406ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[   15544ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[   15544ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[   15545ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[   15545ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[   17377ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[   17378ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getProfit (http://localhost:4399/src/stores/ftbot.ts:491:22)
+    at async Promise.all (index 1)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[   17383ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[   17383ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[   17385ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[   17392ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[   17392ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[   17399ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[   18370ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[   18370ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[   18371ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[   18372ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[   18412ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[   18484ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getWhitelist (http://localhost:4399/src/stores/ftbot.ts:507:22)
+    at async Promise.all (index 5)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[   18413ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[   18413ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[   18415ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[   18416ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[   18417ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[   18431ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[   19629ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[   19629ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[   19630ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[   19630ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[   19677ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[   19678ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[   19678ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[   19678ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[   19678ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[   19712ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getBalance (http://localhost:4399/src/stores/ftbot.ts:548:22)
+    at async Promise.all (index 3)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[   19679ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[   19690ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[   26113ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[   26113ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[   26118ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[   26119ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[   26222ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[   26223ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[   26223ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[   26234ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[   26235ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[   26235ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[   26240ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[   26245ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getBlacklist (http://localhost:4399/src/stores/ftbot.ts:517:22)
+    at async Promise.all (index 6)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[   26491ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[   26491ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[   26492ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[   26492ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[   28109ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[   28110ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getProfit (http://localhost:4399/src/stores/ftbot.ts:491:22)
+    at async Promise.all (index 1)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[   28110ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[   28111ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[   28111ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[   28112ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[   28116ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[   28120ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[   28477ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[   28477ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[   28478ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[   28478ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[   28518ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[   28577ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getProfit (http://localhost:4399/src/stores/ftbot.ts:491:22)
+    at async Promise.all (index 1)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[   28520ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[   28521ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[   28522ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[   28522ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[   28524ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[   28540ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[   32991ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[   32991ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[   32992ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[   32993ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[   33026ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[   33032ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[   33032ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[   33033ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[   33033ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[   33034ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[   33041ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getBlacklist (http://localhost:4399/src/stores/ftbot.ts:517:22)
+    at async Promise.all (index 6)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[   33038ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[   34370ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[   34371ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[   34371ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[   34372ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[   34405ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[   34447ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getProfit (http://localhost:4399/src/stores/ftbot.ts:491:22)
+    at async Promise.all (index 1)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[   34407ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[   34409ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[   34409ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[   34410ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[   34412ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[   34424ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[   40348ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[   40348ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[   40349ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[   40350ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[   40388ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[   40395ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getWhitelist (http://localhost:4399/src/stores/ftbot.ts:507:22)
+    at async Promise.all (index 5)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[   40390ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[   40390ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[   40392ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[   40393ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[   40393ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[   40404ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[   41416ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[   41416ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[   41417ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[   41418ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[   41468ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[   41469ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[   41483ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getTrades (http://localhost:4399/src/stores/ftbot.ts:163:17)
+    at async Promise.all (index 2)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[   41470ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[   41471ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[   41471ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[   41473ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[   41525ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[   44176ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[   44176ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[   44177ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[   44178ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[   44331ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[   44339ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getWhitelist (http://localhost:4399/src/stores/ftbot.ts:507:22)
+    at async Promise.all (index 5)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[   44345ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[   44381ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[   44389ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[   44396ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[   44443ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[   45501ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[   47087ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[   47087ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[   47088ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[   47089ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[   47125ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[   47164ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getProfit (http://localhost:4399/src/stores/ftbot.ts:491:22)
+    at async Promise.all (index 1)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[   47126ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[   47126ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[   47128ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[   47128ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[   47128ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[   47143ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[   48651ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[   48651ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[   48652ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[   48652ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[   48682ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[   48715ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getWhitelist (http://localhost:4399/src/stores/ftbot.ts:507:22)
+    at async Promise.all (index 5)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[   48684ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[   48685ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[   48691ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[   48691ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[   48692ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[   48696ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[   49289ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[   49289ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[   49290ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[   49290ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[   49738ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[   49738ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[   49738ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[   49738ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[   49739ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[   49739ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[   49739ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getBlacklist (http://localhost:4399/src/stores/ftbot.ts:517:22)
+    at async Promise.all (index 6)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[   50593ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[   73095ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[   73095ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[   73096ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[   73096ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[   73207ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[   73208ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[   73208ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[   73208ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[   73208ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[   73208ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[   73228ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[   73230ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getTrades (http://localhost:4399/src/stores/ftbot.ts:163:17)
+    at async Promise.all (index 2)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[   76461ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[   76461ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[   76462ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[   76462ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[   76487ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[   76540ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getProfit (http://localhost:4399/src/stores/ftbot.ts:491:22)
+    at async Promise.all (index 1)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[   76490ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[   76490ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[   76492ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[   76492ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[   76492ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[   76504ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[   78436ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[   78436ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[   78436ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[   78437ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[   78466ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[   78479ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getBalance (http://localhost:4399/src/stores/ftbot.ts:548:22)
+    at async Promise.all (index 3)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[   78467ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[   78468ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[   78468ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[   78471ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[   78471ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[   78482ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[   84282ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[   84282ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[   84283ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[   84283ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[   84319ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[   84319ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[   84341ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getTrades (http://localhost:4399/src/stores/ftbot.ts:163:17)
+    at async Promise.all (index 2)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[   84321ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[   84321ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[   84321ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[   84322ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[   84334ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[   84898ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[   84898ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[   84899ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[   84899ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[   85327ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[   85327ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[   85328ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[   85328ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[   85664ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[   85665ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getProfit (http://localhost:4399/src/stores/ftbot.ts:491:22)
+    at async Promise.all (index 1)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[   85666ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[   85666ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[   86554ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[   87441ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[   87441ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[   87464ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[   90250ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[   90250ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[   90251ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[   90251ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[   90302ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[   90303ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[   90331ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getTrades (http://localhost:4399/src/stores/ftbot.ts:163:17)
+    at async Promise.all (index 2)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[   90305ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[   90305ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[   90306ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[   90307ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[   90321ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[   92226ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[   92226ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[   92227ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[   92227ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[   92263ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[   92307ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getProfit (http://localhost:4399/src/stores/ftbot.ts:491:22)
+    at async Promise.all (index 1)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[   92266ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[   92267ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[   92268ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[   92275ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[   92275ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[   92277ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[   96744ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[   96744ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[   96745ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[   96745ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[   96804ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[   96935ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getWhitelist (http://localhost:4399/src/stores/ftbot.ts:507:22)
+    at async Promise.all (index 5)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[   96805ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[   96806ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[   96808ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[   96808ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[   96814ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[   96818ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[   99856ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[   99856ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[   99857ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[   99857ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[   99889ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[   99927ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getWhitelist (http://localhost:4399/src/stores/ftbot.ts:507:22)
+    at async Promise.all (index 5)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[   99893ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[   99893ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[   99893ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[   99893ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[   99893ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[   99906ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[  362383ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[  362383ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[  362384ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[  362385ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[  362674ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[  362674ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[  362675ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[  362675ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[  364506ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[  364507ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[  364507ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[  364508ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getWhitelist (http://localhost:4399/src/stores/ftbot.ts:507:22)
+    at async Promise.all (index 5)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[  364507ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[  364508ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[  364514ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[  364518ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[  365557ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[  365557ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[  365558ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[  365558ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[  365601ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[  365633ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getWhitelist (http://localhost:4399/src/stores/ftbot.ts:507:22)
+    at async Promise.all (index 5)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[  365604ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[  365605ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[  365605ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[  365606ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[  365606ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[  365618ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[  392492ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[  392492ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[  392493ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[  392494ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[  392768ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[  392768ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[  392769ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[  392769ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[  392811ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[  392837ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getProfit (http://localhost:4399/src/stores/ftbot.ts:491:22)
+    at async Promise.all (index 1)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[  392812ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[  392812ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[  392813ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[  392814ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[  392815ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[  392828ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[  397268ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[  397268ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[  397269ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[  397269ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[  397328ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[  397329ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[  397432ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getTrades (http://localhost:4399/src/stores/ftbot.ts:163:17)
+    at async Promise.all (index 2)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[  397331ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[  397331ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[  397331ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[  397334ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[  397347ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[  398060ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[  398060ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[  398061ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[  398062ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[  398734ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[  398735ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[  398735ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[  398735ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[  398737ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getProfit (http://localhost:4399/src/stores/ftbot.ts:491:22)
+    at async Promise.all (index 1)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[  399620ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[  399621ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[  399626ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[  401563ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[  401563ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[  401564ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[  401565ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[  401612ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[  401638ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getBlacklist (http://localhost:4399/src/stores/ftbot.ts:517:22)
+    at async Promise.all (index 6)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[  401616ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[  401616ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[  401617ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[  401617ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[  401618ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[  401630ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[  402439ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[  402439ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[  402440ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[  402440ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[  403048ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[  403048ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[  403048ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[  403048ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[  403049ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getProfit (http://localhost:4399/src/stores/ftbot.ts:491:22)
+    at async Promise.all (index 1)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[  403858ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[  403863ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[  403867ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[  406081ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[  406081ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[  406082ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[  406083ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[  406110ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[  406110ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[  406172ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getProfit (http://localhost:4399/src/stores/ftbot.ts:491:22)
+    at async Promise.all (index 1)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[  406111ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[  406112ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[  406112ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[  406113ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[  406123ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[  406472ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[  406472ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[  406473ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[  406474ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[  408237ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[  408238ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[  408238ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[  408239ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getProfit (http://localhost:4399/src/stores/ftbot.ts:491:22)
+    at async Promise.all (index 1)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[  408238ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[  408238ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[  408241ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[  408246ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[  424552ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[  424552ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[  424553ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[  424554ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[  424623ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[  424623ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[  424667ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getTrades (http://localhost:4399/src/stores/ftbot.ts:163:17)
+    at async Promise.all (index 2)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[  424624ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[  424632ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[  424632ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[  424632ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[  424640ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[  425797ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[  425797ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[  425798ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[  425799ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[  426025ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[  426026ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[  426027ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getTrades (http://localhost:4399/src/stores/ftbot.ts:163:17)
+    at async Promise.all (index 2)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[  426040ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[  426041ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[  426042ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[  426042ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[  427019ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[  429535ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[  429535ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[  429536ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[  429537ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[  429570ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[  429653ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getWhitelist (http://localhost:4399/src/stores/ftbot.ts:507:22)
+    at async Promise.all (index 5)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[  429573ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[  429574ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[  429574ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[  429575ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[  429576ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[  429591ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[  429836ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[  429836ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[  429837ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[  429838ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[  430172ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[  430172ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[  430173ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[  430174ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[  431054ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[  431054ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[  431054ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[  431054ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[  431054ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[  431054ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[  431058ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getWhitelist (http://localhost:4399/src/stores/ftbot.ts:507:22)
+    at async Promise.all (index 5)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[  433166ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[  436495ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[  436495ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[  436496ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[  436497ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[  436536ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[  436537ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[  436537ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[  436570ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getTrades (http://localhost:4399/src/stores/ftbot.ts:163:17)
+    at async Promise.all (index 2)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[  436538ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[  436538ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[  436539ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[  436555ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[  440669ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[  440669ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[  440670ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[  440670ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[  440709ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[  440710ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[  440766ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getTrades (http://localhost:4399/src/stores/ftbot.ts:163:17)
+    at async Promise.all (index 2)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[  440710ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[  440712ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[  440712ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[  440713ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[  440727ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[  444688ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[  444688ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[  444689ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[  444689ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[  444727ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[  444747ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getBlacklist (http://localhost:4399/src/stores/ftbot.ts:517:22)
+    at async Promise.all (index 6)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[  444730ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[  444730ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[  444730ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[  444731ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[  444732ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[  444742ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[  447064ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[  447064ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[  447065ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[  447066ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[  447096ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[  447116ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getWhitelist (http://localhost:4399/src/stores/ftbot.ts:507:22)
+    at async Promise.all (index 5)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[  447097ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[  447099ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[  447112ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[  447113ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[  447113ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[  447117ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[  483698ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[  483699ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[  483700ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[  483700ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[  483752ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[  483752ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[  483752ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[  483752ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[  483857ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getBalance (http://localhost:4399/src/stores/ftbot.ts:548:22)
+    at async Promise.all (index 3)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[  483753ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[  483753ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[  483768ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[  484335ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[  484335ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[  484336ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[  484336ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[  485088ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[  485088ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[  485089ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[  485089ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[  485089ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[  485095ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[  485095ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getProfit (http://localhost:4399/src/stores/ftbot.ts:491:22)
+    at async Promise.all (index 1)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[  486003ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[  487843ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[  487843ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[  487844ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[  487845ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[  487878ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[  487878ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[  487894ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getTrades (http://localhost:4399/src/stores/ftbot.ts:163:17)
+    at async Promise.all (index 2)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[  487881ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[  487881ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[  487882ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[  487885ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[  487896ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[  488410ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[  488410ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[  488411ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[  488411ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[  488665ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[  488665ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[  488666ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[  488667ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[  489459ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[  489459ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[  489459ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[  489460ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getProfit (http://localhost:4399/src/stores/ftbot.ts:491:22)
+    at async Promise.all (index 1)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[  490309ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[  490322ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[  490324ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[  490329ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[  492310ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[  492310ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[  492311ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[  492311ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[  492342ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[  492442ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getWhitelist (http://localhost:4399/src/stores/ftbot.ts:507:22)
+    at async Promise.all (index 5)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[  492352ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[  492352ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[  492352ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[  492352ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[  492352ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[  492357ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[  492788ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[  492788ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[  492789ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[  492790ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[  493141ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[  493141ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[  493142ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[  493142ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[  493738ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[  493738ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[  493742ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getProfit (http://localhost:4399/src/stores/ftbot.ts:491:22)
+    at async Promise.all (index 1)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[  495454ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[  495456ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[  495456ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[  495460ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[  495472ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303
+[  496400ms] [LOG] add bot {botId: freqtrade, botName: freqtrade, botUrl: http://127.0.0.1:8080, sortId: 1} @ http://localhost:4399/src/stores/ftbotwrapper.ts:202
+[  496400ms] [LOG] botId freqtrade @ http://localhost:4399/src/composables/loginInfo.ts:27
+[  496401ms] [LOG] Starting automatic refresh. @ http://localhost:4399/src/stores/ftbotwrapper.ts:309
+[  496401ms] [LOG] reset @ http://localhost:4399/src/components/layout/NavBar.vue:54
+[  496440ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/blacklist:0
+[  496481ms] AxiosError: Request failed with status code 503
+    at settle (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:1829:14)
+    at XMLHttpRequest.onloadend (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2213:4)
+    at Axios$1.request (http://localhost:4399/node_modules/.vite/deps/axios.js?v=01b27828:2989:37)
+    at async getBlacklist (http://localhost:4399/src/stores/ftbot.ts:517:22)
+    at async Promise.all (index 6)
+    at async refreshSlow (http://localhost:4399/src/stores/ftbot.ts:136:6)
+[  496442ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/profit:0
+[  496444ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/trades?limit=500&offset=0:0
+[  496445ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: AxiosHeaders$1, config: Object} @ http://localhost:4399/@vite/client:524
+[  496447ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/whitelist:0
+[  496448ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8080/api/v1/balance:0
+[  496461ms] [LOG] refreshing_end @ http://localhost:4399/src/stores/ftbotwrapper.ts:303

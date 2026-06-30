@@ -1,0 +1,31 @@
+[      93ms] [LOG] Starting automatic refresh. @ http://localhost:3000/assets/index-CXSzRURc.js:27
+[      93ms] [LOG] refreshing_end @ http://localhost:3000/assets/index-CXSzRURc.js:27
+[   45800ms] [LOG] reset  undefined @ http://localhost:3000/assets/index-CXSzRURc.js:28
+[   67629ms] [LOG] botId ftbot.0 @ http://localhost:3000/assets/index-CXSzRURc.js:27
+[   67684ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:8080/api/v1/token/login:0
+[   67686ms] [ERROR] AxiosError: Request failed with status code 401
+    at Ff (http://localhost:3000/assets/deepClone-CzjseqfJ.js:7:10317)
+    at XMLHttpRequest.g (http://localhost:3000/assets/deepClone-CzjseqfJ.js:7:16428)
+    at Fp.request (http://localhost:3000/assets/deepClone-CzjseqfJ.js:9:2125)
+    at async u (http://localhost:3000/assets/index-CXSzRURc.js:28:69109)
+    at async d (http://localhost:3000/assets/index-CXSzRURc.js:28:69456)
+    at async T (http://localhost:3000/assets/index-CXSzRURc.js:28:233512) @ http://localhost:3000/assets/index-CXSzRURc.js:27
+[   67686ms] [ERROR] Connected to bot, however Login failed, Username or Password wrong. @ http://localhost:3000/assets/index-CXSzRURc.js:28
+[   84971ms] [LOG] botId ftbot.0 @ http://localhost:3000/assets/index-CXSzRURc.js:27
+[   85027ms] [LOG] add bot {botName: freqtrade, botId: ftbot.0, botUrl: http://localhost:8080, sortId: 1} @ http://localhost:3000/assets/index-CXSzRURc.js:27
+[   85028ms] [LOG] botId ftbot.0 @ http://localhost:3000/assets/index-CXSzRURc.js:27
+[   85031ms] [LOG] reset @ http://localhost:3000/assets/index-CXSzRURc.js:28
+[   85103ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://localhost:8080/api/v1/profit:0
+[   85104ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://localhost:8080/api/v1/balance:0
+[   85104ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://localhost:8080/api/v1/trades?limit=500&offset=0:0
+[   85105ms] [ERROR] {data: Object, status: 503, statusText: Service Unavailable, headers: X, config: Object} @ http://localhost:3000/assets/index-CXSzRURc.js:27
+[   85106ms] AxiosError: Request failed with status code 503
+    at Ff (http://localhost:3000/assets/deepClone-CzjseqfJ.js:7:10317)
+    at XMLHttpRequest.g (http://localhost:3000/assets/deepClone-CzjseqfJ.js:7:16428)
+    at Fp.request (http://localhost:3000/assets/deepClone-CzjseqfJ.js:9:2125)
+    at async He (http://localhost:3000/assets/index-CXSzRURc.js:28:80491)
+    at async Promise.all (index 1)
+    at async pe (http://localhost:3000/assets/index-CXSzRURc.js:28:75064)
+[   85107ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://localhost:8080/api/v1/whitelist:0
+[   85107ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://localhost:8080/api/v1/blacklist:0
+[   85122ms] [LOG] refreshing_end @ http://localhost:3000/assets/index-CXSzRURc.js:27

@@ -31,10 +31,7 @@ yarn-error.log*
 /blob-report/
 /playwright/.cache/
 
-# Tooling / runtime caches (not part of the frequi codebase)
-.omc/
-.agents/
-.playwright-mcp/
+# Backtest queue output artifacts (regenerated on each run)
 backtest_queue/
 
 # Freqtrade runtime data — contains secrets (api_server.jwt_secret_key / password)

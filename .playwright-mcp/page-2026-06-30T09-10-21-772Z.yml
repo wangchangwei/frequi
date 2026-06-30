@@ -1,0 +1,57 @@
+- generic [active] [ref=f110e1]:
+  - generic [ref=f110e3]:
+    - banner [ref=f110e4]:
+      - generic [ref=f110e5]:
+        - link "Freqtrade logo FreqtradeUI" [ref=f110e6] [cursor=pointer]:
+          - /url: /
+          - generic "Freqtrade logo" [ref=f110e7]
+          - generic [ref=f110e8]: FreqtradeUI
+        - generic [ref=f110e9]:
+          - generic [ref=f110e10]:
+            - navigation [ref=f110e11]:
+              - list [ref=f110e13]:
+                - listitem [ref=f110e14]:
+                  - link "交易" [ref=f110e15] [cursor=pointer]:
+                    - /url: /trade
+                    - img [ref=f110e16]
+                    - generic [ref=f110e18]: 交易
+                - listitem [ref=f110e19]:
+                  - link "仪表盘" [ref=f110e20] [cursor=pointer]:
+                    - /url: /dashboard
+                    - img [ref=f110e21]
+                    - generic [ref=f110e23]: 仪表盘
+                - listitem [ref=f110e24]:
+                  - link "图表" [ref=f110e25] [cursor=pointer]:
+                    - /url: /graph
+                    - img [ref=f110e26]
+                    - generic [ref=f110e28]: 图表
+                - listitem [ref=f110e29]:
+                  - link "日志" [ref=f110e30] [cursor=pointer]:
+                    - /url: /logs
+                    - img [ref=f110e31]
+                    - generic [ref=f110e33]: 日志
+            - button "Toggle Night Mode" [ref=f110e34] [cursor=pointer]:
+              - img [ref=f110e35]
+          - generic [ref=f110e37]:
+            - generic [ref=f110e38]:
+              - generic "Bot name" [ref=f110e39]: freqtrade
+              - generic [ref=f110e42]:
+                - switch "Auto refresh for freqtrade" [checked] [ref=f110e45] [cursor=pointer]
+                - generic "Online" [ref=f110e46]:
+                  - img [ref=f110e47]
+              - generic "Confirm Dialog deactivated." [ref=f110e49]:
+                - generic "Auto Refresh for all bots" [ref=f110e50]:
+                  - generic [ref=f110e52]:
+                    - checkbox [checked] [ref=f110e54] [cursor=pointer]:
+                      - generic:
+                        - img
+                    - generic:
+                      - paragraph
+                - button "Auto Refresh all bots now" [ref=f110e55] [cursor=pointer]:
+                  - img [ref=f110e56]
+            - button "FT" [ref=f110e59] [cursor=pointer]:
+              - generic [ref=f110e61]: FT
+              - img [ref=f110e62]
+    - main [ref=f110e64]
+  - region "Notifications (F8)":
+    - list

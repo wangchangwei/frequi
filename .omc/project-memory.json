@@ -1,0 +1,370 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1782799452785,
+  "projectRoot": "/Users/changwei/freq/frequi",
+  "techStack": {
+    "languages": [
+      {
+        "name": "JavaScript/TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "package.json"
+        ]
+      },
+      {
+        "name": "TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "tsconfig.json"
+        ]
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "vue",
+        "version": "3.5.38",
+        "category": "frontend"
+      },
+      {
+        "name": "@playwright/test",
+        "version": "1.61.0",
+        "category": "testing"
+      },
+      {
+        "name": "vite",
+        "version": "8.0.16",
+        "category": "build"
+      },
+      {
+        "name": "vitest",
+        "version": "4.1.9",
+        "category": "testing"
+      }
+    ],
+    "packageManager": "pnpm",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": "npx vue-tsc --noEmit 2>&1; echo \"tsc exit: $?\"",
+    "testCommand": null,
+    "lintCommand": "pnpm lint",
+    "devCommand": "pnpm dev",
+    "scripts": {
+      "dev": "vite",
+      "build": "vite build",
+      "preview": "vite preview",
+      "test:unit": "vitest",
+      "typecheck": "vue-tsc --build --noEmit",
+      "lint": "eslint src tests e2e",
+      "lint-ci": "eslint --no-fix src tests e2e",
+      "test:e2e": "playwright test",
+      "test:e2e-chromium": "playwright test --project=chromium",
+      "test:e2e-msedge": "playwright test --project=msedge",
+      "test:e2e-firefox": "playwright test --project=firefox"
+    }
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": "type-based"
+  },
+  "structure": {
+    "isMonorepo": true,
+    "workspaces": [],
+    "mainDirectories": [
+      "docs",
+      "public",
+      "src",
+      "tests"
+    ],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "docker": {
+      "path": "docker",
+      "purpose": null,
+      "fileCount": 1,
+      "lastAccessed": 1782799452745,
+      "keyFiles": [
+        "Dockerfile"
+      ]
+    },
+    "docs": {
+      "path": "docs",
+      "purpose": "Documentation",
+      "fileCount": 1,
+      "lastAccessed": 1782799452748,
+      "keyFiles": [
+        "FreqUI store diagram.drawio"
+      ]
+    },
+    "e2e": {
+      "path": "e2e",
+      "purpose": null,
+      "fileCount": 12,
+      "lastAccessed": 1782799452757,
+      "keyFiles": [
+        "analysis.spec.ts",
+        "backtest.spec.ts",
+        "chart.spec.ts",
+        "dashboard.spec.ts",
+        "downloadData.spec.ts"
+      ]
+    },
+    "public": {
+      "path": "public",
+      "purpose": "Public files",
+      "fileCount": 2,
+      "lastAccessed": 1782799452760,
+      "keyFiles": [
+        "_redirects",
+        "favicon.ico"
+      ]
+    },
+    "src": {
+      "path": "src",
+      "purpose": "Source code",
+      "fileCount": 5,
+      "lastAccessed": 1782799452760,
+      "keyFiles": [
+        "App.vue",
+        "auto-imports.d.ts",
+        "components.d.ts",
+        "env.d.ts",
+        "main.ts"
+      ]
+    },
+    "tests": {
+      "path": "tests",
+      "purpose": "Test files",
+      "fileCount": 1,
+      "lastAccessed": 1782799452764,
+      "keyFiles": [
+        "tsconfig.json"
+      ]
+    },
+    "src/assets": {
+      "path": "src/assets",
+      "purpose": "Static assets",
+      "fileCount": 2,
+      "lastAccessed": 1782799452764,
+      "keyFiles": [
+        "freqtrade-logo-mask.png",
+        "freqtrade-logo.png"
+      ]
+    },
+    "src/components": {
+      "path": "src/components",
+      "purpose": "UI components",
+      "fileCount": 9,
+      "lastAccessed": 1782799452783,
+      "keyFiles": [
+        "AppIcon.vue",
+        "AppText.vue",
+        "BotEntry.vue"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "src/stores/ftbot.ts",
+      "accessCount": 35,
+      "lastAccessed": 1782802902958,
+      "type": "directory"
+    },
+    {
+      "path": "queue_backtest.py",
+      "accessCount": 25,
+      "lastAccessed": 1782801095892,
+      "type": "file"
+    },
+    {
+      "path": "vite.config.ts",
+      "accessCount": 24,
+      "lastAccessed": 1782809242804,
+      "type": "file"
+    },
+    {
+      "path": "src/components/ftbot/BacktestRun.vue",
+      "accessCount": 12,
+      "lastAccessed": 1782802892386,
+      "type": "file"
+    },
+    {
+      "path": "src/types/backtest.ts",
+      "accessCount": 9,
+      "lastAccessed": 1782802917458,
+      "type": "file"
+    },
+    {
+      "path": "src",
+      "accessCount": 8,
+      "lastAccessed": 1782800226191,
+      "type": "directory"
+    },
+    {
+      "path": "src/stores/pairlistConfig.ts",
+      "accessCount": 4,
+      "lastAccessed": 1782809720025,
+      "type": "file"
+    },
+    {
+      "path": "docker-compose.yml",
+      "accessCount": 3,
+      "lastAccessed": 1782809036798,
+      "type": "file"
+    },
+    {
+      "path": "src/composables/loginInfo.ts",
+      "accessCount": 3,
+      "lastAccessed": 1782809547728,
+      "type": "file"
+    },
+    {
+      "path": "src/stores/ftbotwrapper.ts",
+      "accessCount": 3,
+      "lastAccessed": 1782810318565,
+      "type": "file"
+    },
+    {
+      "path": "src/components/ftbot/BacktestHistoryLoad.vue",
+      "accessCount": 2,
+      "lastAccessed": 1782800235957,
+      "type": "file"
+    },
+    {
+      "path": "docker-compose.tests.yml",
+      "accessCount": 2,
+      "lastAccessed": 1782801187172,
+      "type": "file"
+    },
+    {
+      "path": "src/stores/btStore.ts",
+      "accessCount": 2,
+      "lastAccessed": 1782802897399,
+      "type": "file"
+    },
+    {
+      "path": "src/types/downloadData.ts",
+      "accessCount": 2,
+      "lastAccessed": 1782807455561,
+      "type": "file"
+    },
+    {
+      "path": "src/components/BotLogin.vue",
+      "accessCount": 2,
+      "lastAccessed": 1782809429919,
+      "type": "file"
+    },
+    {
+      "path": "src/components/ftbot/PairlistConfigActions.vue",
+      "accessCount": 2,
+      "lastAccessed": 1782809705487,
+      "type": "file"
+    },
+    {
+      "path": ".agents/backtest-workflow-playwright.js",
+      "accessCount": 2,
+      "lastAccessed": 1782811110406,
+      "type": "file"
+    },
+    {
+      "path": "src/utils/backtestMetrics.ts",
+      "accessCount": 2,
+      "lastAccessed": 1782811330883,
+      "type": "file"
+    },
+    {
+      "path": "src/views/BacktestingView.vue",
+      "accessCount": 2,
+      "lastAccessed": 1782813188302,
+      "type": "file"
+    },
+    {
+      "path": "src/components/ftbot/DownloadDataMain.vue",
+      "accessCount": 1,
+      "lastAccessed": 1782802892433,
+      "type": "file"
+    },
+    {
+      "path": "src/components/ftbot/PairlistConfigurator.vue",
+      "accessCount": 1,
+      "lastAccessed": 1782802892487,
+      "type": "file"
+    },
+    {
+      "path": "src/types/pairlists.ts",
+      "accessCount": 1,
+      "lastAccessed": 1782802917517,
+      "type": "file"
+    },
+    {
+      "path": "src/views/LoginView.vue",
+      "accessCount": 1,
+      "lastAccessed": 1782803259253,
+      "type": "file"
+    },
+    {
+      "path": "src/types/types.ts",
+      "accessCount": 1,
+      "lastAccessed": 1782807462212,
+      "type": "file"
+    },
+    {
+      "path": "src/components/ftbot/BacktestResultAnalysis.vue",
+      "accessCount": 1,
+      "lastAccessed": 1782811276304,
+      "type": "file"
+    },
+    {
+      "path": "src/styles/tailwind.css",
+      "accessCount": 1,
+      "lastAccessed": 1782813181870,
+      "type": "file"
+    },
+    {
+      "path": "src/components/layout/NavBar.vue",
+      "accessCount": 1,
+      "lastAccessed": 1782813181923,
+      "type": "file"
+    },
+    {
+      "path": "src/views/HomeView.vue",
+      "accessCount": 1,
+      "lastAccessed": 1782813188154,
+      "type": "file"
+    },
+    {
+      "path": "src/components/ThemeSelect.vue",
+      "accessCount": 1,
+      "lastAccessed": 1782813188248,
+      "type": "file"
+    },
+    {
+      "path": "src/components/AppIcon.vue",
+      "accessCount": 1,
+      "lastAccessed": 1782813193389,
+      "type": "file"
+    },
+    {
+      "path": "src/components/AppText.vue",
+      "accessCount": 1,
+      "lastAccessed": 1782813193409,
+      "type": "file"
+    },
+    {
+      "path": "user_data/config.json",
+      "accessCount": 1,
+      "lastAccessed": 1782835134687,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}

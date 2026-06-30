@@ -1,0 +1,67 @@
+- generic [active] [ref=f72e1]:
+  - generic [ref=f72e3]:
+    - banner [ref=f72e4]:
+      - generic [ref=f72e5]:
+        - link "Freqtrade logo FreqtradeUI" [ref=f72e6] [cursor=pointer]:
+          - /url: /
+          - generic "Freqtrade logo" [ref=f72e7]
+          - generic [ref=f72e8]: FreqtradeUI
+        - generic [ref=f72e9]:
+          - generic [ref=f72e10]:
+            - navigation [ref=f72e11]:
+              - list [ref=f72e13]:
+                - listitem [ref=f72e14]:
+                  - link "图表" [ref=f72e15] [cursor=pointer]:
+                    - /url: /graph
+                    - img [ref=f72e16]
+                    - generic [ref=f72e18]: 图表
+                - listitem [ref=f72e19]:
+                  - link "日志" [ref=f72e20] [cursor=pointer]:
+                    - /url: /logs
+                    - img [ref=f72e21]
+                    - generic [ref=f72e23]: 日志
+                - listitem [ref=f72e24]:
+                  - link "回测" [ref=f72e25] [cursor=pointer]:
+                    - /url: /backtest
+                    - img [ref=f72e26]
+                    - generic [ref=f72e28]: 回测
+                - listitem [ref=f72e29]:
+                  - button "分析" [ref=f72e30] [cursor=pointer]:
+                    - img [ref=f72e31]
+                    - generic [ref=f72e33]: 分析
+                    - img [ref=f72e35]
+                - listitem [ref=f72e37]:
+                  - link "下载数据" [ref=f72e38] [cursor=pointer]:
+                    - /url: /download_data
+                    - img [ref=f72e39]
+                    - generic [ref=f72e41]: 下载数据
+                - listitem [ref=f72e42]:
+                  - link "交易对配置" [ref=f72e43] [cursor=pointer]:
+                    - /url: /pairlist_config
+                    - img [ref=f72e44]
+                    - generic [ref=f72e46]: 交易对配置
+            - button "Toggle Night Mode" [ref=f72e47] [cursor=pointer]:
+              - img [ref=f72e48]
+          - generic [ref=f72e50]:
+            - generic [ref=f72e51]:
+              - generic "Bot name" [ref=f72e52]: freqtrade
+              - generic [ref=f72e55]:
+                - switch "Auto refresh for freqtrade" [checked] [ref=f72e58] [cursor=pointer]
+                - generic "Online" [ref=f72e59]:
+                  - img [ref=f72e60]
+              - generic "Confirm Dialog deactivated." [ref=f72e62]:
+                - generic "Auto Refresh for all bots" [ref=f72e63]:
+                  - generic [ref=f72e65]:
+                    - checkbox [checked] [ref=f72e67] [cursor=pointer]:
+                      - generic:
+                        - img
+                    - generic:
+                      - paragraph
+                - button "Auto Refresh all bots now" [ref=f72e68] [cursor=pointer]:
+                  - img [ref=f72e69]
+            - button "FT" [ref=f72e72] [cursor=pointer]:
+              - generic [ref=f72e74]: FT
+              - img [ref=f72e75]
+    - main [ref=f72e77]
+  - region "Notifications (F8)":
+    - list

@@ -1,0 +1,53 @@
+- generic [active] [ref=f124e1]:
+  - generic [ref=f124e3]:
+    - banner [ref=f124e4]:
+      - generic [ref=f124e5]:
+        - link "Freqtrade logo FreqtradeUI" [ref=f124e6] [cursor=pointer]:
+          - /url: /
+          - generic "Freqtrade logo" [ref=f124e7]
+          - generic [ref=f124e8]: FreqtradeUI
+        - generic [ref=f124e9]:
+          - generic [ref=f124e10]:
+            - navigation [ref=f124e11]:
+              - list [ref=f124e13]:
+                - listitem [ref=f124e14]:
+                  - link "交易" [ref=f124e15] [cursor=pointer]:
+                    - /url: /trade
+                    - img [ref=f124e16]
+                    - generic [ref=f124e17]: 交易
+                - listitem [ref=f124e18]:
+                  - link "仪表盘" [ref=f124e19] [cursor=pointer]:
+                    - /url: /dashboard
+                    - img [ref=f124e20]
+                    - generic [ref=f124e21]: 仪表盘
+                - listitem [ref=f124e22]:
+                  - link "图表" [ref=f124e23] [cursor=pointer]:
+                    - /url: /graph
+                    - img [ref=f124e24]
+                    - generic [ref=f124e25]: 图表
+                - listitem [ref=f124e26]:
+                  - link "日志" [ref=f124e27] [cursor=pointer]:
+                    - /url: /logs
+                    - img [ref=f124e28]
+                    - generic [ref=f124e29]: 日志
+            - button "Toggle Night Mode" [ref=f124e30] [cursor=pointer]:
+              - img [ref=f124e31]
+          - generic [ref=f124e32]:
+            - generic [ref=f124e33]:
+              - generic "Bot name" [ref=f124e34]: No bot selected
+              - generic "Confirm Dialog deactivated." [ref=f124e35]:
+                - generic "Auto Refresh for all bots" [ref=f124e36]:
+                  - generic [ref=f124e38]:
+                    - checkbox [checked] [ref=f124e40] [cursor=pointer]:
+                      - generic:
+                        - img
+                    - generic:
+                      - paragraph
+                - button "Auto Refresh all bots now" [ref=f124e41] [cursor=pointer]:
+                  - img [ref=f124e42]
+            - button "Login" [ref=f124e43] [cursor=pointer]:
+              - img [ref=f124e44]
+              - text: Login
+    - main [ref=f124e45]
+  - region "Notifications (F8)":
+    - list

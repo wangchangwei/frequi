@@ -1,0 +1,23 @@
+- generic [ref=f1e4]:
+  - region "登录" [ref=f1e6]:
+    - generic [ref=f1e7]:
+      - heading "Welcome to Studio X" [level=1] [ref=f1e9]
+      - paragraph [ref=f1e10]: Reliable automation. Agents that evolve with you
+    - generic [ref=f1e11]:
+      - generic [ref=f1e12]:
+        - generic [ref=f1e13]: 账户
+        - textbox "账户" [ref=f1e14]:
+          - /placeholder: name@company.com
+      - generic [ref=f1e15]:
+        - generic [ref=f1e16]: 密码
+        - textbox "密码" [ref=f1e18]:
+          - /placeholder: "********"
+      - link "忘记密码？" [ref=f1e20] [cursor=pointer]:
+        - /url: /forgot-password
+      - button "Continue →" [ref=f1e21] [cursor=pointer]
+      - generic [ref=f1e22]:
+        - button "Admin" [ref=f1e23] [cursor=pointer]
+        - button "Manager" [ref=f1e24] [cursor=pointer]
+        - button "User" [ref=f1e25] [cursor=pointer]
+  - progressbar [ref=f1e27]:
+    - img [ref=f1e28]

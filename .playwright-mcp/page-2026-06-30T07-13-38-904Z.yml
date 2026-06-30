@@ -1,0 +1,82 @@
+- generic [active] [ref=f7e1]:
+  - generic [ref=f7e3]:
+    - banner [ref=f7e4]:
+      - generic [ref=f7e5]:
+        - link "Freqtrade logo FreqtradeUI" [ref=f7e6] [cursor=pointer]:
+          - /url: /
+          - generic "Freqtrade logo" [ref=f7e7]
+          - generic [ref=f7e8]: FreqtradeUI
+        - generic [ref=f7e9]:
+          - generic [ref=f7e10]:
+            - navigation [ref=f7e11]:
+              - list [ref=f7e13]:
+                - listitem [ref=f7e14]:
+                  - link "Chart" [ref=f7e15] [cursor=pointer]:
+                    - /url: /graph
+                    - img [ref=f7e16]
+                    - generic [ref=f7e18]: Chart
+                - listitem [ref=f7e19]:
+                  - link "Logs" [ref=f7e20] [cursor=pointer]:
+                    - /url: /logs
+                    - img [ref=f7e21]
+                    - generic [ref=f7e23]: Logs
+                - listitem [ref=f7e24]:
+                  - link "Backtest" [ref=f7e25] [cursor=pointer]:
+                    - /url: /backtest
+                    - img [ref=f7e26]
+                    - generic [ref=f7e28]: Backtest
+                - listitem [ref=f7e29]:
+                  - button "Analysis" [ref=f7e30] [cursor=pointer]:
+                    - img [ref=f7e31]
+                    - generic [ref=f7e33]: Analysis
+                    - img [ref=f7e35]
+                - listitem [ref=f7e37]:
+                  - link "Download Data" [ref=f7e38] [cursor=pointer]:
+                    - /url: /download_data
+                    - img [ref=f7e39]
+                    - generic [ref=f7e41]: Download Data
+                - listitem [ref=f7e42]:
+                  - link "Pairlist Config" [ref=f7e43] [cursor=pointer]:
+                    - /url: /pairlist_config
+                    - img [ref=f7e44]
+                    - generic [ref=f7e46]: Pairlist Config
+            - button "Toggle Night Mode" [ref=f7e47] [cursor=pointer]:
+              - img [ref=f7e48]
+          - generic [ref=f7e50]:
+            - generic [ref=f7e51]:
+              - generic "Bot name" [ref=f7e52]: freqtrade
+              - generic [ref=f7e55]:
+                - switch "Auto refresh for freqtrade" [checked] [ref=f7e58] [cursor=pointer]
+                - generic "Online" [ref=f7e59]:
+                  - img [ref=f7e60]
+              - generic "Confirm Dialog deactivated." [ref=f7e62]:
+                - generic "Auto Refresh for all bots" [ref=f7e63]:
+                  - generic [ref=f7e65]:
+                    - checkbox [checked] [ref=f7e67] [cursor=pointer]:
+                      - generic:
+                        - img
+                    - generic:
+                      - paragraph
+                - button "Auto Refresh all bots now" [ref=f7e68] [cursor=pointer]:
+                  - img [ref=f7e69]
+            - button "FT" [ref=f7e72] [cursor=pointer]:
+              - generic [ref=f7e74]: FT
+              - img [ref=f7e75]
+    - main [ref=f7e77]:
+      - generic [ref=f7e78]:
+        - heading "Whitelist Methods" [level=3] [ref=f7e80]
+        - heading "Whitelist" [level=3] [ref=f7e81]
+        - paragraph [ref=f7e82]: List Unavailable. Please Login and make sure server is running.
+        - separator [ref=f7e83]
+        - generic [ref=f7e86]:
+          - generic "Blacklist - Select (followed by a click on '-') to remove pairs" [ref=f7e87]: Blacklist
+          - generic [ref=f7e88]:
+            - button [ref=f7e89] [cursor=pointer]:
+              - img [ref=f7e90]
+            - button "Select pairs to delete pairs from your blacklist." [disabled] [ref=f7e92]:
+              - img [ref=f7e93]
+        - paragraph [ref=f7e95]:
+          - text: No Blacklist Available.
+          - text: If you expect to have pairs in your blacklist, please login and make sure the server is running.
+  - region "Notifications (F8)":
+    - list

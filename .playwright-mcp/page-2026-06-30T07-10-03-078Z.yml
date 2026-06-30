@@ -1,0 +1,95 @@
+- generic:
+  - generic:
+    - generic:
+      - banner:
+        - generic:
+          - link:
+            - /url: /
+            - generic: FreqtradeUI
+          - generic:
+            - generic:
+              - navigation:
+                - generic:
+                  - list:
+                    - listitem:
+                      - link:
+                        - /url: /trade
+                        - img
+                        - generic: Trade
+                    - listitem:
+                      - link:
+                        - /url: /dashboard
+                        - img
+                        - generic: Dashboard
+                    - listitem:
+                      - link:
+                        - /url: /graph
+                        - img
+                        - generic: Chart
+                    - listitem:
+                      - link:
+                        - /url: /logs
+                        - img
+                        - generic: Logs
+              - button:
+                - img
+            - generic:
+              - generic:
+                - generic: No bot selected
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - checkbox [checked]:
+                            - generic:
+                              - img
+                  - button:
+                    - img
+              - button:
+                - img
+                - text: Login
+      - main:
+        - generic:
+          - separator
+          - heading [level=1]:
+            - text: Welcome to the
+            - generic: FreqtradeUI
+          - generic: This page allows you to control your trading bot.
+          - separator
+          - paragraph:
+            - text: If you need any help, please refer to the
+            - link:
+              - /url: https://www.freqtrade.io/en/latest/
+              - text: Freqtrade Documentation
+            - text: .
+          - paragraph: Have fun - wishes you the Freqtrade team
+  - dialog "Login to your bot" [ref=f4e66]:
+    - generic [ref=f4e67]:
+      - generic [ref=f4e68]:
+        - heading "Login to your bot" [level=2] [ref=f4e69]
+        - paragraph [ref=f4e70]: Enter your bot credentials to connect
+      - button "Close" [active] [ref=f4e71] [cursor=pointer]:
+        - img [ref=f4e72]
+    - generic [ref=f4e75]:
+      - generic [ref=f4e76]:
+        - generic [ref=f4e79]: Bot Name
+        - textbox "Bot Name" [ref=f4e82]
+      - generic [ref=f4e83]:
+        - generic [ref=f4e86]: API Url
+        - textbox "API Url" [ref=f4e89]: http://localhost:3000
+      - generic [ref=f4e90]:
+        - generic [ref=f4e93]: Username
+        - textbox "Username" [ref=f4e96]:
+          - /placeholder: Freqtrader
+      - generic [ref=f4e97]:
+        - generic [ref=f4e100]: Password
+        - textbox "Password" [ref=f4e103]
+      - generic [ref=f4e104]:
+        - button "Reset" [ref=f4e105] [cursor=pointer]:
+          - generic [ref=f4e106]: Reset
+        - button "Cancel" [ref=f4e107] [cursor=pointer]:
+          - generic [ref=f4e108]: Cancel
+        - button "Submit" [ref=f4e109] [cursor=pointer]:
+          - img [ref=f4e110]
+          - generic [ref=f4e112]: Submit

@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"git check-ignore -v user_data/ .omc/ .agents/ .playwright-mcp/ backtest_queue/ 2>&1\",\"description\":\"Verify untracked dirs are now ignored\"}",
+  "error": "Exit code 128\nfatal: pathspec 'user_data/' is beyond a symbolic link",
+  "timestamp": "2026-06-30T15:59:56.657Z",
+  "retry_count": 1
+}

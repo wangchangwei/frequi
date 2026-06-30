@@ -1,0 +1,96 @@
+- generic:
+  - generic:
+    - generic:
+      - banner:
+        - generic:
+          - link:
+            - /url: /
+            - generic: FreqtradeUI
+          - generic:
+            - generic:
+              - navigation:
+                - generic:
+                  - list:
+                    - listitem:
+                      - link:
+                        - /url: /trade
+                        - img
+                        - generic: 交易
+                    - listitem:
+                      - link:
+                        - /url: /dashboard
+                        - img
+                        - generic: 仪表盘
+                    - listitem:
+                      - link:
+                        - /url: /graph
+                        - img
+                        - generic: 图表
+                    - listitem:
+                      - link:
+                        - /url: /logs
+                        - img
+                        - generic: 日志
+              - button:
+                - img
+            - generic:
+              - generic:
+                - generic: No bot selected
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - checkbox [checked]:
+                            - generic:
+                              - img
+                  - button:
+                    - img
+              - button:
+                - img
+                - text: Login
+      - main:
+        - generic:
+          - separator
+          - heading [level=1]:
+            - text: 欢迎使用
+            - generic: FreqtradeUI
+          - generic: 此页面可让您管理和控制您的交易机器人。
+          - separator
+          - paragraph:
+            - text: 如果您需要任何帮助，请参阅
+            - link:
+              - /url: https://www.freqtrade.io/en/latest/
+              - text: Freqtrade 官方文档
+            - text: 。
+          - paragraph: 交易愉快！ - Freqtrade 团队祝您一切顺利
+  - dialog "Login to your bot" [ref=f11e2]:
+    - generic [ref=f11e3]:
+      - generic [ref=f11e4]:
+        - heading "Login to your bot" [level=2] [ref=f11e5]
+        - paragraph [ref=f11e6]: Enter your bot credentials to connect
+      - button "Close" [active] [ref=f11e7] [cursor=pointer]:
+        - img [ref=f11e8]
+    - generic [ref=f11e11]:
+      - generic [ref=f11e12]:
+        - generic [ref=f11e15]: 机器人名称
+        - textbox "机器人名称" [ref=f11e18]:
+          - /placeholder: 请输入机器人名称
+      - generic [ref=f11e19]:
+        - generic [ref=f11e22]: API 地址
+        - textbox "API 地址" [ref=f11e25]: http://localhost:4399
+      - generic [ref=f11e26]:
+        - generic [ref=f11e29]: 用户名
+        - textbox "用户名" [ref=f11e32]:
+          - /placeholder: Freqtrader
+      - generic [ref=f11e33]:
+        - generic [ref=f11e36]: 密码
+        - textbox "密码" [ref=f11e39]
+      - generic [ref=f11e40]:
+        - button "重置" [ref=f11e41] [cursor=pointer]:
+          - generic [ref=f11e42]: 重置
+        - button "取消" [ref=f11e43] [cursor=pointer]:
+          - generic [ref=f11e44]: 取消
+        - button "提交" [ref=f11e45] [cursor=pointer]:
+          - img [ref=f11e46]
+          - generic [ref=f11e48]: 提交

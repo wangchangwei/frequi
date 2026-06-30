@@ -1,0 +1,221 @@
+- generic [active] [ref=f222e1]:
+  - generic [ref=f222e3]:
+    - banner [ref=f222e4]:
+      - generic [ref=f222e5]:
+        - link "Freqtrade logo FreqtradeUI" [ref=f222e6] [cursor=pointer]:
+          - /url: /
+          - generic "Freqtrade logo" [ref=f222e7]
+          - generic [ref=f222e8]: FreqtradeUI
+        - generic [ref=f222e9]:
+          - generic [ref=f222e10]:
+            - navigation [ref=f222e11]:
+              - list [ref=f222e13]:
+                - listitem [ref=f222e14]:
+                  - link "图表" [ref=f222e15] [cursor=pointer]:
+                    - /url: /graph
+                    - img [ref=f222e16]
+                    - generic [ref=f222e18]: 图表
+                - listitem [ref=f222e19]:
+                  - link "日志" [ref=f222e20] [cursor=pointer]:
+                    - /url: /logs
+                    - img [ref=f222e21]
+                    - generic [ref=f222e23]: 日志
+                - listitem [ref=f222e24]:
+                  - link "回测" [ref=f222e25] [cursor=pointer]:
+                    - /url: /backtest
+                    - img [ref=f222e26]
+                    - generic [ref=f222e28]: 回测
+                - listitem [ref=f222e29]:
+                  - button "分析" [ref=f222e30] [cursor=pointer]:
+                    - img [ref=f222e31]
+                    - generic [ref=f222e33]: 分析
+                    - img [ref=f222e35]
+                - listitem [ref=f222e37]:
+                  - link "下载数据" [ref=f222e38] [cursor=pointer]:
+                    - /url: /download_data
+                    - img [ref=f222e39]
+                    - generic [ref=f222e41]: 下载数据
+                - listitem [ref=f222e42]:
+                  - link "交易对配置" [ref=f222e43] [cursor=pointer]:
+                    - /url: /pairlist_config
+                    - img [ref=f222e44]
+                    - generic [ref=f222e46]: 交易对配置
+            - button "Toggle Night Mode" [ref=f222e47] [cursor=pointer]:
+              - img [ref=f222e48]
+          - generic [ref=f222e50]:
+            - generic [ref=f222e51]:
+              - generic "Bot name" [ref=f222e52]: freqtrade
+              - generic [ref=f222e55]:
+                - switch "Auto refresh for freqtrade" [checked] [ref=f222e58] [cursor=pointer]
+                - generic "Online" [ref=f222e59]:
+                  - img [ref=f222e60]
+              - generic "Confirm Dialog deactivated." [ref=f222e62]:
+                - generic "Auto Refresh for all bots" [ref=f222e63]:
+                  - generic [ref=f222e65]:
+                    - checkbox [checked] [ref=f222e67] [cursor=pointer]:
+                      - generic:
+                        - img
+                    - generic:
+                      - paragraph
+                - button "Auto Refresh all bots now" [ref=f222e68] [cursor=pointer]:
+                  - img [ref=f222e69]
+            - button "FT" [ref=f222e72] [cursor=pointer]:
+              - generic [ref=f222e74]: FT
+              - img [ref=f222e75]
+    - main [ref=f222e77]:
+      - generic [ref=f222e78]:
+        - list [ref=f222e79]:
+          - listitem [ref=f222e80]:
+            - generic [ref=f222e81]:
+              - generic [ref=f222e82]: CrossMarketPairList
+              - generic [ref=f222e83]: Filter pairs if they exist or not on another market.
+            - button [ref=f222e84] [cursor=pointer]:
+              - img [ref=f222e85]
+          - listitem [ref=f222e87]:
+            - generic [ref=f222e88]:
+              - generic [ref=f222e89]: 市值 (MarketCap)
+              - generic [ref=f222e90]: 基于市值排序动态生成交易对。
+            - button [ref=f222e91] [cursor=pointer]:
+              - img [ref=f222e92]
+          - listitem [ref=f222e94]:
+            - generic [ref=f222e95]:
+              - generic [ref=f222e96]: PercentChangePairList
+              - generic [ref=f222e97]: Provides dynamic pair list based on percentage change.
+            - button [ref=f222e98] [cursor=pointer]:
+              - img [ref=f222e99]
+          - listitem [ref=f222e101]:
+            - generic [ref=f222e102]:
+              - generic [ref=f222e103]: 生产者 (Producer)
+              - generic [ref=f222e104]: 从生产者获取交易对列表。
+            - button [ref=f222e105] [cursor=pointer]:
+              - img [ref=f222e106]
+          - listitem [ref=f222e108]:
+            - generic [ref=f222e109]:
+              - generic [ref=f222e110]: RemotePairList
+              - generic [ref=f222e111]: Retrieve pairs from a remote API or local file.
+            - button [ref=f222e112] [cursor=pointer]:
+              - img [ref=f222e113]
+          - listitem [ref=f222e115]:
+            - generic [ref=f222e116]:
+              - generic [ref=f222e117]: 静态交易对 (Static)
+              - generic [ref=f222e118]: 使用配置中预设的静态交易对列表。
+            - button [ref=f222e119] [cursor=pointer]:
+              - img [ref=f222e120]
+          - listitem [ref=f222e122]:
+            - generic [ref=f222e123]:
+              - generic [ref=f222e124]: 交易量 (Volume)
+              - generic [ref=f222e125]: 基于成交量动态生成交易对。
+            - button [ref=f222e126] [cursor=pointer]:
+              - img [ref=f222e127]
+          - listitem [ref=f222e129]:
+            - generic [ref=f222e130]:
+              - generic [ref=f222e131]: 上市时间过滤 (Age)
+              - generic [ref=f222e132]: 过滤掉上市时间过短的新币。
+            - button [disabled] [ref=f222e133]:
+              - img [ref=f222e134]
+          - listitem [ref=f222e136]:
+            - generic [ref=f222e137]:
+              - generic [ref=f222e138]: DelistFilter
+              - generic [ref=f222e139]: Filter pairs that will be delisted on exchange.
+            - button [disabled] [ref=f222e140]:
+              - img [ref=f222e141]
+          - listitem [ref=f222e143]:
+            - generic [ref=f222e144]:
+              - generic [ref=f222e145]: 全周期交易过滤 (FullTrades)
+              - generic [ref=f222e146]: 移除无法覆盖指定时间周期的交易对。
+            - button [disabled] [ref=f222e147]:
+              - img [ref=f222e148]
+          - listitem [ref=f222e150]:
+            - generic [ref=f222e151]:
+              - generic [ref=f222e152]: 偏移过滤 (Offset)
+              - generic [ref=f222e153]: 使用偏移量跳过列表前面的交易对。
+            - button [disabled] [ref=f222e154]:
+              - img [ref=f222e155]
+          - listitem [ref=f222e157]:
+            - generic [ref=f222e158]:
+              - generic [ref=f222e159]: PairInformationFilter
+              - generic [ref=f222e160]: Filter pairs based upon any information in their market data.
+            - button [disabled] [ref=f222e161]:
+              - img [ref=f222e162]
+          - listitem [ref=f222e164]:
+            - generic [ref=f222e165]:
+              - generic [ref=f222e166]: 表现过滤 (Performance)
+              - generic [ref=f222e167]: 基于历史交易表现过滤交易对。
+            - button [disabled] [ref=f222e168]:
+              - img [ref=f222e169]
+          - listitem [ref=f222e171]:
+            - generic [ref=f222e172]:
+              - generic [ref=f222e173]: 精度过滤 (Precision)
+              - generic [ref=f222e174]: 过滤掉不满足价格或数量精度的交易对。
+            - button [disabled] [ref=f222e175]:
+              - img [ref=f222e176]
+          - listitem [ref=f222e178]:
+            - generic [ref=f222e179]:
+              - generic [ref=f222e180]: 价格过滤 (Price)
+              - generic [ref=f222e181]: 过滤价格过低或过高的交易对。
+            - button [disabled] [ref=f222e182]:
+              - img [ref=f222e183]
+          - listitem [ref=f222e185]:
+            - generic [ref=f222e186]:
+              - generic [ref=f222e187]: 区间稳定性过滤 (RangeStability)
+              - generic [ref=f222e188]: 基于价格波动区间的稳定性进行过滤。
+            - button [disabled] [ref=f222e189]:
+              - img [ref=f222e190]
+          - listitem [ref=f222e192]:
+            - generic [ref=f222e193]:
+              - generic [ref=f222e194]: 随机打乱 (Shuffle)
+              - generic [ref=f222e195]: 将交易对列表的顺序随机打乱。
+            - button [disabled] [ref=f222e196]:
+              - img [ref=f222e197]
+          - listitem [ref=f222e199]:
+            - generic [ref=f222e200]:
+              - generic [ref=f222e201]: 价差过滤 (Spread)
+              - generic [ref=f222e202]: 过滤买卖价差过大的交易对。
+            - button [disabled] [ref=f222e203]:
+              - img [ref=f222e204]
+          - listitem [ref=f222e206]:
+            - generic [ref=f222e207]:
+              - generic [ref=f222e208]: 波动率过滤 (Volatility)
+              - generic [ref=f222e209]: 过滤波动率过大或过小的交易对。
+            - button [disabled] [ref=f222e210]:
+              - img [ref=f222e211]
+        - generic [ref=f222e213]:
+          - generic [ref=f222e214]:
+            - button "保存配置" [ref=f222e215] [cursor=pointer]:
+              - img [ref=f222e216]
+            - generic [ref=f222e218]:
+              - combobox [ref=f222e220] [cursor=pointer]:
+                - generic: default
+                - img [ref=f222e222]
+              - generic [ref=f222e224]:
+                - button "Edit this config." [ref=f222e225] [cursor=pointer]:
+                  - img [ref=f222e226]
+                - button "Duplicate config." [ref=f222e228] [cursor=pointer]:
+                  - img [ref=f222e229]
+                - button "Delete this config." [ref=f222e231] [cursor=pointer]:
+                  - img [ref=f222e232]
+                - button "Add new config." [ref=f222e234] [cursor=pointer]:
+                  - img [ref=f222e235]
+            - button "开始测试" [disabled] [ref=f222e237]:
+              - img [ref=f222e238]
+              - generic [ref=f222e240]: 开始测试
+          - generic [ref=f222e241]:
+            - generic [ref=f222e242]:
+              - generic [ref=f222e243]: "结算货币:"
+              - textbox [ref=f222e245]: USDT
+            - generic [ref=f222e249]:
+              - checkbox "自定义交易所" [ref=f222e251] [cursor=pointer]
+              - generic [ref=f222e252]:
+                - generic [ref=f222e253]: 自定义交易所
+                - paragraph
+          - button "黑名单" [ref=f222e255] [cursor=pointer]:
+            - generic [ref=f222e256]: 黑名单
+            - img [ref=f222e257]
+          - generic [ref=f222e259]: 拖拽交易对列表至此处
+        - generic [ref=f222e260]:
+          - generic [ref=f222e261]:
+            - button "配置代码" [pressed] [ref=f222e262] [cursor=pointer]
+            - button "计算结果" [disabled] [ref=f222e263]
+          - code [ref=f222e268]: "[]"
+  - region "Notifications (F8)":
+    - list

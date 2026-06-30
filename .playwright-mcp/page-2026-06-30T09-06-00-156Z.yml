@@ -1,0 +1,107 @@
+- generic [active] [ref=f21e1]:
+  - generic [ref=f21e3]:
+    - banner [ref=f21e4]:
+      - generic [ref=f21e5]:
+        - link "Freqtrade logo FreqtradeUI" [ref=f21e6] [cursor=pointer]:
+          - /url: /
+          - generic "Freqtrade logo" [ref=f21e7]
+          - generic [ref=f21e8]: FreqtradeUI
+        - generic [ref=f21e9]:
+          - generic [ref=f21e10]:
+            - navigation [ref=f21e11]:
+              - list [ref=f21e13]:
+                - listitem [ref=f21e14]:
+                  - link "图表" [ref=f21e15] [cursor=pointer]:
+                    - /url: /graph
+                    - img [ref=f21e16]
+                    - generic [ref=f21e18]: 图表
+                - listitem [ref=f21e19]:
+                  - link "日志" [ref=f21e20] [cursor=pointer]:
+                    - /url: /logs
+                    - img [ref=f21e21]
+                    - generic [ref=f21e23]: 日志
+                - listitem [ref=f21e24]:
+                  - link "回测" [ref=f21e25] [cursor=pointer]:
+                    - /url: /backtest
+                    - img [ref=f21e26]
+                    - generic [ref=f21e28]: 回测
+                - listitem [ref=f21e29]:
+                  - button "分析" [ref=f21e30] [cursor=pointer]:
+                    - img [ref=f21e31]
+                    - generic [ref=f21e33]: 分析
+                    - img [ref=f21e35]
+                - listitem [ref=f21e37]:
+                  - link "下载数据" [ref=f21e38] [cursor=pointer]:
+                    - /url: /download_data
+                    - img [ref=f21e39]
+                    - generic [ref=f21e41]: 下载数据
+                - listitem [ref=f21e42]:
+                  - link "交易对配置" [ref=f21e43] [cursor=pointer]:
+                    - /url: /pairlist_config
+                    - img [ref=f21e44]
+                    - generic [ref=f21e46]: 交易对配置
+            - button "Toggle Night Mode" [ref=f21e47] [cursor=pointer]:
+              - img [ref=f21e48]
+          - generic [ref=f21e50]:
+            - generic [ref=f21e51]:
+              - generic "Bot name" [ref=f21e52]: freqtrade
+              - generic [ref=f21e55]:
+                - switch "Auto refresh for freqtrade" [checked] [ref=f21e58] [cursor=pointer]
+                - generic "Online" [ref=f21e59]:
+                  - img [ref=f21e60]
+              - generic "Confirm Dialog deactivated." [ref=f21e62]:
+                - generic "Auto Refresh for all bots" [ref=f21e63]:
+                  - generic [ref=f21e65]:
+                    - checkbox [checked] [ref=f21e67] [cursor=pointer]:
+                      - generic:
+                        - img
+                    - generic:
+                      - paragraph
+                - button "Auto Refresh all bots now" [ref=f21e68] [cursor=pointer]:
+                  - img [ref=f21e69]
+            - button "FT" [ref=f21e72] [cursor=pointer]:
+              - generic [ref=f21e74]: FT
+              - img [ref=f21e75]
+    - main [ref=f21e77]:
+      - generic [ref=f21e78]:
+        - list [ref=f21e79]
+        - generic [ref=f21e80]:
+          - generic [ref=f21e81]:
+            - button "保存配置" [ref=f21e82] [cursor=pointer]:
+              - img [ref=f21e83]
+            - generic [ref=f21e85]:
+              - combobox [ref=f21e87] [cursor=pointer]:
+                - generic: default
+                - img [ref=f21e89]
+              - generic [ref=f21e91]:
+                - button "Edit this config." [ref=f21e92] [cursor=pointer]:
+                  - img [ref=f21e93]
+                - button "Duplicate config." [ref=f21e95] [cursor=pointer]:
+                  - img [ref=f21e96]
+                - button "Delete this config." [ref=f21e98] [cursor=pointer]:
+                  - img [ref=f21e99]
+                - button "Add new config." [ref=f21e101] [cursor=pointer]:
+                  - img [ref=f21e102]
+            - button "开始测试" [disabled] [ref=f21e104]:
+              - img [ref=f21e105]
+              - generic [ref=f21e107]: 开始测试
+          - generic [ref=f21e108]:
+            - generic [ref=f21e109]:
+              - generic [ref=f21e110]: "结算货币:"
+              - textbox [ref=f21e112]
+            - generic [ref=f21e116]:
+              - checkbox "自定义交易所" [ref=f21e118] [cursor=pointer]
+              - generic [ref=f21e119]:
+                - generic [ref=f21e120]: 自定义交易所
+                - paragraph
+          - button "黑名单" [ref=f21e122] [cursor=pointer]:
+            - generic [ref=f21e123]: 黑名单
+            - img [ref=f21e124]
+          - generic [ref=f21e126]: 拖拽交易对列表至此处
+        - generic [ref=f21e127]:
+          - generic [ref=f21e128]:
+            - button "配置代码" [pressed] [ref=f21e129] [cursor=pointer]
+            - button "计算结果" [disabled] [ref=f21e130]
+          - code [ref=f21e135]: "[]"
+  - region "Notifications (F8)":
+    - list
