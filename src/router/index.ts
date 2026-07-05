@@ -71,6 +71,9 @@ const routes: Array<RouteRecordRaw> = [
     path: '/pairlist_config',
     name: 'Pairlist Configuration',
     component: () => import('@/views/PairlistConfigView.vue'),
+    meta: {
+      allowAnonymous: true,
+    },
   },
   {
     path: '/download_data',
