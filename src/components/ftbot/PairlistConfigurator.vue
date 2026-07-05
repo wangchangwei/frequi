@@ -30,7 +30,7 @@ const pairlistTranslations: Record<string, { name: string; description: string }
   FullTradesFilter: { name: '满仓交易槽位筛选', description: '基于交易槽位占用情况筛选' },
   OffsetFilter: { name: '偏移筛选', description: '从列表中偏移/排除部分交易对' },
   PairInformationFilter: { name: '配对基础信息筛选', description: '基于配对基础信息筛选' },
-  PercentChangeFilter: { name: '百分比变化筛选', description: '按百分比变化筛选' },
+  PercentChangePairList: { name: '百分比变化配对列表', description: '按百分比变化筛选' },
   PerformanceFilter: { name: '业绩筛选', description: '基于历史盈亏表现筛选' },
   PrecisionFilter: { name: '精度筛选', description: '按价格精度筛选' },
   PriceFilter: { name: '价格筛选', description: '按价格范围筛选' },
