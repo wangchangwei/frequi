@@ -13,12 +13,12 @@ const props = withDefaults(
     stakeCurrencyDecimals?: number;
   }>(),
   {
-    title: 'Trades',
+    title: '交易',
     stakeCurrency: '',
     activeTrades: false,
     showFilter: false,
     multiBotView: false,
-    emptyText: 'No Trades to show.',
+    emptyText: '暂无交易可显示。',
     stakeCurrencyDecimals: 3,
   },
 );

@@ -16,12 +16,12 @@ const props = withDefaults(
     emptyText?: string;
   }>(),
   {
-    title: 'Trades',
+    title: '交易',
     stakeCurrency: '',
     activeTrades: false,
     showFilter: false,
     multiBotView: false,
-    emptyText: 'No Trades to show.',
+    emptyText: '暂无交易可显示。',
   },
 );
 
@@ -41,34 +41,34 @@ function formatPriceWithDecimals(price: number) {
 
 const tableFields = ref([
   { field: 'trade_id', header: 'ID' },
-  { field: 'pair', header: 'Pair' },
-  { field: 'amount', header: 'Amount' },
+  { field: 'pair', header: '交易对' },
+  { field: 'amount', header: '数量' },
   props.activeTrades
-    ? { field: 'stake_amount', header: 'Stake amount' }
-    : { field: 'max_stake_amount', header: 'Total stake amount' },
+    ? { field: 'stake_amount', header: '保证金' }
+    : { field: 'max_stake_amount', header: '总保证金' },
   {
     field: 'open_rate',
-    header: 'Open rate',
+    header: '开仓价',
   },
   {
     field: props.activeTrades ? 'current_rate' : 'close_rate',
-    header: props.activeTrades ? 'Current rate' : 'Close rate',
+    header: props.activeTrades ? '当前价' : '平仓价',
   },
   {
     field: 'profit',
-    header: props.activeTrades ? 'Current profit %' : 'Profit %',
+    header: props.activeTrades ? '当前收益率 %' : '收益率 %',
   },
-  { field: 'open_timestamp', header: 'Open date' },
+  { field: 'open_timestamp', header: '开仓时间' },
   ...(props.activeTrades
     ? [{ field: 'actions', header: '' }]
     : [
-        { field: 'close_timestamp', header: 'Close date' },
-        { field: 'exit_reason', header: 'Close Reason' },
+        { field: 'close_timestamp', header: '平仓时间' },
+        { field: 'exit_reason', header: '平仓原因' },
       ]),
 ]);
 
 if (props.multiBotView) {
-  tableFields.value.unshift({ field: 'botName', header: 'Bot' });
+  tableFields.value.unshift({ field: 'botName', header: '机器人' });
 }
 
 const tableColumns = computed<TableColumn<Trade>[]>(() =>
@@ -89,15 +89,15 @@ const filteredTrades = computed(() => {
 
 async function forceExitHandler(item: Trade, ordertype: string | undefined = undefined) {
   const message = ordertype
-    ? `Really exit trade ${item.trade_id} (Pair ${item.pair}) using a ${ordertype} order?`
-    : `Really exit trade ${item.trade_id} (Pair ${item.pair})?`;
+    ? `确定要使用 ${ordertype} 订单强制平仓交易 ${item.trade_id} (交易对 ${item.pair}) 吗？`
+    : `确定要强制平仓交易 ${item.trade_id} (交易对 ${item.pair}) 吗？`;
   if (
     settingsStore.confirmDialog !== true ||
     (await confirm({
-      title: 'Force exit trade',
-      description: 'This action cannot be undone.',
+      title: '强制平仓',
+      description: '此操作无法撤销。',
       message,
-      confirmText: 'Confirm',
+      confirmText: '确认',
     }))
   ) {
     const payload: MultiForceExitPayload = {
@@ -117,10 +117,10 @@ async function forceExitHandler(item: Trade, ordertype: string | undefined = und
 async function removeTradeHandler(item: Trade) {
   if (
     await confirm({
-      title: 'Delete trade',
-      description: 'This action cannot be undone.',
-      message: `Really delete trade ${item.trade_id} (Pair ${item.pair})?`,
-      confirmText: 'Confirm',
+      title: '删除交易',
+      description: '此操作无法撤销。',
+      message: `确定要删除交易 ${item.trade_id} (交易对 ${item.pair}) 吗？`,
+      confirmText: '确认',
     })
   ) {
     const payload: MultiDeletePayload = {
@@ -141,10 +141,10 @@ function forceExitPartialHandler(item: Trade) {
 async function cancelOpenOrderHandler(item: Trade) {
   if (
     await confirm({
-      title: 'Cancel open order',
-      description: 'This action cannot be undone.',
-      message: `Really cancel open order for trade ${item.trade_id} (Pair ${item.pair})?`,
-      confirmText: 'Confirm',
+      title: '取消挂单',
+      description: '此操作无法撤销。',
+      message: `确定要取消交易 ${item.trade_id} (交易对 ${item.pair}) 的挂单吗？`,
+      confirmText: '确认',
     })
   ) {
     const payload: MultiDeletePayload = {
@@ -272,7 +272,7 @@ const rowSelection = computed({
     </UTable>
 
     <div v-if="showFilter" class="flex justify-end gap-2 p-2">
-      <UInput v-model="filterText" placeholder="Filter" class="w-64" />
+      <UInput v-model="filterText" placeholder="筛选" class="w-64" />
     </div>
     <div v-if="!activeTrades" class="flex justify-end border-t border-default pt-2">
       <UPagination

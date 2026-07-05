@@ -49,7 +49,7 @@ function clickBacktest() {
 
 <template>
   <div class="mb-2">
-    <span>Strategy</span>
+    <span>策略</span>
     <StrategySelect v-model="btStore.strategy"></StrategySelect>
   </div>
   <div
@@ -57,11 +57,11 @@ function clickBacktest() {
     :disabled="botStore.activeBot.backtestRunning"
   >
     <!-- Backtesting parameters -->
-    <h3 class="font-bold mb-2 col-span-2 text-center">Backtesting parameters</h3>
-    <label for="timeframe-select">Timeframe:</label>
+    <h3 class="font-bold mb-2 col-span-2 text-center">回测参数</h3>
+    <label for="timeframe-select">时间周期:</label>
     <TimeframeSelect id="timeframe-select" v-model="btStore.selectedTimeframe" />
     <label for="timeframe-detail-select" class="flex justify-end items-center gap-2"
-      >Detail Timeframe:
+      >详细时间周期:
       <InfoBox
         hint="Detail timeframe, to simulate intra-candle results. Not setting this will not use this functionality."
       />
@@ -72,7 +72,7 @@ function clickBacktest() {
       :below-timeframe="btStore.selectedTimeframe"
     />
 
-    <label for="max-open-trades">Max open trades:</label>
+    <label for="max-open-trades">最大交易数:</label>
     <UInputNumber
       id="max-open-trades"
       v-model="btStore.maxOpenTrades"
@@ -80,7 +80,7 @@ function clickBacktest() {
       :increment="false"
       :decrement="false"
     ></UInputNumber>
-    <label for="starting-capital">Starting capital:</label>
+    <label for="starting-capital">起始资金:</label>
     <UInputNumber
       id="starting-capital"
       v-model="btStore.startingCapital"
@@ -94,10 +94,10 @@ function clickBacktest() {
         maximumFractionDigits: 5,
       }"
     ></UInputNumber>
-    <label for="stake-amount-bool">Stake amount:</label>
+    <label for="stake-amount-bool">质押金额:</label>
     <div class="flex items-center">
       <BaseCheckbox class="basis-1/3" id="stake-amount-bool" v-model="btStore.stakeAmountUnlimited"
-        >Unlimited stake</BaseCheckbox
+        >无限质押</BaseCheckbox
       >
       <UInputNumber
         id="stake-amount"
@@ -116,10 +116,10 @@ function clickBacktest() {
       ></UInputNumber>
     </div>
 
-    <label for="enable-protections">Enable Protections:</label>
+    <label for="enable-protections">启用保护:</label>
     <BaseCheckbox id="enable-protections" v-model="btStore.enableProtections"></BaseCheckbox>
     <template v-if="botStore.activeBot.botFeatures.backtestFreqAI">
-      <label for="enable-cache">Cache Backtest results:</label>
+      <label for="enable-cache">缓存回测结果:</label>
       <BaseCheckbox id="enable-cache" v-model="btStore.allowCache"></BaseCheckbox>
     </template>
 
@@ -132,7 +132,7 @@ function clickBacktest() {
     <TimeRangeSelect v-model="btStore.timerange" class="mx-auto mt-2 col-span-2"></TimeRangeSelect>
   </div>
 
-  <h3 class="mt-3 font-bold text-2xl">Backtesting summary</h3>
+  <h3 class="mt-3 font-bold text-2xl">回测汇总</h3>
   <div class="flex flex-wrap md:flex-nowrap justify-between md:justify-center mt-2">
     <UButton
       id="start-backtest"
@@ -146,7 +146,7 @@ function clickBacktest() {
       class="mx-1"
       @click="clickBacktest"
     >
-      Start backtest
+      开始回测
     </UButton>
     <UButton
       color="neutral"
@@ -155,7 +155,7 @@ function clickBacktest() {
       class="mx-1"
       @click="botStore.activeBot.pollBacktest()"
     >
-      Load backtest result
+      加载回测结果
     </UButton>
     <UButton
       color="neutral"
@@ -164,7 +164,7 @@ function clickBacktest() {
       :disabled="!botStore.activeBot.backtestRunning"
       @click="botStore.activeBot.stopBacktest()"
     >
-      Stop Backtest
+      停止回测
     </UButton>
     <UButton
       color="neutral"
@@ -173,7 +173,7 @@ function clickBacktest() {
       :disabled="botStore.activeBot.backtestRunning || !botStore.activeBot.canRunBacktest"
       @click="botStore.activeBot.removeBacktest()"
     >
-      Reset Backtest
+      重置回测
     </UButton>
   </div>
 </template>

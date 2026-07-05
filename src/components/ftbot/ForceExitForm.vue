@@ -70,19 +70,19 @@ resetForm();
 </script>
 
 <template>
-  <UModal :title="`Force exiting a trade`" description="Configure and confirm a forced trade exit">
+  <UModal :title="`强制退出交易`" description="配置并确认强制交易退出">
     <template #body>
       <form ref="form" class="space-y-4" @submit.prevent="handleExit">
         <div class="mb-4">
           <p class="mb-2">
-            <span>Exiting Trade #{{ trade.trade_id }} {{ trade.pair }}.</span>
+            <span>正在退出交易 #{{ trade.trade_id }} {{ trade.pair }}。</span>
             <br />
-            <span>Currently owning {{ trade.amount }} {{ trade.base_currency }}</span>
+            <span>当前持有 {{ trade.amount }} {{ trade.base_currency }}</span>
           </p>
         </div>
 
         <UFormField
-          :label="`Amount in ${trade.base_currency} [optional]`"
+          :label="`${trade.base_currency} 数量 [可选]`"
           :description="amountInBase"
         >
           <div class="space-y-2">
@@ -106,9 +106,9 @@ resetForm();
           </div>
         </UFormField>
         <UFormField
-          label="Price"
+          label="价格"
           v-if="botStore.activeBot.botFeatures.forceExitWithPrice"
-          description="Only available with limit orders"
+          description="仅限限价单可用"
         >
           <UInputNumber
             id="price-input"
@@ -124,7 +124,7 @@ resetForm();
           />
         </UFormField>
 
-        <UFormField label="OrderType" required>
+        <UFormField label="订单类型" required>
           <USegmentedControl
             v-model="ordertype"
             :items="orderTypeOptions"
@@ -137,9 +137,9 @@ resetForm();
     </template>
     <template #footer>
       <UButton class="ms-auto" icon="mdi:close" color="neutral" @click="$emit('close', false)"
-        >Cancel</UButton
+        >取消</UButton
       >
-      <UButton icon="mdi:exit-to-app" @click="handleExit">Exit Position</UButton>
+      <UButton icon="mdi:exit-to-app" @click="handleExit">退出仓位</UButton>
     </template>
   </UModal>
 </template>

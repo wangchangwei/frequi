@@ -34,7 +34,7 @@ function confirmInput(run_id: string, result: BacktestResultInMemory) {
 
 <template>
   <div class="flex flex-col items-stretch">
-    <h3 class="font-bold text-2xl">Available results:</h3>
+    <h3 class="font-bold text-2xl">可用结果:</h3>
     <ul
       class="ms-2 divide-y border-x border-neutral-500 rounded-sm border-y divide-solid divide-neutral-500"
     >

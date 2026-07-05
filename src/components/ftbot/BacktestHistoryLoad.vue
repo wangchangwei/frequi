@@ -15,8 +15,8 @@ onMounted(() => {
 async function deleteBacktestResult(result: BacktestHistoryEntry) {
   if (
     await confirm({
-      title: 'Delete result',
-      message: `Delete result ${result.filename} from disk?`,
+      title: '删除结果',
+      message: `确定要从磁盘删除结果 ${result.filename} 吗?`,
     })
   ) {
     botStore.activeBot.deleteBacktestHistoryResult(result);
@@ -31,11 +31,11 @@ const filteredList = computed(() =>
   ),
 );
 const columns: TableColumn<BacktestHistoryEntry>[] = [
-  { accessorKey: 'strategy', header: 'Strategy' },
-  { accessorKey: 'timeframe', header: 'Details' },
-  { accessorKey: 'backtest_start_time', header: 'Backtest Time' },
-  { accessorKey: 'filename', header: 'Filename' },
-  { id: 'actions', header: 'Actions' },
+  { accessorKey: 'strategy', header: '策略' },
+  { accessorKey: 'timeframe', header: '详情' },
+  { accessorKey: 'backtest_start_time', header: '回测时间' },
+  { accessorKey: 'filename', header: '文件名' },
+  { id: 'actions', header: '操作' },
 ];
 
 function isRowLoaded(row: Row<BacktestHistoryEntry>) {
@@ -74,7 +74,7 @@ const meta: TableMeta<BacktestHistoryEntry> = {
         id="trade-filter"
         v-model="filterText"
         type="text"
-        placeholder="Filter results"
+        placeholder="筛选结果"
         title="Filter results"
       />
     </div>
@@ -110,7 +110,7 @@ const meta: TableMeta<BacktestHistoryEntry> = {
             v-if="botStore.activeBot.botFeatures.backtestDelete && !isRowLoaded(row)"
             size="sm"
             variant="solid"
-            title="Load this Result"
+            title="加载此结果"
             color="primary"
             icon="mdi:arrow-right"
             :disabled="isRowLoaded(row)"
@@ -118,7 +118,7 @@ const meta: TableMeta<BacktestHistoryEntry> = {
           />
           <UButton
             v-if="isRowLoaded(row)"
-            title="Unload this Result from the UI (will remain on disk)"
+            title="从界面卸载此结果（将保留在磁盘上）"
             icon="mdi:close"
             size="sm"
             variant="solid"
@@ -129,7 +129,7 @@ const meta: TableMeta<BacktestHistoryEntry> = {
             v-if="botStore.activeBot.botFeatures.backtestDelete"
             size="sm"
             color="neutral"
-            title="Delete this Result from Disk"
+            title="从磁盘删除此结果"
             icon="mdi:delete"
             :disabled="isRowLoaded(row)"
             @click.stop="deleteBacktestResult(row.original)"

@@ -105,46 +105,46 @@ type NavItem = NavigationMenuItem & { visible?: boolean; mobileOnly?: boolean };
 
 const navItems = computed<NavItem[]>(() => [
   {
-    label: 'Trade',
+    label: '交易',
     to: '/trade',
     visible: !botStore.canRunBacktest,
     icon: 'i-mdi-currency-usd',
   },
   {
-    label: 'Dashboard',
+    label: '仪表板',
     to: '/dashboard',
     visible: !botStore.canRunBacktest,
     icon: 'i-mdi-view-dashboard',
   },
   {
-    label: 'Chart',
+    label: '图表',
     to: '/graph',
     icon: 'i-mdi-chart-line',
   },
   {
-    label: 'Logs',
+    label: '日志',
     to: '/logs',
     icon: 'i-mdi-format-list-bulleted',
   },
   {
-    label: 'Settings',
+    label: '设置',
     to: '/settings',
     mobileOnly: true,
     icon: 'i-mdi-cog',
   },
   {
-    label: 'Backtest',
+    label: '回测',
     to: '/backtest',
     visible: botStore.canRunBacktest,
     icon: 'i-mdi-currency-usd',
   },
   {
-    label: 'Analysis',
+    label: '分析',
     visible: botStore.canRunBacktest,
     icon: 'mdi:chart-timeline-variant-shimmer',
     children: [
       {
-        label: 'Recursive Analysis',
+        label: '递归分析',
         to: '/recursive_analysis',
         icon: 'i-mdi-magnify-scan',
         visible:
@@ -152,7 +152,7 @@ const navItems = computed<NavItem[]>(() => [
           botStore.activeBot.botFeatures.recursiveAnalysis,
       },
       {
-        label: 'Lookahead Analysis',
+        label: '前瞻分析',
         to: '/lookahead_analysis',
         icon: 'i-mdi-chart-timeline-variant-shimmer',
         visible:
@@ -162,13 +162,13 @@ const navItems = computed<NavItem[]>(() => [
     ],
   },
   {
-    label: 'Download Data',
+    label: '下载数据',
     to: '/download_data',
     visible: botStore.isWebserverMode && botStore.activeBot.botFeatures.downloadDataView,
     icon: 'i-mdi-download',
   },
   {
-    label: 'Pairlist Config',
+    label: '配对列表配置',
     to: '/pairlist_config',
     icon: 'i-mdi-format-list-numbered-rtl',
     visible:
@@ -183,25 +183,25 @@ const nonMobileNavItems = computed(() => visibleNavItems.value.filter((item) => 
 const menuItems = computed<DropdownMenuItem[][]>(() => [
   [
     {
-      label: `V: ${settingsStore.uiVersion}`,
+      label: `版本: ${settingsStore.uiVersion}`,
       disabled: true,
     },
   ],
   [
     {
-      label: 'Settings',
+      label: '设置',
       icon: 'i-mdi-cog',
       onSelect: () => router.push('/settings'),
     },
     {
-      label: layoutStore.layoutLocked ? 'Unlock Layout' : 'Lock Layout',
+      label: layoutStore.layoutLocked ? '解锁布局' : '锁定布局',
       icon: layoutStore.layoutLocked ? 'i-mdi-lock' : 'i-mdi-lock-open',
       onSelect: () => {
         layoutStore.layoutLocked = !layoutStore.layoutLocked;
       },
     },
     {
-      label: 'Reset Layout',
+      label: '重置布局',
       icon: 'i-mdi-lock-reset',
       onSelect: resetDynamicLayout,
     },
@@ -210,7 +210,7 @@ const menuItems = computed<DropdownMenuItem[][]>(() => [
     ? [
         [
           {
-            label: 'Logout',
+            label: '退出登录',
             icon: 'i-mdi-logout',
             onSelect: clickLogout,
           },
@@ -222,7 +222,7 @@ const menuItems = computed<DropdownMenuItem[][]>(() => [
 function editBotLogin(botId: string) {
   const bot = botStore.botStores[botId];
   if (!bot) {
-    showAlert('Bot not found', 'warning');
+    showAlert('机器人未找到', 'warning');
     return;
   }
   const loginInfo: AuthStorageWithBotId = {
@@ -261,14 +261,14 @@ function editBotLogin(botId: string) {
           <div
             v-if="!settingsStore.confirmDialog"
             class="my-auto me-5 flex text-yellow-300"
-            title="Confirm dialog deactivated, Forced exits will be executed immediately. Be careful."
+            title="确认对话框已停用，强制平仓将立即执行，请注意！"
           >
             <i-mdi-run-fast />
             <i-mdi-alert />
           </div>
           <div class="hidden md:flex md:flex-nowrap items-center nav-item me-2">
             <span class="text-sm me-2" title="Bot name">
-              {{ (botStore.activeBot && botStore.activeBot.botName) || 'No bot selected' }}
+              {{ (botStore.activeBot && botStore.activeBot.botName) || '未选择机器人' }}
             </span>
             <BotEntry
               v-if="botStore.selectedBotObj"
@@ -296,7 +296,7 @@ function editBotLogin(botId: string) {
             color="neutral"
             @click="loginDialog({})"
             icon="mdi:login"
-            >Login
+            >登录
           </UButton>
         </div>
 
@@ -326,7 +326,7 @@ function editBotLogin(botId: string) {
                   orientation="vertical"
                 />
                 <USeparator class="my-2" />
-                <span>Version: {{ settingsStore.uiVersion }}</span>
+                <span>版本: {{ settingsStore.uiVersion }}</span>
 
                 <div class="flex flex-row items-center justify-center">
                   <ThemeSelect show-text />
@@ -334,7 +334,7 @@ function editBotLogin(botId: string) {
                 <USeparator class="my-2" />
                 <div class="flex flex-row items-center">
                   <span class="text-sm me-2" title="Bot name">
-                    {{ (botStore.activeBot && botStore.activeBot.botName) || 'No bot selected' }}
+                    {{ (botStore.activeBot && botStore.activeBot.botName) || '未选择机器人' }}
                   </span>
                   <BotEntry
                     v-if="botStore.selectedBotObj"

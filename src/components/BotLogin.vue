@@ -125,11 +125,11 @@ async function handleSubmit() {
     if (axios.isAxiosError(error) && error.response && error.response.status === 401) {
       nameState.value = false;
       pwdState.value = false;
-      errorMessage.value = 'Connected to bot, however Login failed, Username or Password wrong.';
+      errorMessage.value = '已连接到机器人，但登录失败，用户名或密码错误。';
     } else {
       urlState.value = false;
-      errorMessage.value = `Please verify that the bot is running, the Bot API is enabled and the URL is reachable.
-You can verify this by navigating to ${auth.value.url}/api/v1/ping to make sure the bot API is reachable`;
+      errorMessage.value = `请确认机器人正在运行，Bot API 已启用，且 URL 可访问。
+您可以访问 ${auth.value.url}/api/v1/ping 来确认机器人 API 是否可访问。`;
       if (auth.value.url !== window.location.origin) {
         errorMessageCORS.value = true;
       }
@@ -166,18 +166,18 @@ onMounted(() => {
 
 <template>
   <form ref="formRef" novalidate @submit.stop.prevent="handleSubmit" @reset="handleReset">
-    <UFormField class="mb-4" label="Bot Name">
+    <UFormField class="mb-4" label="机器人名称">
       <UInput
         v-model="auth.botName"
-        placeholder="Bot Name"
+        placeholder="机器人名称"
         class="mt-1 block w-full"
         @keydown.enter="handleOk"
       />
     </UFormField>
     <UFormField
       class="mb-4"
-      label="API Url"
-      :error="urlState === false ? 'API URL is required.' : undefined"
+      label="API 地址"
+      :error="urlState === false ? 'API 地址为必填项。' : undefined"
     >
       <UInput
         id="url-input"
@@ -191,14 +191,14 @@ onMounted(() => {
         v-if="urlDuplicate"
         class="mt-2"
         color="warning"
-        title="This URL is already in use by another bot."
+        title="此 URL 已被其他机器人使用。"
       >
       </UAlert>
     </UFormField>
     <UFormField
       class="mb-4"
-      label="Username"
-      :error="nameState === false ? 'Name and Password are required.' : undefined"
+      label="用户名"
+      :error="nameState === false ? '用户名和密码为必填项。' : undefined"
     >
       <UInput
         v-model="auth.username"
@@ -210,8 +210,8 @@ onMounted(() => {
     </UFormField>
     <UFormField
       class="mb-4"
-      label="Password"
-      :error="pwdState === false ? 'Invalid Password' : undefined"
+      label="密码"
+      :error="pwdState === false ? '密码无效' : undefined"
     >
       <UInput
         v-model="auth.password"
@@ -226,12 +226,12 @@ onMounted(() => {
         v-if="errorMessage"
         class="mt-2 whitespace-pre-line"
         color="warning"
-        title="Login failed"
+        title="登录失败"
       >
         <template #description>
           {{ errorMessage }}
           <span v-if="errorMessageCORS">
-            Please also check your bot's CORS configuration:
+            请同时检查机器人的 CORS 配置：
             <a
               href="https://www.freqtrade.io/en/latest/rest-api/#cors"
               class="text-blue-500 underline"
@@ -242,15 +242,15 @@ onMounted(() => {
       </UAlert>
     </div>
     <div class="flex justify-end gap-2 mt-4">
-      <UButton label="Reset" color="error" type="reset" />
+      <UButton label="重置" color="error" type="reset" />
       <UButton
         v-if="inModal"
-        label="Cancel"
+        label="取消"
         color="neutral"
         type="button"
         @click="emitLoginResult(true)"
       />
-      <UButton label="Submit" color="primary" type="submit" icon="mdi:login" />
+      <UButton label="提交" color="primary" type="submit" icon="mdi:login" />
     </div>
   </form>
 </template>

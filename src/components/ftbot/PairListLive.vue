@@ -49,7 +49,7 @@ onMounted(() => {
 <template>
   <div>
     <div>
-      <h3 class="text-xl">Whitelist Methods</h3>
+      <h3 class="text-xl">白名单方法</h3>
 
       <ul v-if="botStore.activeBot.pairlistMethods.length" class="list wide">
         <li
@@ -74,7 +74,7 @@ onMounted(() => {
         {{ pair }}
       </li>
     </ul>
-    <p v-else>List Unavailable. Please Login and make sure server is running.</p>
+    <p v-else>列表不可用。请登录并确保服务器正在运行。</p>
     <USeparator />
 
     <!-- Blacklsit -->
@@ -92,11 +92,11 @@ onMounted(() => {
             <template #content>
               <form ref="form" @submit.prevent="addBlacklistPair" class="py-2 px-3">
                 <div class="space-y-1">
-                  <h4 class="font-bold mb-2">Add Pair to Blacklist</h4>
-                  <UFormField label="Pair" class="space-x-2" required>
+                  <h4 class="font-bold mb-2">添加到黑名单</h4>
+                  <UFormField label="交易对" class="space-x-2" required>
                     <UInput v-model="newblacklistpair" required autofocus></UInput>
                   </UFormField>
-                  <UButton id="blacklist-submit" class="ms-auto mb-2" type="submit"> Add </UButton>
+                  <UButton id="blacklist-submit" class="ms-auto mb-2" type="submit"> 添加 </UButton>
                 </div>
               </form>
             </template>
@@ -104,7 +104,7 @@ onMounted(() => {
           <UButton
             v-if="botStore.activeBot.botFeatures.botBlacklistModify"
             color="neutral"
-            title="Select pairs to delete pairs from your blacklist."
+            title="选择要从黑名单中删除的交易对。"
             :disabled="blacklistSelect.length === 0"
             icon="mdi:delete"
             @click="deletePairs"

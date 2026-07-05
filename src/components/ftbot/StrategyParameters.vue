@@ -27,7 +27,7 @@ const sortedParamsBySpace = computed<Record<string, typeof props.strategy.params
 <template>
   <div v-if="strategy.params && strategy.params.length > 0" class="text-start">
     <div v-for="(params, space) in sortedParamsBySpace" :key="space" class="mb-4">
-      <h3 class="text-md font-bold underline mb-2" :title="`Space ${space}`">{{ space }}</h3>
+      <h3 class="text-md font-bold underline mb-2" :title="`空间 ${space}`">{{ space }}</h3>
       <div
         v-for="param in params"
         :key="param.name"
@@ -40,6 +40,6 @@ const sortedParamsBySpace = computed<Record<string, typeof props.strategy.params
     </div>
   </div>
   <div v-else class="p-4">
-    <p>This strategy has no parameters.</p>
+    <p>该策略没有参数。</p>
   </div>
 </template>

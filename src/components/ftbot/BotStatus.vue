@@ -5,10 +5,10 @@ const botStore = useBotStore();
 <template>
   <div v-if="botStore.activeBot.botState" class="p-4">
     <p class="mb-4">
-      Running Freqtrade <strong>{{ botStore.activeBot.version }}</strong>
+      运行 Freqtrade <strong>{{ botStore.activeBot.version }}</strong>
     </p>
     <p class="mb-4">
-      Running with
+      使用
       <strong>
         {{ botStore.activeBot.botState.max_open_trades }}x{{
           botStore.activeBot.botState.stake_amount
@@ -18,7 +18,7 @@ const botStore = useBotStore();
       on
       <strong class="text-nowrap"
         >{{ botStore.activeBot.botState.exchange }}
-        {{ botStore.activeBot.botState.demo_trading ? '(Demo)' : '' }}</strong
+        {{ botStore.activeBot.botState.demo_trading ? '(模拟)' : '' }}</strong
       >
       in
       <strong
@@ -29,47 +29,47 @@ const botStore = useBotStore();
             : ''
         }}</strong
       >
-      markets, with Strategy <strong>{{ botStore.activeBot.botState.strategy }}</strong
-      >.
+      市场，使用策略 <strong>{{ botStore.activeBot.botState.strategy }}</strong
+      >。
     </p>
     <p v-if="'stoploss_on_exchange' in botStore.activeBot.botState" class="mb-4">
-      Stoploss on exchange is
+      交易所止损
       <strong>{{
-        botStore.activeBot.botState.stoploss_on_exchange ? 'enabled' : 'disabled'
+        botStore.activeBot.botState.stoploss_on_exchange ? '已启用' : '已禁用'
       }}</strong
-      >.
+      >。
     </p>
     <p class="mb-4">
-      Currently <strong>{{ botStore.activeBot.botState.state }}</strong
+      当前状态 <strong>{{ botStore.activeBot.botState.state }}</strong
       >,
-      <strong>force entry: {{ botStore.activeBot.botState.force_entry_enable }}</strong>
+      <strong>强制入场: {{ botStore.activeBot.botState.force_entry_enable }}</strong>
     </p>
     <p>
-      <strong>{{ botStore.activeBot.botState.dry_run ? 'Dry-Run' : 'Live' }}</strong>
+      <strong>{{ botStore.activeBot.botState.dry_run ? '模拟' : '实盘' }}</strong>
     </p>
     <USeparator class="my-2" />
     <p class="mb-4" v-if="botStore.activeBot.profit">
-      Avg Profit {{ formatPercent(botStore.activeBot.profit.profit_all_ratio_mean) }} (&sum;
-      {{ formatPercent(botStore.activeBot.profit.profit_all_ratio_sum) }}) in
-      {{ botStore.activeBot.profit.trade_count }} Trades, with an average duration of
-      {{ botStore.activeBot.profit.avg_duration }}. Best pair:
-      {{ botStore.activeBot.profit.best_pair }}.
+      平均收益 {{ formatPercent(botStore.activeBot.profit.profit_all_ratio_mean) }} (&sum;
+      {{ formatPercent(botStore.activeBot.profit.profit_all_ratio_sum) }})，
+      共 {{ botStore.activeBot.profit.trade_count }} 笔交易，平均持仓时长
+      {{ botStore.activeBot.profit.avg_duration }}。最佳交易对:
+      {{ botStore.activeBot.profit.best_pair }}。
     </p>
     <p v-if="botStore.activeBot.profit?.first_trade_timestamp" class="mb-4">
       <span v-if="botStore.activeBot.profit.bot_start_timestamp" class="block">
-        Bot start date:
+        机器人启动时间:
         <strong>
           <DateTimeTZ :date="botStore.activeBot.profit.bot_start_timestamp" show-timezone />
         </strong>
       </span>
       <span class="block">
-        First trade opened:
+        首笔交易开仓:
         <strong>
           <DateTimeTZ :date="botStore.activeBot.profit.first_trade_timestamp" show-timezone />
         </strong>
       </span>
       <span class="block">
-        Last trade opened:
+        最后一笔交易开仓:
         <strong>
           <DateTimeTZ :date="botStore.activeBot.profit.latest_trade_timestamp" show-timezone />
         </strong>
@@ -77,11 +77,11 @@ const botStore = useBotStore();
     </p>
     <p>
       <span v-if="botStore.activeBot.profit?.profit_factor" class="block">
-        Profit factor:
+        收益因子:
         {{ formatNumber(botStore.activeBot.profit?.profit_factor, 2) }}
       </span>
       <span v-if="botStore.activeBot.profit?.trading_volume" class="block mb-4">
-        Trading volume:
+        交易量:
         {{
           formatPriceCurrency(
             botStore.activeBot.profit.trading_volume,
@@ -91,7 +91,7 @@ const botStore = useBotStore();
         }}
       </span>
     </p>
-    <BaseCollapsible v-if="botStore.activeBot.strategy?.params" title="Strategy parameters">
+    <BaseCollapsible v-if="botStore.activeBot.strategy?.params" title="策略参数">
       <StrategyParameters :strategy="botStore.activeBot.strategy" class="m-3" />
     </BaseCollapsible>
     <USeparator class="my-5" />

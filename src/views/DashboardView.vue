@@ -121,7 +121,7 @@ onMounted(async () => {
         :min-h="4"
         drag-allow-from=".drag-header"
       >
-        <DraggableContainer header="Bot comparison">
+        <DraggableContainer header="机器人对比">
           <BotComparisonList />
         </DraggableContainer>
       </GridItem>
@@ -137,7 +137,7 @@ onMounted(async () => {
         drag-allow-from=".drag-header"
       >
         <DraggableContainer
-          header="Open Trades"
+          header="未平仓位"
           info-text="Open trades of all selected bots. Click on a trade to go to the trade page for that trade/bot."
         >
           <TradeList active-trades :trades="botStore.allOpenTradesSelectedBots" multi-bot-view />
@@ -154,7 +154,7 @@ onMounted(async () => {
         :min-h="4"
         drag-allow-from=".drag-header"
       >
-        <DraggableContainer header="Cumulative Profit">
+        <DraggableContainer header="累计收益">
           <CumProfitChart
             :trades="botStore.allTradesSelectedBots"
             :open-trades="botStore.allOpenTradesSelectedBots"
@@ -173,7 +173,7 @@ onMounted(async () => {
         :min-h="4"
         drag-allow-from=".drag-header"
       >
-        <DraggableContainer header="Wallet History">
+        <DraggableContainer header="钱包历史">
           <WalletHistoryChart :wallet-data="botStore.allBalanceHistory" :show-title="false" />
         </DraggableContainer>
       </GridItem>
@@ -189,7 +189,7 @@ onMounted(async () => {
         drag-allow-from=".drag-header"
       >
         <DraggableContainer
-          header="Closed Trades"
+          header="已平仓位"
           info-text="Closed trades for all selected bots. Click on a trade to go to the trade page for that trade/bot."
         >
           <TradeList

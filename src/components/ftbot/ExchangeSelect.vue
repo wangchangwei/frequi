@@ -17,11 +17,11 @@ const exchangeList = computed<SelectMenuItem[]>(() => {
 
   return [
     [
-      { label: 'Supported', type: 'label' },
+      { label: '支持', type: 'label' },
       ...supported.map((e) => ({ value: e.classname ?? e.name, label: e.name })),
     ],
     [
-      { label: 'Unsupported', type: 'label' },
+      { label: '不支持', type: 'label' },
       ...unsupported.map((e) => ({ value: e.classname ?? e.name, label: e.name })),
     ],
   ];

@@ -20,14 +20,14 @@ const botStore = useBotStore();
       title="Open trades"
       :active-trades="true"
       :stake-currency-decimals="botStore.activeBot.stakeCurrencyDecimals"
-      empty-text="No open Trades."
+      empty-text="暂无未平仓交易。"
     />
     <CustomTradeList
       v-if="history && !botStore.activeBot.detailTradeId"
       :trades="botStore.activeBot.closedTrades"
       title="Trade history"
       :stake-currency-decimals="botStore.activeBot.stakeCurrencyDecimals"
-      empty-text="No closed trades so far."
+      empty-text="暂无已平仓交易。"
     />
     <div
       v-if="botStore.activeBot.detailTradeId && botStore.activeBot.tradeDetail"
@@ -37,7 +37,7 @@ const botStore = useBotStore();
         color="neutral"
         class="self-start my-1 ms-1"
         @click="botStore.activeBot.setDetailTrade(null)"
-        label="Back"
+        label="返回"
         icon="mdi:arrow-left"
       />
       <TradeDetail

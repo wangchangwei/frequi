@@ -105,8 +105,8 @@ async function startDownload() {
             <div class="flex-fill">
               <div class="flex flex-col gap-2">
                 <div class="flex justify-between">
-                  <h4 class="text-start font-bold text-lg">Select Pairs</h4>
-                  <h5 class="text-start font-bold text-lg">Pairs from template</h5>
+                  <h4 class="text-start font-bold text-lg">选择交易对</h4>
+                  <h5 class="text-start font-bold text-lg">模板交易对</h5>
                 </div>
                 <div class="flex gap-2">
                   <BaseStringList v-model="pairs" placeholder="Pair" class="grow" />
@@ -129,7 +129,7 @@ async function startDownload() {
                       color="neutral"
                       @click="replacePairs(pairlistStore.whitelist)"
                     >
-                      Use Pairs from Pairlist Config
+                      使用交易对配置中的交易对
                     </UButton>
                   </div>
                 </div>
@@ -139,7 +139,7 @@ async function startDownload() {
             <!-- Timeframes section -->
             <div class="flex-fill px-3">
               <div class="flex flex-col gap-2">
-                <h4 class="text-start font-bold text-lg">Select timeframes</h4>
+                <h4 class="text-start font-bold text-lg">选择时间周期</h4>
                 <BaseStringList v-model="timeframes" placeholder="Timeframe" />
               </div>
             </div>
@@ -149,9 +149,9 @@ async function startDownload() {
           <div class="px-3 border dark:border-neutral-700 border-neutral-300 p-2 rounded-sm">
             <div class="flex flex-col gap-2">
               <div class="flex justify-between items-center">
-                <h4 class="text-start mb-0 font-bold text-lg">Time Selection</h4>
+                <h4 class="text-start mb-0 font-bold text-lg">时间选择</h4>
                 <BaseCheckbox v-model="timeSelection.useCustomTimerange" class="mb-0" switch>
-                  Use custom timerange
+                  使用自定义时间范围
                 </BaseCheckbox>
               </div>
 
@@ -159,7 +159,7 @@ async function startDownload() {
                 <TimeRangeSelect v-model="timeSelection.timerange" />
               </div>
               <div v-else class="flex items-center gap-2">
-                <label>Days to download:</label>
+                <label>下载天数:</label>
                 <UInputNumber
                   v-model="timeSelection.days"
                   aria-label="Days to download"
@@ -181,16 +181,16 @@ async function startDownload() {
               class="mb-2 border dark:border-neutral-700 border-neutral-300 rounded-md p-2 text-start"
             >
               <BaseCheckbox v-model="advancedOptions.erase" class="mb-2"
-                >Erase existing data</BaseCheckbox
+                >清除现有数据</BaseCheckbox
               >
               <BaseCheckbox
                 v-model="advancedOptions.prepend_data"
                 class="mb-2"
                 v-if="botStore.activeBot.botFeatures.downloadDataPrepend"
-                >Prepend data when downloading</BaseCheckbox
+                >下载时预置数据</BaseCheckbox
               >
               <BaseCheckbox v-model="advancedOptions.downloadTrades" class="mb-2">
-                Download Trades instead of OHLCV data
+                下载交易记录而非 OHLCV 数据
               </BaseCheckbox>
               <div class="grid grid-cols md:grid-cols-2 items-center gap-2">
                 <USelectMenu
@@ -198,12 +198,11 @@ async function startDownload() {
                   v-if="botStore.activeBot.botFeatures.downloadDataCandleTypes"
                   v-model="advancedOptions.candleTypes"
                   :items="candleTypes"
-                  placeholder="Select Candle Types"
+                  placeholder="选择蜡烛类型"
                   value-key="value"
                 />
                 <small
-                  >When no candle-type is selected, freqtrade will download the necessary candle
-                  types for regular operation automatically.</small
+                  >当未选择蜡烛类型时，freqtrade 会自动下载正常运行所需的蜡烛类型。</small
                 >
               </div>
             </div>
@@ -212,7 +211,7 @@ async function startDownload() {
             >
               <UCollapsible v-model:open="exchange.customExchange">
                 <BaseCheckbox v-model="exchange.customExchange" class="mb-2">
-                  Custom Exchange
+                  自定义交易所
                 </BaseCheckbox>
                 <template #content>
                   <ExchangeSelect
@@ -226,7 +225,7 @@ async function startDownload() {
 
           <div class="px-3">
             <UButton variant="solid" icon="mdi:download" @click="startDownload"
-              >Start Download</UButton
+              >开始下载</UButton
             >
           </div>
         </div>

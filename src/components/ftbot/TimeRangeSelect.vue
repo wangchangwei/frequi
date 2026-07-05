@@ -104,7 +104,7 @@ onMounted(() => {
 <template>
   <div>
     <div class="flex gap-2">
-      <UFormField label="Start Date">
+      <UFormField label="开始日期">
         <UInput id="dateFrom" v-model="dateFromText" placeholder="yyyy-mm-dd" class="flex-1">
           <template #trailing>
             <UButton
@@ -129,7 +129,7 @@ onMounted(() => {
           </template>
         </UInput>
       </UFormField>
-      <UFormField label="End Date">
+      <UFormField label="结束日期">
         <UInput id="dateTo" v-model="dateToText" placeholder="yyyy-mm-dd" class="flex-1">
           <template #trailing>
             <UButton

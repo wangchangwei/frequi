@@ -39,10 +39,10 @@ async function startAnalysis(payload: RecursiveAnalysisPayload) {
 <template>
   <div class="px-1 mx-auto w-full max-w-4xl lg:max-w-7xl">
     <BackgroundJobTracking class="mb-4" />
-    <DraggableContainer header="Recursive Analysis" class="mx-1 p-4">
+    <DraggableContainer data-testid="recursive-analysis-header" header="Recursive Analysis" class="mx-1 p-4">
       <RecursiveAnalysisForm :running="running" @start="startAnalysis" />
     </DraggableContainer>
-    <DraggableContainer v-if="result" header="Analysis Result" class="mx-1 mt-4 p-4">
+    <DraggableContainer v-if="result" data-testid="analysis-result-header" header="Analysis Result" class="mx-1 mt-4 p-4">
       <RecursiveAnalysisResults :result="result" />
     </DraggableContainer>
   </div>

@@ -63,8 +63,8 @@ defineEmits<{
       v-if="botFeatures.cancelOpenOrders && (trade.open_order_id || trade.has_open_orders)"
       class="justify-start!"
       color="neutral"
-      title="Cancel open orders"
-      label="Cancel open orders"
+      title="取消挂单"
+      label="取消挂单"
       icon="mdi:cancel"
       @click="$emit('cancelOpenOrder', trade)"
     />
@@ -72,8 +72,8 @@ defineEmits<{
       v-if="enableForceEntry"
       class="justify-start!"
       color="neutral"
-      title="Increase position"
-      label="Increase position"
+      title="增加仓位"
+      label="增加仓位"
       icon="mdi:plus-box-multiple-outline"
       @click="$emit('forceEntry', trade)"
     />
@@ -81,16 +81,16 @@ defineEmits<{
       v-if="botFeatures.reloadTrade"
       class="justify-start!"
       color="neutral"
-      title="Reload"
-      label="Reload"
+      title="重载"
+      label="重载"
       icon="mdi:reload-alert"
       @click="$emit('reloadTrade', trade)"
     />
     <UButton
       class="justify-start!"
       color="neutral"
-      title="Delete trade"
-      label="Delete trade"
+      title="删除交易"
+      label="删除交易"
       icon="mdi:delete"
       @click="$emit('deleteTrade', trade)"
     />

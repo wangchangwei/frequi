@@ -14,9 +14,9 @@ const props = withDefaults(
 );
 
 const modeDescs: { [key in modes]: string } = {
-  default: 'Current profit',
-  total: 'Total profit',
-  realized: 'Realized profit',
+  default: '当前收益',
+  total: '总收益',
+  realized: '已实现收益',
 };
 
 const profitRatio = computed<number | undefined | null>(() => {

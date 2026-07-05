@@ -177,7 +177,7 @@ const tradingTabItems = computed<TabsItem[]>(() => {
         :h="gridLayoutOpenTrades.h"
         drag-allow-from=".drag-header"
       >
-        <DraggableContainer header="Open Trades">
+        <DraggableContainer header="未平仓交易">
           <TradeList
             class="open-trades"
             :trades="botStore.activeBot.openTrades"
@@ -197,7 +197,7 @@ const tradingTabItems = computed<TabsItem[]>(() => {
         :h="gridLayoutTradeHistory.h"
         drag-allow-from=".drag-header"
       >
-        <DraggableContainer header="Closed Trades">
+        <DraggableContainer header="已平仓交易">
           <TradeList
             class="trade-history"
             :trades="botStore.activeBot.closedTrades"

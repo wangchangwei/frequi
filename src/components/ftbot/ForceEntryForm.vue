@@ -98,7 +98,7 @@ resetForm();
       <form ref="form" class="space-y-4" @submit.prevent="handleEntry">
         <UFormField
           v-if="botStore.activeBot.botFeatures.forceEnterShort && botStore.activeBot.shortAllowed"
-          label="Order direction (Long or Short)"
+          label="订单方向 (多或空)"
         >
           <USegmentedControl
             v-model="orderSide"
@@ -110,7 +110,7 @@ resetForm();
           />
         </UFormField>
 
-        <UFormField label="Pair" required>
+        <UFormField label="交易对" required>
           <UInput
             v-model="selectedPair"
             :disabled="positionIncrease"
@@ -121,7 +121,7 @@ resetForm();
           />
         </UFormField>
 
-        <UFormField label="Price [optional]">
+        <UFormField label="价格 [可选]">
           <UInputNumber
             v-model="price"
             show-buttons
@@ -136,7 +136,7 @@ resetForm();
           />
         </UFormField>
 
-        <UFormField :label="`Stake-amount in ${botStore.activeBot.stakeCurrency} [optional]`">
+        <UFormField :label="`保证金 (${botStore.activeBot.stakeCurrency}) [可选]`">
           <UInputNumber
             v-model="stakeAmount"
             show-buttons
@@ -152,7 +152,7 @@ resetForm();
 
         <UFormField
           v-if="botStore.activeBot.botFeatures.forceEnterShort && botStore.activeBot.shortAllowed"
-          label="Leverage to apply [optional]"
+          label="杠杆 [可选]"
         >
           <UInputNumber
             id="leverage-input"
@@ -166,7 +166,7 @@ resetForm();
           />
         </UFormField>
 
-        <UFormField label="OrderType">
+        <UFormField label="订单类型">
           <USegmentedControl
             v-model="ordertype"
             :items="orderTypeOptions"
@@ -179,7 +179,7 @@ resetForm();
 
         <UFormField
           v-if="botStore.activeBot.botFeatures.forceEntryTag"
-          label="* Custom entry tag [optional]"
+          label="* 自定义入场标签 [可选]"
         >
           <UInput id="enterTag-input" v-model="enterTag" class="w-full" />
         </UFormField>
@@ -187,8 +187,8 @@ resetForm();
     </template>
     <template #footer>
       <div class="ms-auto flex justify-end gap-2">
-        <UButton color="neutral" @click="$emit('close', false)" icon="mdi:close"> Cancel </UButton>
-        <UButton @click="handleEntry" icon="mdi:check"> Enter Position </UButton>
+        <UButton color="neutral" @click="$emit('close', false)" icon="mdi:close"> 取消 </UButton>
+        <UButton @click="handleEntry" icon="mdi:check"> 入场 </UButton>
       </div>
     </template>
   </UModal>

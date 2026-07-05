@@ -12,8 +12,8 @@ const isRunning = computed((): boolean => {
 
 async function handleStopBot() {
   const result = await confirm({
-    title: 'Stop Bot',
-    message: 'Stop the bot loop from running?',
+    title: '停止机器人',
+    message: '确定要停止机器人运行吗？',
   });
   if (result) {
     botStore.activeBot.stopBot();
@@ -23,9 +23,9 @@ async function handleStopBot() {
 async function handleStopBuy() {
   if (
     await confirm({
-      title: 'Pause - Stop Entering',
+      title: '暂停 - 停止开仓',
       message:
-        'Freqtrade will continue to handle open trades, but will not enter new trades or increase position sizes. \nReally stop entering?',
+        'Freqtrade 将继续处理已有交易，但不会再开新仓或增加仓位。\n确定要停止开仓吗？',
     })
   ) {
     botStore.activeBot.stopBuy();
@@ -35,8 +35,8 @@ async function handleStopBuy() {
 async function handleReloadConfig() {
   if (
     await confirm({
-      title: 'Reload Config',
-      message: 'Reload configuration (including strategy)?',
+      title: '重新加载配置',
+      message: '重新加载配置（包括策略）？',
     })
   ) {
     botStore.activeBot.reloadConfig();
@@ -46,7 +46,7 @@ async function handleReloadConfig() {
 async function handleForceExit() {
   if (
     await confirm({
-      title: 'ForceExit all',
+      title: '强制全部平仓',
       message: 'Really forceexit ALL trades?',
     })
   ) {
@@ -71,7 +71,7 @@ async function handleForceEntry() {
       size="xl"
       color="neutral"
       :disabled="!botStore.activeBot.isTrading || isRunning"
-      title="Start Trading"
+      title="开始交易"
       icon="mdi:play"
       @click="botStore.activeBot.startBot()"
     />
@@ -79,7 +79,7 @@ async function handleForceEntry() {
       size="xl"
       color="neutral"
       :disabled="!botStore.activeBot.isTrading || !isRunning"
-      title="Stop Trading - Also stops handling open trades."
+      title="停止交易 - 同时停止处理已有交易"
       icon="mdi:stop"
       @click="handleStopBot()"
     />
@@ -87,7 +87,7 @@ async function handleForceEntry() {
       size="xl"
       color="neutral"
       :disabled="!botStore.activeBot.isTrading || !isRunning"
-      title="Pause (StopBuy) - Freqtrade will continue to handle open trades, but will not enter new trades or increase position sizes."
+      title="暂停（停止开仓）- Freqtrade 将继续处理已有交易，但不会再开新仓或增加仓位"
       icon="mdi:pause"
       @click="handleStopBuy()"
     />
@@ -95,7 +95,7 @@ async function handleForceEntry() {
       size="xl"
       color="neutral"
       :disabled="!botStore.activeBot.isTrading"
-      title="Reload Config - reloads configuration including strategy, resetting all settings changed on the fly."
+      title="重新加载配置 - 重新加载配置和策略，重置所有运行时修改的设置"
       icon="mdi:reload"
       @click="handleReloadConfig()"
     />
@@ -103,7 +103,7 @@ async function handleForceEntry() {
       color="neutral"
       size="xl"
       :disabled="!botStore.activeBot.isTrading"
-      title="Force exit all"
+      title="强制全部平仓"
       icon="mdi:close-box-multiple"
       @click="handleForceExit()"
     />
@@ -112,7 +112,7 @@ async function handleForceEntry() {
       size="xl"
       color="neutral"
       :disabled="!botStore.activeBot.isTrading || !isRunning"
-      title="Force enter - Immediately enter a trade at an optional price. Exits are then handled according to strategy rules."
+      title="强制入场 - 立即以可选价格开仓，平仓按策略规则执行"
       icon="mdi:plus-box-multiple-outline"
       @click="handleForceEntry"
     />
@@ -121,7 +121,7 @@ async function handleForceEntry() {
       size="xl"
       color="neutral"
       :disabled="botStore.activeBot.isTrading"
-      title="Start Trading mode"
+      title="开始交易模式"
       icon="mdi:play"
       @click="botStore.activeBot.startTrade()"
     />

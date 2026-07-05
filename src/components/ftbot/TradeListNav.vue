@@ -46,7 +46,7 @@ watch(
 <template>
   <div>
     <div class="flex justify-center">
-      <span class="me-2">Sort by:</span>
+      <span class="me-2">排序:</span>
       <URadioGroup
         v-model="sortMethod"
         :items="sortMethodOptions.map((o) => ({ label: o.text, value: o.value }))"
@@ -63,7 +63,7 @@ watch(
         :title="'Trade Navigation'"
         @click="sortDescendingOrder = !sortDescendingOrder"
         :trailing-icon="sortDescendingOrder ? 'mdi:arrow-down' : 'mdi:arrow-up'"
-        >Trade Navigation
+        >交易导航
       </UButton>
       <li
         v-for="(trade, i) in sortedTrades"

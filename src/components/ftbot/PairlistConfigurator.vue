@@ -14,6 +14,32 @@ const configEmpty = computed(() => {
   return pairlistStore.config.pairlists.length == 0;
 });
 
+// 配对列表翻译映射
+const pairlistTranslations: Record<string, { name: string; description: string }> = {
+  StaticPairList: { name: '静态配对列表', description: '使用静态白名单' },
+  VolumePairList: { name: '成交量配对列表', description: '按成交量筛选交易对' },
+  AgeFilter: { name: '交易对年龄筛选', description: '按交易对上线时间筛选' },
+  PrecisionFilter: { name: '精度筛选', description: '按价格精度筛选' },
+  PriceFilter: { name: '价格筛选', description: '按价格范围筛选' },
+  ShuffleFilter: { name: '随机排序', description: '随机排序交易对' },
+  PercentChangeFilter: { name: '百分比变化筛选', description: '按百分比变化筛选' },
+  SpreadFilter: { name: '价差筛选', description: '按买卖价差筛选' },
+  VolumePairList: { name: '成交量配对列表', description: '按成交量筛选交易对' },
+  RangeStabilityFilter: { name: '范围稳定性筛选', description: '按价格范围稳定性筛选' },
+  OffsetFilter: { name: '偏移筛选', description: '从列表中偏移/排除部分交易对' },
+  MutualListFilter: { name: ' mutual list filter', description: ' filter by mutual list' },
+  PairlistFilter: { name: '配对列表筛选', description: '使用另一个配对列表进行筛选' },
+  WhiteListFilter: { name: '白名单筛选', description: '白名单筛选' },
+};
+
+function translatePairlist(pl: Pairlist) {
+  const key = Object.keys(pairlistTranslations).find((k) => pl.name.includes(k));
+  if (key) {
+    return pairlistTranslations[key];
+  }
+  return { name: pl.name, description: pl.description };
+}
+
 useSortable(availablePairlistsEl, availablePairlists.value, {
   group: {
     name: 'configurator',
@@ -94,8 +120,8 @@ if (pairlistStore.whitelist.length > 0) {
         class="flex text-start items-center py-2 px-3 hover:cursor-grab [.dragging]:bg-neutral-100 dark:[.dragging]:bg-neutral-900 [.dragging]:border [.dragging]:border-neutral-500"
       >
         <div class="flex grow items-start flex-col">
-          <span class="font-bold">{{ pairlist.name }}</span>
-          <span class="text-sm text-muted">{{ pairlist.description }}</span>
+          <span class="font-bold">{{ translatePairlist(pairlist).name }}</span>
+          <span class="text-sm text-muted">{{ translatePairlist(pairlist).description }}</span>
         </div>
         <UButton
           color="neutral"
@@ -110,13 +136,13 @@ if (pairlistStore.whitelist.length > 0) {
       <PairlistConfigActions />
       <div class="border rounded-sm border-neutral-500 p-2 mb-2">
         <div class="flex items-center gap-2 my-2">
-          <span class="col-auto">Stake currency: </span>
+          <span class="col-auto">质押货币: </span>
           <UInput v-model="pairlistStore.stakeCurrency" />
         </div>
 
         <div class="mb-2 border rounded-sm border-neutral-500 p-2 text-start">
           <BaseCheckbox v-model="pairlistStore.customExchange" class="mb-2">
-            Custom Exchange
+            自定义交易所
           </BaseCheckbox>
           <Transition name="fade">
             <ExchangeSelect
@@ -131,9 +157,8 @@ if (pairlistStore.whitelist.length > 0) {
         v-if="pairlistStore.config.pairlists.length > 0 && !pairlistStore.firstPairlistIsGenerator"
         class="my-2"
         color="warning"
-        title="Invalid configuration"
-        description="The first entry in the pairlist must be a Generating pairlist, like StaticPairList or
-          VolumePairList."
+        title="配置无效"
+        description="配对列表的第一个条目必须是生成类型的配对列表，例如 StaticPairList 或 VolumePairList。"
       />
       <div
         ref="pairlistConfigsEl"
@@ -157,8 +182,8 @@ if (pairlistStore.whitelist.length > 0) {
         value-key="value"
         size="md"
         :items="[
-          { value: 'Config' },
-          { value: 'Results', disabled: pairlistStore.whitelist.length === 0 },
+          { value: '配置' },
+          { value: '结果', disabled: pairlistStore.whitelist.length === 0 },
         ]"
         disabled-key="disabled"
       >
@@ -182,7 +207,7 @@ if (pairlistStore.whitelist.length > 0) {
 
 <style lang="scss" scoped>
 .empty:after {
-  content: 'Drag pairlist here';
+  content: '拖拽配对列表到此处';
   position: absolute;
   align-self: center;
   font-size: 1.1rem;
