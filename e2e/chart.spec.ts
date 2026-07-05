@@ -74,7 +74,7 @@ test.describe('Chart', () => {
     await page.getByRole('button', { name: 'Close' }).click();
 
     await expect(page.locator('canvas')).toHaveScreenshot(
-      'Chart-Plot-with_BollingerBands-Dark.png',
+      'Chart-Plot-with-BollingerBands-Dark.png',
       {
         threshold: 0.15,
         maxDiffPixelRatio: 0.15,
@@ -83,7 +83,7 @@ test.describe('Chart', () => {
 
     await page.getByRole('button', { name: 'Toggle Night Mode' }).click();
 
-    await expect(page.locator('canvas')).toHaveScreenshot('Chart-Plot-with_BollingerBands.png', {
+    await expect(page.locator('canvas')).toHaveScreenshot('Chart-Plot-with-BollingerBands.png', {
       threshold: 0.15,
       maxDiffPixelRatio: 0.15,
     });

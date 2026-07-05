@@ -23,7 +23,7 @@ test.describe('Login', () => {
     await page.goto('/login');
     await expect(page.locator('button', { hasText: 'Login' })).not.toBeInViewport();
     await page.locator('li', { hasText: 'No bot selected' });
-    await page.locator('.card-header:has-text("Freqtrade bot Login")');
+    await page.locator('.card-header:has-text("Bot Login")');
     // Test prefilled URL
     await expect(page.locator('input[id=url-input]').inputValue()).resolves.toBe(
       'http://localhost:3000',
@@ -43,10 +43,10 @@ test.describe('Login', () => {
   test('Test Login', async ({ page }) => {
     await defaultMocks(page);
     await page.goto('/login');
-    await page.locator('.card-header:has-text("Freqtrade bot Login")');
+    await page.locator('.card-header:has-text("Bot Login")');
 
     await page.getByRole('textbox', { name: 'Bot Name' }).fill('TestBot');
-    await page.getByRole('textbox', { name: 'Username' }).fill('Freqtrader');
+    await page.getByRole('textbox', { name: 'Username' }).fill('user');
     await page.getByRole('textbox', { name: 'Password' }).fill('SuperDuperBot');
 
     await page.route('**/api/v1/token/login', (route) => {
@@ -74,9 +74,9 @@ test.describe('Login', () => {
   test('Test Login failed - wrong api url', async ({ page }) => {
     await defaultMocks(page);
     await page.goto('/login');
-    await page.locator('.card-header:has-text("Freqtrade bot Login")');
+    await page.locator('.card-header:has-text("Bot Login")');
     await page.getByRole('textbox', { name: 'Bot Name' }).fill('TestBot');
-    await page.getByRole('textbox', { name: 'Username' }).fill('Freqtrader');
+    await page.getByRole('textbox', { name: 'Username' }).fill('user');
     await page.getByRole('textbox', { name: 'Password' }).fill('SuperDuperBot');
 
     await page.route('**/api/v1/token/login', (route) => {
@@ -97,9 +97,9 @@ test.describe('Login', () => {
   test('Test Login failed - wrong password', async ({ page }) => {
     await defaultMocks(page);
     await page.goto('/login');
-    await page.locator('.card-header:has-text("Freqtrade bot Login")');
+    await page.locator('.card-header:has-text("Bot Login")');
     await page.getByRole('textbox', { name: 'Bot Name' }).fill('TestBot');
-    await page.getByRole('textbox', { name: 'Username' }).fill('Freqtrader');
+    await page.getByRole('textbox', { name: 'Username' }).fill('user');
     await page.getByRole('textbox', { name: 'Password' }).fill('SuperDuperBot');
 
     await page.route('**/api/v1/token/login', (route) => {

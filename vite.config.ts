@@ -29,8 +29,8 @@ export default defineConfig({
       ui: {
         colors: {
           primary: 'brand',
-          // slate, gray or mist
-          neutral: 'mist',
+          // Use warm neutral palette instead of cold grays
+          neutral: 'warm',
         },
         alert: {
           defaultVariants: {
@@ -90,7 +90,7 @@ export default defineConfig({
         changeOrigin: true,
       },
     },
-    host: '127.0.0.1',
+    host: '0.0.0.0',
     port: 3000,
   },
   test: {

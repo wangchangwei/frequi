@@ -25,7 +25,7 @@ async function handleStopBuy() {
     await confirm({
       title: '暂停 - 停止开仓',
       message:
-        'Freqtrade 将继续处理已有交易，但不会再开新仓或增加仓位。\n确定要停止开仓吗？',
+        '将继续处理已有交易，但不会再开新仓或增加仓位。\n确定要停止开仓吗？',
     })
   ) {
     botStore.activeBot.stopBuy();
@@ -87,7 +87,7 @@ async function handleForceEntry() {
       size="xl"
       color="neutral"
       :disabled="!botStore.activeBot.isTrading || !isRunning"
-      title="暂停（停止开仓）- Freqtrade 将继续处理已有交易，但不会再开新仓或增加仓位"
+      title="暂停（停止开仓）- 将继续处理已有交易，但不会再开新仓或增加仓位"
       icon="mdi:pause"
       @click="handleStopBuy()"
     />

@@ -203,7 +203,7 @@ onMounted(() => {
       <UInput
         v-model="auth.username"
         required
-        placeholder="Freqtrader"
+        placeholder="Username"
         class="w-full"
         @keydown.enter="handleOk"
       />
@@ -233,9 +233,9 @@ onMounted(() => {
           <span v-if="errorMessageCORS">
             请同时检查机器人的 CORS 配置：
             <a
-              href="https://www.freqtrade.io/en/latest/rest-api/#cors"
+              href="#"
               class="text-blue-500 underline"
-              >Freqtrade CORS documentation</a
+              >CORS documentation</a
             >
           </span>
         </template>

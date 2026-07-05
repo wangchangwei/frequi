@@ -3,39 +3,50 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme static {
-      --color-brand-50: #DBFAFF;
-      --color-brand-100: #B8F4FF;
-      --color-brand-200: #75EAFF;
-      --color-brand-300: #2EE0FF;
-      --color-brand-400: #00C3E6;
-      --color-brand-500: #0089A1;
-      --color-brand-600: #006C80;
-      --color-brand-700: #005261;
-      --color-brand-800: #003842;
-      --color-brand-900: #001A1F;
-      --color-brand-950: #000D0F;
+/* ==========================================================================
+   Claude-inspired Warm Dark Theme - Trading Dashboard
+   ========================================================================== */
 
+@theme static {
+  /* Primary brand - Warm Amber Orange (Claude signature) */
+  --color-brand-50:  #FFF7ED;
+  --color-brand-100:  #FFEDD5;
+  --color-brand-200:  #FED7AA;
+  --color-brand-300:  #FDBA74;
+  --color-brand-400:  #FB923C;
+  --color-brand-500:  #F97316;
+  --color-brand-600:  #EA580C;
+  --color-brand-700:  #C2410C;
+  --color-brand-800:  #9A3412;
+  --color-brand-900:  #7C2D12;
+  --color-brand-950:  #431407;
+
+  /* Warm neutral palette - avoids cold gray */
+  --color-warm-50:   #FAFAF9;
+  --color-warm-100:  #F5F5F4;
+  --color-warm-200:  #E7E5E4;
+  --color-warm-300:  #D6D3D1;
+  --color-warm-400:  #A8A29E;
+  --color-warm-500:  #78716C;
+  --color-warm-600:  #57534E;
+  --color-warm-700:  #44403C;
+  --color-warm-800:  #292524;
+  --color-warm-900:  #1C1917;
+  --color-warm-950:  #0C0A09;
 }
 
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
+/* ==========================================================================
+   Base Layer - Theme Variables
+   ========================================================================== */
 @layer base {
   *,
   ::after,
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
+    border-color: var(--color-warm-200, currentColor);
   }
 
-  /* Cursor pointer for Buttons - workaround for Tailwind v4 change */
   button,
   [role="button"] {
     cursor: pointer;
@@ -43,30 +54,116 @@
 }
 
 :root {
-  /* default profit loss colors, can be overridden by custom style */
-  --color-profit: #12bb7b;
-  --color-loss: #ef5350;
+  /* Light theme - warm off-white */
+  --color-background: #FAFAF9;
+  --color-surface: #FFFFFF;
+  --color-surface-elevated: #FFFFFF;
+  --color-text: #1C1917;
+  --color-text-muted: #57534E;
+  --color-border: #E7E5E4;
+  --color-profit: #16A34A;
+  --color-loss: #DC2626;
 }
 
+.dark {
+  /* Dark theme - warm charcoal, NOT cold gray */
+  --color-background: #0C0A09;
+  --color-surface: #1C1917;
+  --color-surface-elevated: #292524;
+  --color-text: #FAFAF9;
+  --color-text-muted: #A8A29E;
+  --color-border: #44403C;
+  --color-profit: #22C55E;
+  --color-loss: #EF4444;
+}
+
+/* ==========================================================================
+   Smooth Theme Transitions
+   ========================================================================== */
 body.ft-theme-transition,
 body.ft-theme-transition *,
 body.ft-theme-transition *:before,
 body.ft-theme-transition *:after {
-    transition:
-        background 750ms ease-in-out,
-        border-color 750ms ease-in-out,
-        background-color 750ms ease-in-out,
-    ;
-    transition-delay: 0 !important;
+  transition:
+    background-color 400ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 400ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 400ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0 !important;
 }
 
+/* ==========================================================================
+   Global Styles
+   ========================================================================== */
 html {
-    /*  Set the default font size to 14px */
-    font-size: 14px;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle noise texture for depth (applied to dark surfaces) */
+.dark {
+  background-color: var(--color-background);
+}
+
+.dark::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.015;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  z-index: 9999;
 }
 
 .vue-grid-item {
-    /*  Fix white corners in vue-grid-item. */
-    background-color: unset !important;
+  background-color: unset !important;
 }
 
+/* ==========================================================================
+   Custom Scrollbar - Warm Dark Theme
+   ========================================================================== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-warm-600, #57534E);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-warm-500, #78716C);
+}
+
+/* ==========================================================================
+   Card & Surface Elevation
+   ========================================================================== */
+.claude-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.05),
+    0 0 0 1px rgba(0, 0, 0, 0.03);
+}
+
+.dark .claude-card {
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.03);
+}
+
+/* Warm glow for primary elements */
+.claude-glow {
+  box-shadow: 0 0 20px rgba(232, 113, 10, 0.15);
+}
+
+.dark .claude-glow {
+  box-shadow: 0 0 30px rgba(232, 113, 10, 0.25);
+}

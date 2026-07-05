@@ -25,12 +25,12 @@ test.describe('Analysis', () => {
     // Click recursive analysis
     await page.getByText('Recursive analysis').click();
     await expect(page).toHaveURL(/recursive_analysis/);
-    await expect(page.getByText('Recursive Analysis', { exact: true })).toBeInViewport();
+    await expect(page.getByTestId('recursive-analysis-header')).toBeInViewport();
     // Click lookahead analysis
     await page.getByRole('button', { name: 'Analysis', exact: true }).click();
     await page.getByText('Lookahead analysis').click();
     await expect(page).toHaveURL(/lookahead_analysis/);
-    await expect(page.getByText('Lookahead Analysis', { exact: true })).toBeInViewport();
+    await expect(page.getByTestId('lookahead-analysis-header')).toBeInViewport();
   });
 
   test('Lookahead analysis test', async ({ page }) => {
@@ -61,19 +61,19 @@ test.describe('Analysis', () => {
     });
 
     await page.goto('/lookahead_analysis');
-    await expect(page.getByText('Lookahead Analysis', { exact: true })).toBeInViewport();
+    await expect(page.getByTestId('lookahead-analysis-header')).toBeInViewport();
 
-    await expect(page.getByRole('button', { name: 'Start lookahead analysis' })).not.toBeEnabled();
+    await expect(page.getByRole('button', { name: '开始前瞻偏差分析' })).not.toBeEnabled();
     await page.getByRole('button', { name: 'Show popup' }).click();
     await page.getByText('AverageStrategy').click();
-    await expect(page.getByRole('button', { name: 'Start lookahead analysis' })).toBeEnabled();
-    await page.getByRole('button', { name: 'Start lookahead analysis' }).click();
+    await expect(page.getByRole('button', { name: '开始前瞻偏差分析' })).toBeEnabled();
+    await page.getByRole('button', { name: '开始前瞻偏差分析' }).click();
 
     // Delays by a second due to background task timing
-    await expect(page.getByText('Analysis Result', { exact: true })).toBeInViewport();
-    await expect(page.getByText('No lookahead bias detected')).toBeInViewport();
+    await expect(page.getByTestId('analysis-result-header')).toBeInViewport();
+    await expect(page.getByText('未检测到前瞻偏差')).toBeInViewport();
     await expect(page.getByRole('cell', { name: 'AverageStrategy' })).toBeInViewport();
-    await expect(page.getByText('No lookahead bias detected')).toBeInViewport();
+    await expect(page.getByText('未检测到前瞻偏差')).toBeInViewport();
   });
 
   test('Recursive analysis test', async ({ page }) => {
@@ -104,7 +104,7 @@ test.describe('Analysis', () => {
     });
 
     await page.goto('/recursive_analysis');
-    await expect(page.getByText('Recursive Analysis', { exact: true })).toBeInViewport();
+    await expect(page.getByTestId('recursive-analysis-header')).toBeInViewport();
     await expect(page.getByRole('button', { name: 'Start recursive analysis' })).not.toBeEnabled();
     await page.getByRole('button', { name: 'Show popup' }).click();
     await page.getByText('AverageStrategy').click();
@@ -112,7 +112,7 @@ test.describe('Analysis', () => {
     await page.getByRole('button', { name: 'Start recursive analysis' }).click();
 
     // Delays by a second due to background task timing
-    await expect(page.getByText('Analysis Result', { exact: true })).toBeInViewport();
+    await expect(page.getByTestId('analysis-result-header')).toBeInViewport();
     await expect(
       page.getByText('4 indicator(s) affected by startup candle count'),
     ).toBeInViewport();
