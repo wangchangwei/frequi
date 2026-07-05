@@ -14,22 +14,59 @@ const configEmpty = computed(() => {
   return pairlistStore.config.pairlists.length == 0;
 });
 
-// 配对列表翻译映射
+// 配对列表翻译映射 (PairlistConfigItem.vue 必须保持完全一致)
 const pairlistTranslations: Record<string, { name: string; description: string }> = {
+  // Generators
   StaticPairList: { name: '静态配对列表', description: '使用静态白名单' },
+  VolumePairList: { name: '成交量配对列表', description: '按成交量筛选交易对' },
+  CrossMarketPairList: { name: '跨市场配对列表', description: '使用其他市场的交易对' },
+  MarketCapPairList: { name: '市值配对列表', description: '按市值筛选交易对' },
+  ProducerPairList: { name: '主从配对列表', description: '从 Leader 数据获取配对列表' },
+  RemotePairList: { name: '远程配对列表', description: '从远程数据源获取配对列表' },
+
+  // Filters
   AgeFilter: { name: '交易对年龄筛选', description: '按交易对上线时间筛选' },
+  DelistFilter: { name: '已下架交易对筛选', description: '过滤已下架或即将下架的交易对' },
+  FullTradesFilter: { name: '满仓交易槽位筛选', description: '基于交易槽位占用情况筛选' },
+  OffsetFilter: { name: '偏移筛选', description: '从列表中偏移/排除部分交易对' },
+  PairInformationFilter: { name: '配对基础信息筛选', description: '基于配对基础信息筛选' },
+  PercentChangeFilter: { name: '百分比变化筛选', description: '按百分比变化筛选' },
+  PerformanceFilter: { name: '业绩筛选', description: '基于历史盈亏表现筛选' },
   PrecisionFilter: { name: '精度筛选', description: '按价格精度筛选' },
   PriceFilter: { name: '价格筛选', description: '按价格范围筛选' },
-  ShuffleFilter: { name: '随机排序', description: '随机排序交易对' },
-  PercentChangeFilter: { name: '百分比变化筛选', description: '按百分比变化筛选' },
-  SpreadFilter: { name: '价差筛选', description: '按买卖价差筛选' },
-  VolumePairList: { name: '成交量配对列表', description: '按成交量筛选交易对' },
   RangeStabilityFilter: { name: '范围稳定性筛选', description: '按价格范围稳定性筛选' },
-  OffsetFilter: { name: '偏移筛选', description: '从列表中偏移/排除部分交易对' },
-  MutualListFilter: { name: ' mutual list filter', description: ' filter by mutual list' },
-  PairlistFilter: { name: '配对列表筛选', description: '使用另一个配对列表进行筛选' },
-  WhiteListFilter: { name: '白名单筛选', description: '白名单筛选' },
+  ShuffleFilter: { name: '随机排序', description: '随机排序交易对' },
+  SpreadFilter: { name: '价差筛选', description: '按买卖价差筛选' },
+  VolatilityFilter: { name: '波动率筛选', description: '按价格波动率筛选' },
+
+  // Deprecated (upstream 已移除, 保留以防代码引用)
+  MutualListFilter: { name: '互斥配对列表筛选', description: '按两个 pairlist 互相过滤(已弃用)' },
+  PairlistFilter: { name: '配对列表筛选', description: '使用另一个配对列表进行筛选(已弃用)' },
+  WhiteListFilter: { name: '白名单筛选', description: '白名单筛选(已弃用)' },
 };
+
+// 无 freqtrade backend 时浏览器中也能验证汉化结果
+const FALLBACK_AVAILABLE_PAIRLISTS: Pairlist[] = [
+  { name: 'StaticPairList', description: 'Static Pair List provider', is_pairlist_generator: true, showParameters: false, params: {} },
+  { name: 'VolumePairList', description: 'Volume PairList provider', is_pairlist_generator: true, showParameters: false, params: {} },
+  { name: 'AgeFilter', description: 'Minimum age (days listed) pair list filter', is_pairlist_generator: false, showParameters: false, params: {} },
+  { name: 'CrossMarketPairList', description: 'Cross Market pair list filter', is_pairlist_generator: true, showParameters: false, params: {} },
+  { name: 'DelistFilter', description: 'Delist pair list filter', is_pairlist_generator: false, showParameters: false, params: {} },
+  { name: 'FullTradesFilter', description: 'Full trade slots pair list filter', is_pairlist_generator: false, showParameters: false, params: {} },
+  { name: 'MarketCapPairList', description: 'Market Cap PairList provider', is_pairlist_generator: true, showParameters: false, params: {} },
+  { name: 'OffsetFilter', description: 'Offset pair list filter', is_pairlist_generator: false, showParameters: false, params: {} },
+  { name: 'PairInformationFilter', description: 'Pair Information filter', is_pairlist_generator: false, showParameters: false, params: {} },
+  { name: 'PercentChangePairList', description: 'Percent change pair list filter', is_pairlist_generator: false, showParameters: false, params: {} },
+  { name: 'PerformanceFilter', description: 'Performance pair list filter', is_pairlist_generator: false, showParameters: false, params: {} },
+  { name: 'PrecisionFilter', description: 'Precision pair list filter', is_pairlist_generator: false, showParameters: false, params: {} },
+  { name: 'PriceFilter', description: 'Price pair list filter', is_pairlist_generator: false, showParameters: false, params: {} },
+  { name: 'ProducerPairList', description: 'External Pair List provider', is_pairlist_generator: true, showParameters: false, params: {} },
+  { name: 'RangeStabilityFilter', description: 'Rate of change pairlist filter', is_pairlist_generator: false, showParameters: false, params: {} },
+  { name: 'RemotePairList', description: 'Remote PairList provider', is_pairlist_generator: true, showParameters: false, params: {} },
+  { name: 'ShuffleFilter', description: 'Shuffle pair list filter', is_pairlist_generator: false, showParameters: false, params: {} },
+  { name: 'SpreadFilter', description: 'Spread pair list filter', is_pairlist_generator: false, showParameters: false, params: {} },
+  { name: 'VolatilityFilter', description: 'Volatility pairlist filter', is_pairlist_generator: false, showParameters: false, params: {} },
+];
 
 function translatePairlist(pl: Pairlist) {
   const key = Object.keys(pairlistTranslations).find((k) => pl.name.includes(k));
@@ -76,15 +113,22 @@ useSortable(pairlistConfigsEl, pairlistStore.config.pairlists, {
 });
 
 onMounted(async () => {
-  availablePairlists.value = (await botStore.activeBot.getPairlists()).pairlists.sort((a, b) =>
-    // Sort by is_pairlist_generator (by name), then by name.
-    // TODO: this might need to be improved
-    a.is_pairlist_generator === b.is_pairlist_generator
-      ? a.name.localeCompare(b.name)
-      : a.is_pairlist_generator
-        ? -1
-        : 1,
-  );
+  try {
+    const response = await botStore.activeBot.getPairlists();
+    availablePairlists.value = response.pairlists.sort((a, b) =>
+      // Sort by is_pairlist_generator (by name), then by name.
+      // TODO: this might need to be improved
+      a.is_pairlist_generator === b.is_pairlist_generator
+        ? a.name.localeCompare(b.name)
+        : a.is_pairlist_generator
+          ? -1
+          : 1,
+    );
+  } catch (e) {
+    // 无 freqtrade backend (例如本地起 UI 看效果), 用 fallback 演示列表保证汉化可验证
+    console.warn('[PairlistConfigurator] 使用 fallback availablePairlists:', e);
+    availablePairlists.value = [...FALLBACK_AVAILABLE_PAIRLISTS];
+  }
   pairlistStore.selectOrCreateConfig(
     pairlistStore.isSavedConfig(pairlistStore.configName) ? pairlistStore.configName : 'default',
   );
