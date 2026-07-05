@@ -29,8 +29,8 @@ export default defineConfig({
       ui: {
         colors: {
           primary: 'brand',
-          // Use warm neutral palette instead of cold grays
-          neutral: 'warm',
+          // slate, gray, zinc, neutral, stone, taupe, mauve, mist, olive
+          neutral: 'mist',
         },
         alert: {
           defaultVariants: {
