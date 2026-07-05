@@ -23,8 +23,6 @@ const paramTranslations: Record<string, { description: string; help?: string }> 
   'number_format': { description: '数字格式' },
   'precision': { description: '精度' },
   'refresh_days': { description: '刷新天数' },
-  'enabled': { description: '启用' },
-  'candles': { description: '蜡烛数' },
   'use_candles': { description: '使用蜡烛数' },
   'passes': { description: '通过次数' },
   'num_pairs': { description: '交易对数量' },
@@ -42,8 +40,6 @@ const paramTranslations: Record<string, { description: string; help?: string }> 
   // ValueFilter 参数
   'min_value': { description: '最小值' },
   'max_value': { description: '最大值' },
-  'filter_min_value': { description: '筛选最小值' },
-  'filter_max_value': { description: '筛选最大值' },
 
   // SpreadFilter 参数
   'max_spread_ratio': { description: '最大价差比例' },
@@ -56,8 +52,6 @@ const paramTranslations: Record<string, { description: string; help?: string }> 
 
   // RangeStabilityFilter 参数
   'lookback_days': { description: '回溯天数' },
-  'lookback_window': { description: '回溯窗口' },
-  'min_change': { description: '最小变化' },
 
   // ShuffleFilter 参数
   'shuffle_threshold': { description: '随机阈值' },
@@ -68,7 +62,6 @@ const paramTranslations: Record<string, { description: string; help?: string }> 
 
   // VolumePairList 参数
   'volume_pairs_file': { description: '成交量交易对文件' },
-  'number_assets': { description: '资产数量' },
   'sort_key': { description: '排序键' },
 
   // PrecisionFilter 参数
@@ -117,7 +110,6 @@ const paramTranslations: Record<string, { description: string; help?: string }> 
   'stake_currency': { description: '保证金货币' },
   'deadline': { description: '截止时间' },
   'order_time_in_force': { description: '订单时效' },
-  'price_side': { description: '价格方向' },
   'side': { description: '方向' },
 
   // IDFilter 参数
@@ -129,9 +121,6 @@ const paramTranslations: Record<string, { description: string; help?: string }> 
 
   // ExchangeFilter 参数
   'exchange': { description: '交易所' },
-
-  // SpreadFilter
-  'max_spread_ratio': { description: '最大价差比例' },
 
   // 旧参数兼容
   'filter_min_value': { description: '筛选最小值' },
@@ -287,7 +276,7 @@ const helpTranslations: Record<string, string> = {
 
 function translateParam(param: PairlistParameter) {
   let description = param.description;
-  let help = param.help;
+  let help: string | undefined = param.help;
 
   // 翻译 description
   if (paramTranslations[param.description]) {

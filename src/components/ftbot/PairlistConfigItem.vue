@@ -20,7 +20,6 @@ function toggleVisible() {
 // 配对列表翻译映射
 const pairlistTranslations: Record<string, { name: string; description: string }> = {
   StaticPairList: { name: '静态配对列表', description: '使用静态白名单' },
-  VolumePairList: { name: '成交量配对列表', description: '按成交量筛选交易对' },
   AgeFilter: { name: '交易对年龄筛选', description: '按交易对上线时间筛选' },
   PrecisionFilter: { name: '精度筛选', description: '按价格精度筛选' },
   PriceFilter: { name: '价格筛选', description: '按价格范围筛选' },
