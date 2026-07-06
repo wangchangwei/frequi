@@ -71,7 +71,7 @@ async function loginThroughUI(page: Page, botName = 'PipelineBot'): Promise<void
 }
 
 /** Read pairlistConfig pinia store's whitelist length (best-effort). */
-async function readWhitelistLength(page: Page): Promise<number> {
+async function readWhitelistLength(_page: Page): Promise<number> {
   // Best-effort probe: pinia state isn't exposed globally without devtools
   // plugin wiring. We rely on the DOM Pair input as the witness of state.
   return 0;
@@ -160,25 +160,7 @@ async function setBtStoreField(page: Page, field: string, value: unknown): Promi
   );
 }
 
-/** Wait until pairlistStore.whitelist has >0 entries, or fall back to evaluating. */
-async function ensureWhitelistPopulated(page: Page): Promise<string[]> {
-  // Wait briefly for the page to mount and pairlistStore to be reachable.
-  await page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => undefined);
-
-  // Best-effort: try clicking the "评估" button if config has any generators.
-  // The default config in PairlistConfigurator is empty, so we don't expect
-  // a populated whitelist from a fresh load — instead, prove the API surface
-  // works and that the evaluate UI exists. We accept whitelist==[] gracefully.
-
-  // Read the store via Vue devtools hook if available.
-  const whitelist = await page.evaluate(() => {
-    const w = (window as unknown as { __pairlistWhitelist?: string[] }).__pairlistWhitelist;
-    return Array.isArray(w) ? w : [];
-  });
-
-  return whitelist;
-}
-
+/** Inject a value into a pinia setup-store field via the exposed window hook. */
 // ---------------------------------------------------------------------------
 // Pipeline
 // ---------------------------------------------------------------------------
@@ -256,7 +238,7 @@ test.describe('FreqUI pipeline against real :8080', () => {
     // -----------------------------------------------------------------------
     // 3. Download data — consume pairlistStore.whitelist via the button
     // -----------------------------------------------------------------------
-    let pairsFromStep2: string[] = [];
+    let pairsFromStep2: string[];
     {
       let downloadHit = false;
       page.on('response', (resp) => {
@@ -399,8 +381,8 @@ test.describe('FreqUI pipeline against real :8080', () => {
     // -------------------------------------------------------------------------
     // 5. Backtest — POST /backtest, poll until done|failed
     // -------------------------------------------------------------------------
-    let backtestStrategy = '';
-    let backtestDoneAt = 0;
+    let backtestStrategy: string;
+    let backtestDoneAt: number;
     {
       // Pull a real strategy name from /show_config (the bot's running config
       // carries `strategy` as a top-level field). The `/strategies` endpoint
@@ -516,7 +498,7 @@ test.describe('FreqUI pipeline against real :8080', () => {
     // -----------------------------------------------------------------------
     // 6. Recursive analysis — same strategy, startup_candle array
     // -----------------------------------------------------------------------
-    let analysisStartAt = 0;
+    let analysisStartAt: number;
     {
       let recPostHit = false;
       let recJobId = '';
