@@ -38,3 +38,4 @@ backtest_queue/
 # and live trade DB. Must never enter the repo. Matches both a directory and the
 # local symlink that points at the freqtrade repo's user_data/ tree.
 user_data
+.omc/

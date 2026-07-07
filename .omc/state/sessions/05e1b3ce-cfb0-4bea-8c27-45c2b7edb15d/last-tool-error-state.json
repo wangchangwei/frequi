@@ -1,7 +1,0 @@
-{
-  "tool_name": "Read",
-  "tool_input_preview": "{\"file_path\":\"/Users/changwei/.claude/projects/-Users-changwei-freq-frequi/05e1b3ce-cfb0-4bea-8c27-45c2b7edb15d/tool-results/mcp-plugin_playwright-playwright-browser_evaluate-1782810760765.txt\",\"limit...",
-  "error": "File does not exist. Note: your current working directory is /Users/changwei/freq/frequi.",
-  "timestamp": "2026-06-30T09:12:46.090Z",
-  "retry_count": 1
-}

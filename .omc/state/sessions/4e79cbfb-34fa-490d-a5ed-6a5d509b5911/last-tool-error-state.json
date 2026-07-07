@@ -1,7 +1,0 @@
-{
-  "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"docker compose -f /Users/changwei/freq/frequi/docker-compose.tests.yml run --rm --entrypoint freqtrade backtesting backtesting --datadir /freqtrade/user_data/data/binance --strategy-path /...",
-  "error": "Exit code 2\n Container frequi-backtesting-run-cfce49ab5ff8 Creating \n Container frequi-backtesting-run-cfce49ab5ff8 Created \n2026-06-30 06:41:32,369 - freqtrade - INFO - freqtrade 2026.5.1\n2026-06-30 06:41:32,576 - numexpr.utils - INFO - NumExpr defaulting to 10 threads.\n2026-06-30 06:41:33,217 - freqtrade.configuration.load_config - INFO - Using config: user_data/config.json ...\n2026-06-30 06:41:33,218 - freqtrade.loggers - INFO - Enabling colorized output.\n2026-06-30 06:41:33,219 - freqtrade.l...",
-  "timestamp": "2026-06-30T06:41:36.119Z",
-  "retry_count": 1
-}
