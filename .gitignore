@@ -41,3 +41,9 @@ yarn-error.log*
 /.playwright-mcp/
 /pairlist*.png
 /e2e/*.spec.ts-snapshots/
+
+# E2E run output artifacts (local-only)
+/artifacts/
+
+# Hermes agent temp env files (random suffix)
+/hermes-verify-v1-env.*
