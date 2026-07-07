@@ -71,6 +71,8 @@ function handleReset(evt) {
 }
 
 async function handleSubmit() {
+  // Wait for DOM to be ready before checking form validity
+  await nextTick();
   // Exit when the form isn't valid
   if (!checkFormValidity()) {
     return;
@@ -186,12 +188,7 @@ onMounted(() => {
         class="mt-1 block w-full"
         @keydown.enter="handleOk"
       />
-      <UAlert
-        v-if="urlDuplicate"
-        class="mt-2"
-        color="warning"
-        title="此 URL 已被其他机器人使用。"
-      >
+      <UAlert v-if="urlDuplicate" class="mt-2" color="warning" title="此 URL 已被其他机器人使用。">
       </UAlert>
     </UFormField>
     <UFormField
@@ -207,11 +204,7 @@ onMounted(() => {
         @keydown.enter="handleOk"
       />
     </UFormField>
-    <UFormField
-      class="mb-4"
-      label="密码"
-      :error="pwdState === false ? '密码无效' : undefined"
-    >
+    <UFormField class="mb-4" label="密码" :error="pwdState === false ? '密码无效' : undefined">
       <UInput
         v-model="auth.password"
         required
@@ -221,12 +214,7 @@ onMounted(() => {
       />
     </UFormField>
     <div>
-      <UAlert
-        v-if="errorMessage"
-        class="mt-2 whitespace-pre-line"
-        color="warning"
-        title="登录失败"
-      >
+      <UAlert v-if="errorMessage" class="mt-2 whitespace-pre-line" color="warning" title="登录失败">
         <template #description>
           {{ errorMessage }}
           <span v-if="errorMessageCORS">

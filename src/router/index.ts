@@ -36,6 +36,46 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('@/views/DashboardView.vue'),
   },
   {
+    path: '/bots',
+    name: 'BotRegistry',
+    component: () => import('@/views/BotRegistryView.vue'),
+  },
+  {
+    path: '/bots/:id',
+    name: 'BotDetail',
+    component: () => import('@/views/BotDetailView.vue'),
+  },
+  {
+    path: '/accounts',
+    name: 'AccountList',
+    component: () => import('@/views/AccountListView.vue'),
+  },
+  {
+    path: '/strategies',
+    name: 'StrategyList',
+    component: () => import('@/views/StrategyListView.vue'),
+  },
+  {
+    path: '/strategies/:id',
+    name: 'StrategyDetail',
+    component: () => import('@/views/StrategyDetailView.vue'),
+  },
+  {
+    path: '/configs',
+    name: 'ConfigCenter',
+    component: () => import('@/views/ConfigCenterView.vue'),
+  },
+  {
+    path: '/configs/:id',
+    name: 'ConfigDetail',
+    component: () => import('@/views/ConfigDetailView.vue'),
+  },
+  {
+    path: '/configs/:id/diff',
+    name: 'ConfigDiff',
+    component: () => import('@/views/ConfigDiffView.vue'),
+  },
+  {
     path: '/balance',
     name: 'Balance',
     component: () => import('@/components/ftbot/BotBalance.vue'),
@@ -89,6 +129,41 @@ const routes: Array<RouteRecordRaw> = [
     path: '/lookahead_analysis',
     name: 'Lookahead Analysis',
     component: () => import('@/views/LookaheadAnalysisView.vue'),
+  },
+  {
+    path: '/backtest-jobs',
+    name: 'BacktestJobQueue',
+    component: () => import('@/views/BacktestJobQueueView.vue'),
+  },
+  {
+    path: '/backtest-compare',
+    name: 'BacktestComparison',
+    component: () => import('@/views/BacktestComparisonView.vue'),
+  },
+  {
+    path: '/risk',
+    name: 'RiskDashboard',
+    component: () => import('@/views/RiskDashboardView.vue'),
+  },
+  {
+    path: '/alerts',
+    name: 'AlertCenter',
+    component: () => import('@/views/AlertCenterView.vue'),
+  },
+  {
+    path: '/ai-analysis',
+    name: 'AiAnalysis',
+    component: () => import('@/views/AiAnalysisView.vue'),
+  },
+  {
+    path: '/audit',
+    name: 'AuditCenter',
+    component: () => import('@/views/AuditCenterView.vue'),
+  },
+  {
+    path: '/hyperopt',
+    name: 'Hyperopt',
+    component: () => import('@/views/HyperoptView.vue'),
   },
   {
     path: '/(.*)*',

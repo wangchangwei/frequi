@@ -34,9 +34,7 @@ const botStore = useBotStore();
     </p>
     <p v-if="'stoploss_on_exchange' in botStore.activeBot.botState" class="mb-4">
       交易所止损
-      <strong>{{
-        botStore.activeBot.botState.stoploss_on_exchange ? '已启用' : '已禁用'
-      }}</strong
+      <strong>{{ botStore.activeBot.botState.stoploss_on_exchange ? '已启用' : '已禁用' }}</strong
       >。
     </p>
     <p class="mb-4">
@@ -50,8 +48,8 @@ const botStore = useBotStore();
     <USeparator class="my-2" />
     <p class="mb-4" v-if="botStore.activeBot.profit">
       平均收益 {{ formatPercent(botStore.activeBot.profit.profit_all_ratio_mean) }} (&sum;
-      {{ formatPercent(botStore.activeBot.profit.profit_all_ratio_sum) }})，
-      共 {{ botStore.activeBot.profit.trade_count }} 笔交易，平均持仓时长
+      {{ formatPercent(botStore.activeBot.profit.profit_all_ratio_sum) }})， 共
+      {{ botStore.activeBot.profit.trade_count }} 笔交易，平均持仓时长
       {{ botStore.activeBot.profit.avg_duration }}。最佳交易对:
       {{ botStore.activeBot.profit.best_pair }}。
     </p>

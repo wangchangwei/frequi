@@ -11,16 +11,34 @@ const pairlistTranslations: Record<string, { name: string; description: string }
   ProducerPairList: { name: '生产者 (Producer)', description: '从生产者获取交易对列表。' },
   MarketCapPairList: { name: '市值 (MarketCap)', description: '基于市值排序动态生成交易对。' },
   AgeFilter: { name: '上市时间过滤 (Age)', description: '过滤掉上市时间过短的新币。' },
-  VolatilityFilter: { name: '波动率过滤 (Volatility)', description: '过滤波动率过大或过小的交易对。' },
-  PerformanceFilter: { name: '表现过滤 (Performance)', description: '基于历史交易表现过滤交易对。' },
-  PrecisionFilter: { name: '精度过滤 (Precision)', description: '过滤掉不满足价格或数量精度的交易对。' },
+  VolatilityFilter: {
+    name: '波动率过滤 (Volatility)',
+    description: '过滤波动率过大或过小的交易对。',
+  },
+  PerformanceFilter: {
+    name: '表现过滤 (Performance)',
+    description: '基于历史交易表现过滤交易对。',
+  },
+  PrecisionFilter: {
+    name: '精度过滤 (Precision)',
+    description: '过滤掉不满足价格或数量精度的交易对。',
+  },
   PriceFilter: { name: '价格过滤 (Price)', description: '过滤价格过低或过高的交易对。' },
   SpreadFilter: { name: '价差过滤 (Spread)', description: '过滤买卖价差过大的交易对。' },
   ShuffleFilter: { name: '随机打乱 (Shuffle)', description: '将交易对列表的顺序随机打乱。' },
-  RangeStabilityFilter: { name: '区间稳定性过滤 (RangeStability)', description: '基于价格波动区间的稳定性进行过滤。' },
+  RangeStabilityFilter: {
+    name: '区间稳定性过滤 (RangeStability)',
+    description: '基于价格波动区间的稳定性进行过滤。',
+  },
   OffsetFilter: { name: '偏移过滤 (Offset)', description: '使用偏移量跳过列表前面的交易对。' },
-  FullTradesFilter: { name: '全周期交易过滤 (FullTrades)', description: '移除无法覆盖指定时间周期的交易对。' },
-  CorrelationsFilter: { name: '相关性过滤 (Correlations)', description: '过滤与特定币种高度相关的交易对。' }
+  FullTradesFilter: {
+    name: '全周期交易过滤 (FullTrades)',
+    description: '移除无法覆盖指定时间周期的交易对。',
+  },
+  CorrelationsFilter: {
+    name: '相关性过滤 (Correlations)',
+    description: '过滤与特定币种高度相关的交易对。',
+  },
 };
 
 const availablePairlists = ref<Pairlist[]>([]);
@@ -112,8 +130,12 @@ if (pairlistStore.whitelist.length > 0) {
         class="flex text-start items-center py-2 px-3 hover:cursor-grab [.dragging]:bg-neutral-100 dark:[.dragging]:bg-neutral-900 [.dragging]:border [.dragging]:border-neutral-500"
       >
         <div class="flex grow items-start flex-col">
-          <span class="font-bold">{{ pairlistTranslations[pairlist.name]?.name || pairlist.name }}</span>
-          <span class="text-sm text-muted">{{ pairlistTranslations[pairlist.name]?.description || pairlist.description }}</span>
+          <span class="font-bold">{{
+            pairlistTranslations[pairlist.name]?.name || pairlist.name
+          }}</span>
+          <span class="text-sm text-muted">{{
+            pairlistTranslations[pairlist.name]?.description || pairlist.description
+          }}</span>
         </div>
         <UButton
           color="neutral"

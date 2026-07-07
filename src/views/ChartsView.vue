@@ -110,9 +110,7 @@ watch(
       <UCard :ui="{ body: 'p-3 sm:p-3' }">
         <div class="flex items-center gap-2 mb-1">
           <span class="text-xl font-bold">设置</span>
-          <InfoBox
-            hint="这些设置仅适用于图表视图，不会影响机器人的实际配置或行为。"
-          />
+          <InfoBox hint="这些设置仅适用于图表视图，不会影响机器人的实际配置或行为。" />
         </div>
         <div
           class="mb-2 border dark:border-neutral-700 border-neutral-300 rounded-md p-2 text-start"

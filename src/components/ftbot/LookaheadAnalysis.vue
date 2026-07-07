@@ -39,10 +39,19 @@ async function startAnalysis(payload: LookaheadAnalysisPayload) {
 <template>
   <div class="px-1 mx-auto w-full max-w-4xl lg:max-w-7xl">
     <BackgroundJobTracking class="mb-4" />
-    <DraggableContainer data-testid="lookahead-analysis-header" header="前瞻偏差分析 (Lookahead Analysis)" class="mx-1 p-4">
+    <DraggableContainer
+      data-testid="lookahead-analysis-header"
+      header="前瞻偏差分析 (Lookahead Analysis)"
+      class="mx-1 p-4"
+    >
       <LookaheadAnalysisForm :running="running" @start="startAnalysis" />
     </DraggableContainer>
-    <DraggableContainer v-if="result" data-testid="analysis-result-header" header="分析结果" class="mx-1 mt-4 p-4">
+    <DraggableContainer
+      v-if="result"
+      data-testid="analysis-result-header"
+      header="分析结果"
+      class="mx-1 mt-4 p-4"
+    >
       <LookaheadAnalysisResults :result="result" />
     </DraggableContainer>
   </div>

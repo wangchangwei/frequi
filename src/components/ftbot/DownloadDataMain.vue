@@ -40,8 +40,6 @@ const advancedOptions = ref({
 // State to track the collapse status
 const isAdvancedOpen = ref(false);
 
-
-
 const candleTypes: SelectMenuItem[] = [
   { label: '现货', value: 'spot' },
   { label: '期货', value: 'futures' },
@@ -148,8 +146,6 @@ async function startDownload() {
             </div>
           </div>
 
-
-
           <!-- Time selection section -->
           <div class="px-3 border dark:border-neutral-700 border-neutral-300 p-2 rounded-sm">
             <div class="flex flex-col gap-2">
@@ -184,9 +180,7 @@ async function startDownload() {
             <div
               class="mb-2 border dark:border-neutral-700 border-neutral-300 rounded-md p-2 text-start"
             >
-              <BaseCheckbox v-model="advancedOptions.erase" class="mb-2"
-                >清除现有数据</BaseCheckbox
-              >
+              <BaseCheckbox v-model="advancedOptions.erase" class="mb-2">清除现有数据</BaseCheckbox>
               <BaseCheckbox
                 v-model="advancedOptions.prepend_data"
                 class="mb-2"
@@ -205,9 +199,7 @@ async function startDownload() {
                   placeholder="选择 K 线类型"
                   value-key="value"
                 />
-                <small
-                  >未选择任何类型时，Freqtrade 将自动下载常规运行所需的 K 线类型。</small
-                >
+                <small>未选择任何类型时，Freqtrade 将自动下载常规运行所需的 K 线类型。</small>
               </div>
             </div>
             <div
@@ -228,9 +220,7 @@ async function startDownload() {
           </BaseCollapsible>
 
           <div class="px-3">
-            <UButton variant="solid" icon="mdi:download" @click="startDownload"
-              >开始下载</UButton
-            >
+            <UButton variant="solid" icon="mdi:download" @click="startDownload">开始下载</UButton>
           </div>
         </div>
       </div>

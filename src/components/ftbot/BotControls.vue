@@ -24,8 +24,7 @@ async function handleStopBuy() {
   if (
     await confirm({
       title: '暂停 - 停止开仓',
-      message:
-        '将继续处理已有交易，但不会再开新仓或增加仓位。\n确定要停止开仓吗？',
+      message: '将继续处理已有交易，但不会再开新仓或增加仓位。\n确定要停止开仓吗？',
     })
   ) {
     botStore.activeBot.stopBuy();

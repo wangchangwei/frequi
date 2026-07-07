@@ -104,16 +104,36 @@ type NavItem = NavigationMenuItem & { visible?: boolean; mobileOnly?: boolean };
 
 const navItems = computed<NavItem[]>(() => [
   {
-    label: '交易',
-    to: '/trade',
-    visible: !botStore.canRunBacktest,
-    icon: 'i-mdi-currency-usd',
-  },
-  {
     label: '仪表盘',
     to: '/dashboard',
     visible: !botStore.canRunBacktest,
     icon: 'i-mdi-view-dashboard',
+  },
+  {
+    label: '机器人',
+    to: '/bots',
+    icon: 'i-mdi-robot',
+  },
+  {
+    label: '账户',
+    to: '/accounts',
+    icon: 'i-mdi-bank',
+  },
+  {
+    label: '策略',
+    to: '/strategies',
+    icon: 'i-mdi-brain',
+  },
+  {
+    label: '配置中心',
+    to: '/configs',
+    icon: 'i-mdi-cog-box',
+  },
+  {
+    label: '交易',
+    to: '/trade',
+    visible: !botStore.canRunBacktest,
+    icon: 'i-mdi-currency-usd',
   },
   {
     label: '图表',
@@ -158,6 +178,12 @@ const navItems = computed<NavItem[]>(() => [
           (botStore.activeBot?.isWebserverMode ?? false) &&
           botStore.activeBot.botFeatures.lookaheadAnalysis,
       },
+      {
+        label: 'AI 分析',
+        to: '/ai-analysis',
+        icon: 'i-mdi-brain',
+        separator: false,
+      },
     ],
   },
   {
@@ -165,6 +191,31 @@ const navItems = computed<NavItem[]>(() => [
     to: '/download_data',
     visible: botStore.isWebserverMode && botStore.activeBot.botFeatures.downloadDataView,
     icon: 'i-mdi-download',
+  },
+  {
+    label: '回测中心',
+    to: '/backtest-jobs',
+    icon: 'i-mdi-play-box-multiple',
+  },
+  {
+    label: '风险管理',
+    to: '/risk',
+    icon: 'i-mdi-shield-check',
+  },
+  {
+    label: '告警中心',
+    to: '/alerts',
+    icon: 'i-mdi-bell-alert',
+  },
+  {
+    label: '审计中心',
+    to: '/audit',
+    icon: 'i-mdi-clipboard-check',
+  },
+  {
+    label: 'Hyperopt',
+    to: '/hyperopt',
+    icon: 'i-mdi-flash',
   },
   {
     label: '交易对配置',

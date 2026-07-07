@@ -65,9 +65,7 @@ const meta: TableMeta<BacktestHistoryEntry> = {
       icon="mdi:refresh"
       @click="botStore.activeBot.getBacktestHistory"
     />
-    <p>
-      从磁盘加载历史结果。您可以点击多个结果将其全部加载到 freqUI 中。
-    </p>
+    <p>从磁盘加载历史结果。您可以点击多个结果将其全部加载到 freqUI 中。</p>
     <div v-if="botStore.activeBot.backtestHistoryList.length > 0" class="flex align-center">
       <UInput
         id="trade-filter"

@@ -81,10 +81,7 @@ resetForm();
           </p>
         </div>
 
-        <UFormField
-          :label="`${trade.base_currency} 数量 [可选]`"
-          :description="amountInBase"
-        >
+        <UFormField :label="`${trade.base_currency} 数量 [可选]`" :description="amountInBase">
           <div class="space-y-2">
             <UInputNumber
               v-model="amount"

@@ -9,7 +9,7 @@ const timezoneOptions = ['UTC', Intl.DateTimeFormat().resolvedOptions().timeZone
 const openTradesOptions = [
   { value: OpenTradeVizOptions.showPill, text: '在图标中显示小圆点' },
   { value: OpenTradeVizOptions.asTitle, text: '在标题中显示数量' },
-  { value: OpenTradeVizOptions.noOpenTrades, text: "不在标题中显示进行中的交易" },
+  { value: OpenTradeVizOptions.noOpenTrades, text: '不在标题中显示进行中的交易' },
 ];
 const colorPreferenceOptions = [
   { value: ColorPreferences.GREEN_UP, text: '绿涨红跌 (国际主流)' },
@@ -87,9 +87,7 @@ const resetDynamicLayout = () => {
 
         <BaseCheckbox v-model="settingsStore.multiPaneButtonsShowText" class="space-y-1">
           在多面板操作按钮上显示文字说明
-          <template #hint
-            >在多面板控制按钮上显示具体的文本说明。关闭后将仅显示图标。</template
-          >
+          <template #hint>在多面板控制按钮上显示具体的文本说明。关闭后将仅显示图标。</template>
         </BaseCheckbox>
       </div>
 
@@ -119,7 +117,8 @@ const resetDynamicLayout = () => {
         <BaseCheckbox v-model="settingsStore.useReducedPairCalls" class="space-y-1">
           仅请求必需的数据列 (Reduced Columns)
           <template #hint
-            >这可以显著减小回测等大型 K线数据的网络传输体积。当绘图指标更改时，可能会触发二次网络请求。</template
+            >这可以显著减小回测等大型
+            K线数据的网络传输体积。当绘图指标更改时，可能会触发二次网络请求。</template
           >
         </BaseCheckbox>
 
