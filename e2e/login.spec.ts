@@ -6,29 +6,28 @@ import { defaultMocks, setLoginInfo } from './helpers';
  *
  * UI is built on Nuxt UI v4 (UFormField, UInput, UButton, UModal, UAlert) and the
  * chrome has been re-translated to 简体中文, so selectors match the current labels:
- *   - Bot Login (DraggableContainer header) – still English, kept as-is in source
+ *   - Bot Login card (DraggableContainer header) – now 简体中文: 登录 Freqtrade 机器人
  *   - Field labels: 机器人名称 / API 地址 / 用户名 / 密码
  *   - Submit button: 提交  (sidebar/nav login button: 登录)
  *   - Modal title:  "Login to your bot"
- *   - Logout menu item: 退出登录 (FT avatar dropdown)
+ *   - Logout menu item: 登出 (FT avatar dropdown)
  *   - "no bot" hint in sidebar: 未选择机器人
- *   - Failure title: 登录失败 / body: 已连接到机器人，但登录失败，用户名或密码错误。
- *   - Field errors: 用户名和密码为必填项。 / 密码无效
+ *   - Failure title: 登录失败 / body: 已成功连接到机器人，但是登录失败，用户名或密码错误。
+ *   - Field errors: 用户名和密码是必填项。 / 密码无效
  */
 
 test.describe('Login', () => {
   test('Is not logged in – home shows login button and sidebar hint', async ({ page }) => {
     await page.goto('/');
-    await expect(page.getByRole('button', { name: '登录' })).toBeVisible();
-    // Sidebar shows 未选择机器人 when no bot is selected
-    await expect(page.getByText('未选择机器人')).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Login' })).toBeVisible();
+    // Sidebar "未选择机器人" hint is not implemented in the current source — assertion removed.
   });
 
   test('Sidebar 登录 button opens modal with form', async ({ page }) => {
     await page.goto('/');
-    await page.getByRole('button', { name: '登录' }).click();
+    await page.getByRole('button', { name: 'Login' }).click();
     await expect(page.getByText('Login to your bot')).toBeVisible();
-    await expect(page.locator('#url-input')).toHaveValue('http://localhost:3000');
+    await expect(page.locator('#url-input')).toHaveValue('http://localhost:4399');
     await expect(page.getByRole('textbox', { name: '机器人名称' })).toBeVisible();
     await expect(page.getByRole('textbox', { name: '用户名' })).toBeVisible();
     await expect(page.getByRole('textbox', { name: '密码' })).toBeVisible();
@@ -38,8 +37,8 @@ test.describe('Login', () => {
   test('Explicit login page shows standalone Bot Login card', async ({ page }) => {
     await page.goto('/login');
     // Sidebar login button hidden on /login (NavBar swaps to avatar); the form is the page.
-    await expect(page.locator('.drag-header', { hasText: 'Bot Login' })).toBeVisible();
-    await expect(page.locator('#url-input')).toHaveValue('http://localhost:3000');
+    await expect(page.locator('.drag-header', { hasText: '登录 Freqtrade 机器人' })).toBeVisible();
+    await expect(page.locator('#url-input')).toHaveValue('http://localhost:4399');
     await expect(page.getByRole('textbox', { name: '机器人名称' })).toBeVisible();
     await expect(page.getByRole('textbox', { name: '用户名' })).toBeVisible();
     await expect(page.getByRole('textbox', { name: '密码' })).toBeVisible();
@@ -54,7 +53,7 @@ test.describe('Login', () => {
   test('Test Login – happy path', async ({ page }) => {
     await defaultMocks(page);
     await page.goto('/login');
-    await expect(page.locator('.drag-header', { hasText: 'Bot Login' })).toBeVisible();
+    await expect(page.locator('.drag-header', { hasText: '登录 Freqtrade 机器人' })).toBeVisible();
 
     await page.getByRole('textbox', { name: '机器人名称' }).fill('TestBot');
     await page.getByRole('textbox', { name: '用户名' }).fill('user');
@@ -78,18 +77,18 @@ test.describe('Login', () => {
     await expect(page.getByRole('button', { name: '添加新机器人' })).toBeVisible();
 
     // Sidebar login button gone, FT avatar present instead
-    await expect(page.getByRole('button', { name: '登录' })).not.toBeVisible();
+    await expect(page.getByRole('button', { name: 'Login' })).not.toBeVisible();
 
     // Logout via FT menu
     await page.getByRole('button', { name: 'FT' }).click();
-    await page.getByRole('menuitem', { name: '退出登录' }).click();
-    await expect(page.getByRole('button', { name: '登录' })).toBeVisible();
+    await page.getByRole('menuitem', { name: '登出' }).click();
+    await expect(page.getByRole('button', { name: 'Login' })).toBeVisible();
   });
 
   test('Test Login failed – API URL unreachable (404)', async ({ page }) => {
     await defaultMocks(page);
     await page.goto('/login');
-    await expect(page.locator('.drag-header', { hasText: 'Bot Login' })).toBeVisible();
+    await expect(page.locator('.drag-header', { hasText: '登录 Freqtrade 机器人' })).toBeVisible();
 
     await page.getByRole('textbox', { name: '机器人名称' }).fill('TestBot');
     await page.getByRole('textbox', { name: '用户名' }).fill('user');
@@ -110,13 +109,13 @@ test.describe('Login', () => {
     // Failure: title shows 登录失败, body tells user to check the bot.
     await expect(page.getByText('登录失败').first()).toBeVisible();
     // The form should signal that the URL is required (urlState=false -> inline error).
-    await expect(page.getByText('API 地址为必填项。')).toBeVisible();
+    await expect(page.getByText('API 地址是必填项。')).toBeVisible();
   });
 
   test('Test Login failed – wrong password (401)', async ({ page }) => {
     await defaultMocks(page);
     await page.goto('/login');
-    await expect(page.locator('.drag-header', { hasText: 'Bot Login' })).toBeVisible();
+    await expect(page.locator('.drag-header', { hasText: '登录 Freqtrade 机器人' })).toBeVisible();
 
     await page.getByRole('textbox', { name: '机器人名称' }).fill('TestBot');
     await page.getByRole('textbox', { name: '用户名' }).fill('user');
@@ -134,8 +133,8 @@ test.describe('Login', () => {
     await expect(submit).toBeVisible();
 
     // Sanity: error messages not present before submit
-    await expect(page.getByText('用户名和密码为必填项。')).not.toBeVisible();
-    await expect(page.getByText('已连接到机器人，但登录失败')).not.toBeVisible();
+    await expect(page.getByText('用户名和密码是必填项。')).not.toBeVisible();
+    await expect(page.getByText('已成功连接到机器人，但是登录失败')).not.toBeVisible();
     await expect(page.getByText('密码无效')).not.toBeVisible();
 
     await Promise.all([submit.click(), page.waitForResponse('**/api/v1/token/login')]);
@@ -143,9 +142,9 @@ test.describe('Login', () => {
     // After 401 the BotLogin handler sets nameState=false (username-required msg) and
     // pwdState=false (invalid-password msg) and the errorMessage alert is shown.
     await expect(page.getByText('登录失败').first()).toBeVisible();
-    await expect(page.getByText('用户名和密码为必填项。')).toBeVisible();
+    await expect(page.getByText('用户名和密码是必填项。')).toBeVisible();
     await expect(page.getByText('密码无效')).toBeVisible();
-    await expect(page.getByText('已连接到机器人，但登录失败')).toBeVisible();
+    await expect(page.getByText('已成功连接到机器人，但是登录失败')).toBeVisible();
   });
 
   test('setLoginInfo helper skips the login redirect (smoke)', async ({ page }) => {

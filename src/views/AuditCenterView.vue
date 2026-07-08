@@ -523,7 +523,7 @@ onMounted(async () => {
     </div>
 
     <!-- ==================== Trade Detail Modal ==================== -->
-    <UModal
+    <AppModal
       v-if="showTradeDetail && selectedTrade"
       v-model:open="showTradeDetail"
       :title="`交易详情 #${selectedTrade.id}`"
@@ -605,12 +605,11 @@ onMounted(async () => {
           </UTable>
         </div>
       </div>
-
       <template #footer>
         <div class="flex justify-end">
           <UButton variant="outline" @click="closeTradeDetail">关闭 (Close)</UButton>
         </div>
       </template>
-    </UModal>
+    </AppModal>
   </div>
 </template>

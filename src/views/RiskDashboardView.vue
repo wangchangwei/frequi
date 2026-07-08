@@ -383,15 +383,15 @@ function formatTime(ts: number): string {
     </div>
 
     <!-- Add/Edit Rule Dialog -->
-    <UModal
+    <AppModal
       v-if="showAddDialog || showEditDialog"
-      :open="showAddDialog || showEditDialog"
-      @update:open="closeDialog"
-      :title="showEditDialog ? '编辑规则' : '添加规则'"
+      @close="closeDialog"
+      :title="showEditDialog ? '编辑限制规则' : '添加限制规则'"
       size="lg"
     >
       <div class="p-4 space-y-4">
-        <UFormField label="规则名称" required>
+        <UFormField>
+          <template #label>规则名称 <span class="text-red-500 font-semibold">*</span></template>
           <UInput v-model="form.name" placeholder="例如：日损失超过5%" required />
         </UFormField>
 
@@ -431,7 +431,6 @@ function formatTime(ts: number): string {
           <UToggle v-model="form.enabled" />
         </UFormField>
       </div>
-
       <template #footer>
         <div class="flex justify-end gap-2">
           <UButton variant="outline" @click="closeDialog">取消</UButton>
@@ -439,6 +438,6 @@ function formatTime(ts: number): string {
           <UButton v-else @click="handleCreateRule">创建</UButton>
         </div>
       </template>
-    </UModal>
+    </AppModal>
   </div>
 </template>

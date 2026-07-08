@@ -40,6 +40,13 @@ function emitLoginResult(value: boolean) {
   emit('loginResult', value);
 }
 
+function fillQuickLogin() {
+  auth.value.botName = 'Robot';
+  auth.value.url = 'http://127.0.0.1:8080';
+  auth.value.username = 'freqtrader';
+  auth.value.password = 'freqtrader';
+}
+
 const urlDuplicate = computed<boolean>(() => {
   const bots = Object.values(botStore.availableBots).find((bot) => bot.botUrl === auth.value.url);
   return !botEdit.value && bots !== undefined;
@@ -236,6 +243,13 @@ onMounted(() => {
         color="neutral"
         type="button"
         @click="emitLoginResult(true)"
+      />
+      <UButton
+        label="快捷登录"
+        color="secondary"
+        type="button"
+        icon="mdi:flash"
+        @click="fillQuickLogin"
       />
       <UButton label="提交" color="primary" type="submit" icon="mdi:login" />
     </div>

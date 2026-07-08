@@ -374,24 +374,25 @@ onMounted(() => {
     </div>
 
     <!-- Add Strategy Dialog -->
-    <UModal
-      v-if="showAddDialog"
-      :open="showAddDialog"
-      @update:open="showAddDialog = $event"
-      title="添加策略"
-      size="lg"
-    >
+    <AppModal v-if="showAddDialog" @close="showAddDialog = false" title="添加策略" size="lg">
       <div class="p-4">
         <div class="grid grid-cols-2 gap-4">
-          <UFormField label="策略显示名称" required>
+          <UFormField>
+            <template #label
+              >策略显示名称 <span class="text-red-500 font-semibold">*</span></template
+            >
             <UInput v-model="form.name" placeholder="趋势跟踪策略" />
           </UFormField>
-          <UFormField label="Freqtrade 策略类名" required>
+          <UFormField>
+            <template #label
+              >Freqtrade 策略类名 <span class="text-red-500 font-semibold">*</span></template
+            >
             <UInput v-model="form.strategyName" placeholder="StrategyV1" />
           </UFormField>
         </div>
         <div class="grid grid-cols-2 gap-4 mt-4">
-          <UFormField label="风险等级" required>
+          <UFormField>
+            <template #label>风险等级 <span class="text-red-500 font-semibold">*</span></template>
             <USelect
               v-model="form.riskLevel"
               :items="riskLevelOptions"
@@ -412,12 +413,18 @@ onMounted(() => {
 
         <hr class="my-4 border-neutral-200 dark:border-neutral-700" />
 
-        <p class="text-sm font-medium mb-2 text-warning">初始版本信息</p>
+        <h3 class="text-base font-semibold text-neutral-900 dark:text-neutral-100 mt-6 mb-3">
+          初始版本信息
+        </h3>
         <div class="grid grid-cols-2 gap-4">
-          <UFormField label="版本号" required>
+          <UFormField>
+            <template #label>版本号 <span class="text-red-500 font-semibold">*</span></template>
             <UInput v-model="form.versionId" placeholder="v1.0.0" />
           </UFormField>
-          <UFormField label="文件 Hash (SHA256)" required>
+          <UFormField>
+            <template #label
+              >文件 Hash (SHA256) <span class="text-red-500 font-semibold">*</span></template
+            >
             <UInput v-model="form.fileHash" placeholder="策略文件的 SHA256 哈希值" />
           </UFormField>
         </div>
@@ -444,31 +451,32 @@ onMounted(() => {
       </div>
       <template #footer>
         <div class="flex justify-end gap-2">
-          <UButton color="neutral" label="取消" @click="closeDialogs" />
-          <UButton color="primary" label="添加" @click="handleAddStrategy" />
+          <UButton color="neutral" variant="ghost" label="取消" @click="closeDialogs" />
+          <UButton color="primary" class="min-w-24" label="添加" @click="handleAddStrategy" />
         </div>
       </template>
-    </UModal>
+    </AppModal>
 
     <!-- Edit Strategy Dialog -->
-    <UModal
-      v-if="showEditDialog"
-      :open="showEditDialog"
-      @update:open="showEditDialog = $event"
-      title="编辑策略"
-      size="lg"
-    >
+    <AppModal v-if="showEditDialog" @close="showEditDialog = false" title="编辑策略" size="lg">
       <div class="p-4">
         <div class="grid grid-cols-2 gap-4">
-          <UFormField label="策略显示名称" required>
+          <UFormField>
+            <template #label
+              >策略显示名称 <span class="text-red-500 font-semibold">*</span></template
+            >
             <UInput v-model="form.name" />
           </UFormField>
-          <UFormField label="Freqtrade 策略类名" required>
+          <UFormField>
+            <template #label
+              >Freqtrade 策略类名 <span class="text-red-500 font-semibold">*</span></template
+            >
             <UInput v-model="form.strategyName" />
           </UFormField>
         </div>
         <div class="grid grid-cols-2 gap-4 mt-4">
-          <UFormField label="风险等级" required>
+          <UFormField>
+            <template #label>风险等级 <span class="text-red-500 font-semibold">*</span></template>
             <USelect
               v-model="form.riskLevel"
               :items="riskLevelOptions"
@@ -494,10 +502,10 @@ onMounted(() => {
       </div>
       <template #footer>
         <div class="flex justify-end gap-2">
-          <UButton color="neutral" label="取消" @click="closeDialogs" />
-          <UButton color="primary" label="保存" @click="handleUpdateStrategy" />
+          <UButton color="neutral" variant="ghost" label="取消" @click="closeDialogs" />
+          <UButton color="primary" class="min-w-24" label="保存" @click="handleUpdateStrategy" />
         </div>
       </template>
-    </UModal>
+    </AppModal>
   </div>
 </template>

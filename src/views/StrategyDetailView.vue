@@ -429,19 +429,22 @@ onMounted(() => {
     </div>
 
     <!-- Add Version Dialog -->
-    <UModal
+    <AppModal
       v-if="showAddVersionDialog"
-      :open="showAddVersionDialog"
-      @update:open="showAddVersionDialog = $event"
+      @close="showAddVersionDialog = false"
       title="添加新版本"
       size="lg"
     >
       <div class="p-4">
         <div class="grid grid-cols-2 gap-4">
-          <UFormField label="版本号" required>
+          <UFormField>
+            <template #label>版本号 <span class="text-red-500 font-semibold">*</span></template>
             <UInput v-model="newVersionForm.versionId" placeholder="v2.0.0" />
           </UFormField>
-          <UFormField label="文件 Hash (SHA256)" required>
+          <UFormField>
+            <template #label
+              >文件 Hash (SHA256) <span class="text-red-500 font-semibold">*</span></template
+            >
             <UInput v-model="newVersionForm.fileHash" placeholder="策略文件的 SHA256 哈希值" />
           </UFormField>
         </div>
@@ -470,31 +473,32 @@ onMounted(() => {
       </div>
       <template #footer>
         <div class="flex justify-end gap-2">
-          <UButton color="neutral" label="取消" @click="closeDialogs" />
+          <UButton color="neutral" variant="ghost" label="取消" @click="closeDialogs" />
           <UButton color="primary" label="添加版本" @click="handleAddVersion" />
         </div>
       </template>
-    </UModal>
+    </AppModal>
 
     <!-- Edit Strategy Dialog -->
-    <UModal
-      v-if="showEditDialog"
-      :open="showEditDialog"
-      @update:open="showEditDialog = $event"
-      title="编辑策略"
-      size="lg"
-    >
+    <AppModal v-if="showEditDialog" @close="showEditDialog = false" title="编辑策略" size="lg">
       <div class="p-4">
         <div class="grid grid-cols-2 gap-4">
-          <UFormField label="策略显示名称" required>
+          <UFormField>
+            <template #label
+              >策略显示名称 <span class="text-red-500 font-semibold">*</span></template
+            >
             <UInput v-model="form.name" />
           </UFormField>
-          <UFormField label="Freqtrade 策略类名" required>
+          <UFormField>
+            <template #label
+              >Freqtrade 策略类名 <span class="text-red-500 font-semibold">*</span></template
+            >
             <UInput v-model="form.strategyName" />
           </UFormField>
         </div>
         <div class="grid grid-cols-2 gap-4 mt-4">
-          <UFormField label="风险等级" required>
+          <UFormField>
+            <template #label>风险等级 <span class="text-red-500 font-semibold">*</span></template>
             <USelect
               v-model="form.riskLevel"
               :items="[
@@ -525,17 +529,16 @@ onMounted(() => {
       </div>
       <template #footer>
         <div class="flex justify-end gap-2">
-          <UButton color="neutral" label="取消" @click="closeDialogs" />
-          <UButton color="primary" label="保存" @click="handleUpdateStrategy" />
+          <UButton color="neutral" variant="ghost" label="取消" @click="closeDialogs" />
+          <UButton color="primary" class="min-w-24" label="保存" @click="handleUpdateStrategy" />
         </div>
       </template>
-    </UModal>
+    </AppModal>
 
     <!-- Unlink Bot Dialog -->
-    <UModal
+    <AppModal
       v-if="showUnlinkBotDialog"
-      :open="showUnlinkBotDialog"
-      @update:open="showUnlinkBotDialog = $event"
+      @close="showUnlinkBotDialog = false"
       title="解除机器人关联"
       size="sm"
     >
@@ -546,17 +549,16 @@ onMounted(() => {
       </div>
       <template #footer>
         <div class="flex justify-end gap-2">
-          <UButton color="neutral" label="取消" @click="closeDialogs" />
+          <UButton color="neutral" variant="ghost" label="取消" @click="closeDialogs" />
           <UButton color="error" label="解除" @click="handleUnlinkBot(selectedBotId)" />
         </div>
       </template>
-    </UModal>
+    </AppModal>
 
     <!-- Unlink Backtest Dialog -->
-    <UModal
+    <AppModal
       v-if="showUnlinkBacktestDialog"
-      :open="showUnlinkBacktestDialog"
-      @update:open="showUnlinkBacktestDialog = $event"
+      @close="showUnlinkBacktestDialog = false"
       title="解除回测关联"
       size="sm"
     >
@@ -567,10 +569,10 @@ onMounted(() => {
       </div>
       <template #footer>
         <div class="flex justify-end gap-2">
-          <UButton color="neutral" label="取消" @click="closeDialogs" />
+          <UButton color="neutral" variant="ghost" label="取消" @click="closeDialogs" />
           <UButton color="error" label="解除" @click="handleUnlinkBacktest(selectedBacktestId)" />
         </div>
       </template>
-    </UModal>
+    </AppModal>
   </div>
 </template>

@@ -308,15 +308,15 @@ function handleSendTest() {
     </div>
 
     <!-- Add/Edit Rule Dialog -->
-    <UModal
+    <AppModal
       v-if="showAddDialog || showEditDialog"
-      :open="showAddDialog || showEditDialog"
-      @update:open="closeDialog"
+      @close="closeDialog"
       :title="showEditDialog ? '编辑规则' : '添加告警规则'"
       size="lg"
     >
       <div class="p-4 space-y-4">
-        <UFormField label="规则名称" required>
+        <UFormField>
+          <template #label>规则名称 <span class="text-red-500 font-semibold">*</span></template>
           <UInput v-model="form.name" placeholder="例如：高损失告警" required />
         </UFormField>
 
@@ -336,7 +336,6 @@ function handleSendTest() {
           <UToggle v-model="form.enabled" />
         </UFormField>
       </div>
-
       <template #footer>
         <div class="flex justify-end gap-2">
           <UButton variant="outline" @click="closeDialog">取消</UButton>
@@ -344,6 +343,6 @@ function handleSendTest() {
           <UButton v-else @click="handleCreateRule">创建</UButton>
         </div>
       </template>
-    </UModal>
+    </AppModal>
   </div>
 </template>

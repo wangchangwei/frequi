@@ -435,15 +435,17 @@ onMounted(() => {
     </div>
 
     <!-- Passphrase Dialog -->
-    <UModal
+    <AppModal
       v-if="showPassphraseDialog"
-      :open="showPassphraseDialog"
-      @update:open="showPassphraseDialog = $event"
+      @close="showPassphraseDialog = false"
       title="设置会话密钥"
       size="md"
     >
       <div class="p-4">
-        <UFormField label="加密密钥 (会话密钥)" required>
+        <UFormField>
+          <template #label
+            >加密密钥 (会话密钥) <span class="text-red-500 font-semibold">*</span></template
+          >
           <UInput
             v-model="passphraseForm.passphrase"
             type="password"
@@ -456,31 +458,33 @@ onMounted(() => {
       </div>
       <template #footer>
         <div class="flex justify-end gap-2">
-          <UButton color="neutral" label="取消" @click="showPassphraseDialog = false" />
-          <UButton color="primary" label="确认" @click="handleSetPassphrase" />
+          <UButton
+            color="neutral"
+            variant="ghost"
+            label="取消"
+            @click="showPassphraseDialog = false"
+          />
+          <UButton color="primary" class="min-w-24" label="确认" @click="handleSetPassphrase" />
         </div>
       </template>
-    </UModal>
+    </AppModal>
 
     <!-- Add Account Dialog -->
-    <UModal
-      v-if="showAddDialog"
-      :open="showAddDialog"
-      @update:open="showAddDialog = $event"
-      title="添加账户"
-      size="lg"
-    >
+    <AppModal v-if="showAddDialog" @close="showAddDialog = false" title="添加账户" size="lg">
       <div class="p-4">
         <div class="grid grid-cols-2 gap-4">
-          <UFormField label="账户名称" required>
+          <UFormField>
+            <template #label>账户名称 <span class="text-red-500 font-semibold">*</span></template>
             <UInput v-model="form.name" placeholder="我的主账户" />
           </UFormField>
-          <UFormField label="交易所" required>
+          <UFormField>
+            <template #label>交易所 <span class="text-red-500 font-semibold">*</span></template>
             <UInput v-model="form.exchange" placeholder="binance" />
           </UFormField>
         </div>
         <div class="grid grid-cols-2 gap-4 mt-4">
-          <UFormField label="账户类型" required>
+          <UFormField>
+            <template #label>账户类型 <span class="text-red-500 font-semibold">*</span></template>
             <USelect
               v-model="form.type"
               :items="accountTypeOptions"
@@ -494,12 +498,18 @@ onMounted(() => {
           </UFormField>
         </div>
         <div class="mt-4">
-          <p class="text-sm font-medium mb-2 text-warning">API 凭据 (加密存储)</p>
+          <h3 class="text-base font-semibold text-neutral-900 dark:text-neutral-100 mt-6 mb-3">
+            API 凭据 (加密存储)
+          </h3>
           <div class="grid grid-cols-2 gap-4">
-            <UFormField label="API Key" required>
+            <UFormField>
+              <template #label>API Key <span class="text-red-500 font-semibold">*</span></template>
               <UInput v-model="form.apiKey" placeholder="您的 API Key" />
             </UFormField>
-            <UFormField label="API Secret" required>
+            <UFormField>
+              <template #label
+                >API Secret <span class="text-red-500 font-semibold">*</span></template
+              >
               <UInput v-model="form.apiSecret" type="password" placeholder="您的 API Secret" />
             </UFormField>
           </div>
@@ -513,7 +523,8 @@ onMounted(() => {
           </div>
         </div>
         <div class="grid grid-cols-2 gap-4 mt-4">
-          <UFormField label="风险等级" required>
+          <UFormField>
+            <template #label>风险等级 <span class="text-red-500 font-semibold">*</span></template>
             <USelect
               v-model="form.riskLevel"
               :items="riskLevelOptions"
@@ -531,23 +542,18 @@ onMounted(() => {
       </div>
       <template #footer>
         <div class="flex justify-end gap-2">
-          <UButton color="neutral" label="取消" @click="closeDialogs" />
-          <UButton color="primary" label="添加" @click="handleAddAccount" />
+          <UButton color="neutral" variant="ghost" label="取消" @click="closeDialogs" />
+          <UButton color="primary" class="min-w-24" label="添加" @click="handleAddAccount" />
         </div>
       </template>
-    </UModal>
+    </AppModal>
 
     <!-- Edit Account Dialog -->
-    <UModal
-      v-if="showEditDialog"
-      :open="showEditDialog"
-      @update:open="showEditDialog = $event"
-      title="编辑账户"
-      size="lg"
-    >
+    <AppModal v-if="showEditDialog" @close="showEditDialog = false" title="编辑账户" size="lg">
       <div class="p-4">
         <div class="grid grid-cols-2 gap-4">
-          <UFormField label="账户名称" required>
+          <UFormField>
+            <template #label>账户名称 <span class="text-red-500 font-semibold">*</span></template>
             <UInput v-model="form.name" />
           </UFormField>
           <UFormField label="交易所">
@@ -569,10 +575,10 @@ onMounted(() => {
           </UFormField>
         </div>
         <div class="mt-4">
-          <p class="text-sm font-medium mb-2">
+          <h3 class="text-base font-semibold text-neutral-900 dark:text-neutral-100 mt-6 mb-3">
             更新 API 凭据
             <span class="text-neutral-500 font-normal">(留空则保持不变)</span>
-          </p>
+          </h3>
           <div class="grid grid-cols-2 gap-4">
             <UFormField label="新 API Key">
               <UInput v-model="form.apiKey" type="password" placeholder="留空保持不变" />
@@ -591,7 +597,8 @@ onMounted(() => {
           </div>
         </div>
         <div class="grid grid-cols-2 gap-4 mt-4">
-          <UFormField label="风险等级" required>
+          <UFormField>
+            <template #label>风险等级 <span class="text-red-500 font-semibold">*</span></template>
             <USelect
               v-model="form.riskLevel"
               :items="riskLevelOptions"
@@ -609,17 +616,16 @@ onMounted(() => {
       </div>
       <template #footer>
         <div class="flex justify-end gap-2">
-          <UButton color="neutral" label="取消" @click="closeDialogs" />
-          <UButton color="primary" label="保存" @click="handleUpdateAccount" />
+          <UButton color="neutral" variant="ghost" label="取消" @click="closeDialogs" />
+          <UButton color="primary" class="min-w-24" label="保存" @click="handleUpdateAccount" />
         </div>
       </template>
-    </UModal>
+    </AppModal>
 
     <!-- Exposure Dialog -->
-    <UModal
+    <AppModal
       v-if="showExposureDialog && viewingExposure"
-      :open="showExposureDialog"
-      @update:open="showExposureDialog = $event"
+      @close="showExposureDialog = false"
       :title="`${viewingExposure.name} - 风险暴露`"
       size="lg"
     >
@@ -654,7 +660,9 @@ onMounted(() => {
         </div>
 
         <div v-if="viewingExposure.exposure?.perPairExposure" class="mt-6">
-          <h3 class="font-medium mb-2">按交易对暴露</h3>
+          <h3 class="text-base font-semibold text-neutral-900 dark:text-neutral-100 mt-6 mb-3">
+            按交易对暴露
+          </h3>
           <div class="space-y-1">
             <div
               v-for="(ratio, pair) in viewingExposure.exposure.perPairExposure"
@@ -669,9 +677,14 @@ onMounted(() => {
       </div>
       <template #footer>
         <div class="flex justify-end">
-          <UButton color="neutral" label="关闭" @click="showExposureDialog = false" />
+          <UButton
+            color="neutral"
+            variant="ghost"
+            label="关闭"
+            @click="showExposureDialog = false"
+          />
         </div>
       </template>
-    </UModal>
+    </AppModal>
   </div>
 </template>

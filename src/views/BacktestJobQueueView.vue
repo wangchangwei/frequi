@@ -318,19 +318,15 @@ const canCompare = computed(() => backtestJobStore.selectedJobIds.length >= 2);
     </div>
 
     <!-- Add Job Dialog -->
-    <UModal
-      v-if="showAddDialog"
-      :open="showAddDialog"
-      @update:open="closeDialog"
-      title="新建回测任务"
-      size="lg"
-    >
+    <AppModal v-if="showAddDialog" @close="showAddDialog = false" title="新建回测任务" size="lg">
       <div class="p-4 space-y-4">
-        <UFormField label="任务名称" required>
+        <UFormField>
+          <template #label>任务名称 <span class="text-red-500 font-semibold">*</span></template>
           <UInput v-model="form.name" placeholder="我的回测任务" required />
         </UFormField>
 
-        <UFormField label="策略" required>
+        <UFormField>
+          <template #label>策略 <span class="text-red-500 font-semibold">*</span></template>
           <USelect v-model="form.strategyName" :items="strategyOptions" placeholder="选择策略" />
         </UFormField>
 
@@ -353,13 +349,12 @@ const canCompare = computed(() => backtestJobStore.selectedJobIds.length >= 2);
           </div>
         </UFormField>
       </div>
-
       <template #footer>
         <div class="flex justify-end gap-2">
           <UButton variant="outline" @click="closeDialog">取消</UButton>
           <UButton @click="handleCreateJob">创建</UButton>
         </div>
       </template>
-    </UModal>
+    </AppModal>
   </div>
 </template>

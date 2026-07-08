@@ -414,20 +414,16 @@ onMounted(() => {
     </div>
 
     <!-- Add Template Modal -->
-    <UModal
-      v-if="showAddDialog"
-      :open="showAddDialog"
-      @update:open="showAddDialog = $event"
-      title="创建配置模板"
-      size="xl"
-    >
+    <AppModal v-if="showAddDialog" @close="showAddDialog = false" title="创建配置模板" size="xl">
       <div class="p-4 space-y-4">
         <!-- Name + Category -->
         <div class="grid grid-cols-2 gap-4">
-          <UFormField label="模板名称" required>
+          <UFormField>
+            <template #label>模板名称 <span class="text-red-500 font-semibold">*</span></template>
             <UInput v-model="form.name" placeholder="趋势策略默认配置" />
           </UFormField>
-          <UFormField label="分类" required>
+          <UFormField>
+            <template #label>分类 <span class="text-red-500 font-semibold">*</span></template>
             <USelect
               v-model="form.category"
               :items="categorySelectOptions"
@@ -528,26 +524,22 @@ onMounted(() => {
       </div>
       <template #footer>
         <div class="flex justify-end gap-2">
-          <UButton color="neutral" label="取消" @click="closeDialogs" />
-          <UButton color="primary" label="创建" @click="handleAddTemplate" />
+          <UButton color="neutral" variant="ghost" label="取消" @click="closeDialogs" />
+          <UButton color="primary" class="min-w-24" label="创建" @click="handleAddTemplate" />
         </div>
       </template>
-    </UModal>
+    </AppModal>
 
     <!-- Edit Template Modal -->
-    <UModal
-      v-if="showEditDialog"
-      :open="showEditDialog"
-      @update:open="showEditDialog = $event"
-      title="编辑配置模板"
-      size="xl"
-    >
+    <AppModal v-if="showEditDialog" @close="showEditDialog = false" title="编辑配置模板" size="xl">
       <div class="p-4 space-y-4">
         <div class="grid grid-cols-2 gap-4">
-          <UFormField label="模板名称" required>
+          <UFormField>
+            <template #label>模板名称 <span class="text-red-500 font-semibold">*</span></template>
             <UInput v-model="form.name" />
           </UFormField>
-          <UFormField label="分类" required>
+          <UFormField>
+            <template #label>分类 <span class="text-red-500 font-semibold">*</span></template>
             <USelect
               v-model="form.category"
               :items="categorySelectOptions"
@@ -645,10 +637,10 @@ onMounted(() => {
       </div>
       <template #footer>
         <div class="flex justify-end gap-2">
-          <UButton color="neutral" label="取消" @click="closeDialogs" />
-          <UButton color="primary" label="保存" @click="handleUpdateTemplate" />
+          <UButton color="neutral" variant="ghost" label="取消" @click="closeDialogs" />
+          <UButton color="primary" class="min-w-24" label="保存" @click="handleUpdateTemplate" />
         </div>
       </template>
-    </UModal>
+    </AppModal>
   </div>
 </template>

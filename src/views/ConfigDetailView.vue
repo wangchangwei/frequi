@@ -365,10 +365,9 @@ function getCategoryBadgeColor(cat: string): 'success' | 'warning' | 'error' | '
     </div>
 
     <!-- Create Version Modal -->
-    <UModal
+    <AppModal
       v-if="showVersionDialog"
-      :open="showVersionDialog"
-      @update:open="showVersionDialog = $event"
+      @close="showVersionDialog = false"
       title="创建新版本"
       size="lg"
     >
@@ -407,10 +406,10 @@ function getCategoryBadgeColor(cat: string): 'success' | 'warning' | 'error' | '
       </div>
       <template #footer>
         <div class="flex justify-end gap-2">
-          <UButton color="neutral" label="取消" @click="closeVersionDialog" />
+          <UButton color="neutral" variant="ghost" label="取消" @click="closeVersionDialog" />
           <UButton color="primary" label="创建版本" @click="handleCreateVersion" />
         </div>
       </template>
-    </UModal>
+    </AppModal>
   </div>
 </template>

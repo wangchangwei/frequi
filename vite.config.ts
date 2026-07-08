@@ -10,6 +10,15 @@ import IconsResolve from 'unplugin-icons/resolver';
 import Icons from 'unplugin-icons/vite';
 
 const QUEUE_STATUS_FILE = path.join(process.cwd(), 'backtest_queue', 'status.json');
+const NUXT_UI_ROOT_RUNTIME_ID = '\0nuxt-ui-root-runtime';
+const CSS_IMPORT_RE = /\.(?:css|scss|sass|less|styl)(?:$|\?)/;
+const NUXT_UI_ROOT_RUNTIME_EXPORTS = [
+  ['UBadge', 'Badge'],
+  ['UCheckbox', 'Checkbox'],
+  ['UNumberInput', 'InputNumber'],
+  ['USelect', 'Select'],
+  ['UToggle', 'Switch'],
+];
 
 let commitHash: string = 'unknown';
 try {
@@ -29,6 +38,23 @@ export default defineConfig({
         defineModel: true,
       },
     }),
+    {
+      name: 'nuxt-ui-root-runtime',
+      enforce: 'pre',
+      resolveId(source, importer) {
+        if (source === '@nuxt/ui' && !CSS_IMPORT_RE.test(importer ?? '')) {
+          return NUXT_UI_ROOT_RUNTIME_ID;
+        }
+      },
+      load(id) {
+        if (id === NUXT_UI_ROOT_RUNTIME_ID) {
+          return NUXT_UI_ROOT_RUNTIME_EXPORTS.map(
+            ([exportName, componentName]) =>
+              `export { default as ${exportName} } from '@nuxt/ui/components/${componentName}.vue';`,
+          ).join('\n');
+        }
+      },
+    },
     ui({
       ui: {
         colors: {

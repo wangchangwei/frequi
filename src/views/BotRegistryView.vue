@@ -305,25 +305,24 @@ onMounted(() => {
     </div>
 
     <!-- Add/Edit Dialog -->
-    <UModal
-      v-if="showAddDialog"
-      :open="showAddDialog"
-      @update:open="showAddDialog = $event"
-      title="添加机器人"
-      size="lg"
-    >
+    <AppModal v-if="showAddDialog" @close="showAddDialog = false" title="添加机器人" size="lg">
       <div class="p-4">
         <form ref="addFormRef" novalidate @submit.prevent="handleAddBot">
           <div class="grid grid-cols-2 gap-4">
-            <UFormField label="机器人名称" required>
+            <UFormField>
+              <template #label
+                >机器人名称 <span class="text-red-500 font-semibold">*</span></template
+              >
               <UInput v-model="form.name" placeholder="我的交易机器人" required />
             </UFormField>
-            <UFormField label="Bot ID" required>
+            <UFormField>
+              <template #label>Bot ID <span class="text-red-500 font-semibold">*</span></template>
               <UInput v-model="form.botId" placeholder="bot_1" required />
             </UFormField>
           </div>
           <div class="grid grid-cols-2 gap-4 mt-4">
-            <UFormField label="交易所" required>
+            <UFormField>
+              <template #label>交易所 <span class="text-red-500 font-semibold">*</span></template>
               <UInput v-model="form.exchange" placeholder="binance" required />
             </UFormField>
             <UFormField label="运行模式">
@@ -337,7 +336,8 @@ onMounted(() => {
             </UFormField>
           </div>
           <div class="grid grid-cols-2 gap-4 mt-4">
-            <UFormField label="API URL" required>
+            <UFormField>
+              <template #label>API URL <span class="text-red-500 font-semibold">*</span></template>
               <UInput v-model="form.apiUrl" placeholder="http://localhost:8080" required />
             </UFormField>
             <UFormField label="FreqUI URL">
@@ -359,23 +359,20 @@ onMounted(() => {
       </div>
       <template #footer>
         <div class="flex justify-end gap-2">
-          <UButton color="neutral" label="取消" @click="closeDialog" />
-          <UButton color="primary" label="添加" @click="handleAddBot" />
+          <UButton color="neutral" variant="ghost" label="取消" @click="closeDialog" />
+          <UButton color="primary" class="min-w-24" label="添加" @click="handleAddBot" />
         </div>
       </template>
-    </UModal>
+    </AppModal>
 
-    <UModal
-      v-if="showEditDialog"
-      :open="showEditDialog"
-      @update:open="showEditDialog = $event"
-      title="编辑机器人"
-      size="lg"
-    >
+    <AppModal v-if="showEditDialog" @close="showEditDialog = false" title="编辑机器人" size="lg">
       <div class="p-4">
         <form ref="editFormRef" novalidate @submit.prevent="handleUpdateBot">
           <div class="grid grid-cols-2 gap-4">
-            <UFormField label="机器人名称" required>
+            <UFormField>
+              <template #label
+                >机器人名称 <span class="text-red-500 font-semibold">*</span></template
+              >
               <UInput v-model="form.name" required />
             </UFormField>
             <UFormField label="Bot ID">
@@ -383,7 +380,8 @@ onMounted(() => {
             </UFormField>
           </div>
           <div class="grid grid-cols-2 gap-4 mt-4">
-            <UFormField label="交易所" required>
+            <UFormField>
+              <template #label>交易所 <span class="text-red-500 font-semibold">*</span></template>
               <UInput v-model="form.exchange" required />
             </UFormField>
             <UFormField label="运行模式">
@@ -397,7 +395,8 @@ onMounted(() => {
             </UFormField>
           </div>
           <div class="grid grid-cols-2 gap-4 mt-4">
-            <UFormField label="API URL" required>
+            <UFormField>
+              <template #label>API URL <span class="text-red-500 font-semibold">*</span></template>
               <UInput v-model="form.apiUrl" required />
             </UFormField>
             <UFormField label="FreqUI URL">
@@ -419,10 +418,10 @@ onMounted(() => {
       </div>
       <template #footer>
         <div class="flex justify-end gap-2">
-          <UButton color="neutral" label="取消" @click="closeDialog" />
-          <UButton color="primary" label="保存" @click="handleUpdateBot" />
+          <UButton color="neutral" variant="ghost" label="取消" @click="closeDialog" />
+          <UButton color="primary" class="min-w-24" label="保存" @click="handleUpdateBot" />
         </div>
       </template>
-    </UModal>
+    </AppModal>
   </div>
 </template>
