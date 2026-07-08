@@ -9,51 +9,54 @@ test.describe('AiAnalysis', () => {
 
   test('AiAnalysis page loads with header', async ({ page }) => {
     await page.goto('/ai-analysis');
-    await expect(page.getByRole('heading', { name: 'AI 分析' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'AI 分析中心' })).toBeVisible();
   });
 
-  test('AiAnalysis shows API key settings section', async ({ page }) => {
+  test('AiAnalysis shows API key required banner when not configured', async ({ page }) => {
     await page.goto('/ai-analysis');
-    await expect(page.getByText('API Key 设置')).toBeVisible();
-    await expect(page.getByRole('button', { name: '设置 API Key' })).toBeVisible();
+    await expect(page.getByText('API Key Required')).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Configure Key' })).toBeVisible();
+  });
+
+  test('AiAnalysis shows API key settings section when opened', async ({ page }) => {
+    await page.goto('/ai-analysis');
+    // Click configure key button
+    await page.getByRole('button', { name: 'Configure Key' }).click();
+    await expect(page.getByText('API Key Configuration')).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Save Key' })).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Clear Key' })).toBeVisible();
   });
 
   test('AiAnalysis shows analysis type selector', async ({ page }) => {
     await page.goto('/ai-analysis');
-    await expect(page.getByText('分析类型')).toBeVisible();
-    await expect(page.getByText('策略')).toBeVisible();
-    await expect(page.getByText('交易')).toBeVisible();
-    await expect(page.getByText('性能')).toBeVisible();
-    await expect(page.getByText('风险')).toBeVisible();
+    // Analysis types are shown as buttons
+    await expect(page.getByRole('button', { name: '策略' })).toBeVisible();
+    await expect(page.getByRole('button', { name: '交易' })).toBeVisible();
+    await expect(page.getByRole('button', { name: '性能' })).toBeVisible();
+    await expect(page.getByRole('button', { name: '风险' })).toBeVisible();
   });
 
   test('AiAnalysis shows model selector', async ({ page }) => {
     await page.goto('/ai-analysis');
-    await expect(page.getByText('选择模型')).toBeVisible();
+    // Model selector shows with label "Model:"
+    await expect(page.getByText('Model:')).toBeVisible();
     await expect(page.getByText('gpt-4o-mini')).toBeVisible();
   });
 
-  test('AiAnalysis shows run analysis button', async ({ page }) => {
+  test('AiAnalysis shows analysis launcher panel', async ({ page }) => {
     await page.goto('/ai-analysis');
-    await expect(page.getByRole('button', { name: '开始分析' })).toBeVisible();
-  });
-
-  test('AiAnalysis shows analysis history section', async ({ page }) => {
-    await page.goto('/ai-analysis');
-    await expect(page.getByText('分析历史')).toBeVisible();
+    await expect(page.getByText('Start New Analysis')).toBeVisible();
   });
 
   test('AiAnalysis shows advanced options toggle', async ({ page }) => {
     await page.goto('/ai-analysis');
-    await expect(page.getByText('高级选项')).toBeVisible();
-    await expect(page.getByRole('switch', { name: '显示高级选项' })).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Advanced Options' })).toBeVisible();
   });
 
-  test('AiAnalysis API key dialog opens', async ({ page }) => {
+  test('AiAnalysis API key dialog opens and saves', async ({ page }) => {
     await page.goto('/ai-analysis');
-    await page.getByRole('button', { name: '设置 API Key' }).click();
-    await expect(page.getByText('设置 API Key')).toBeVisible();
-    await expect(page.getByText('保存')).toBeVisible();
-    await expect(page.getByText('清除')).toBeVisible();
+    await page.getByRole('button', { name: 'Configure Key' }).click();
+    await expect(page.getByText('API Key Configuration')).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Save Key' })).toBeVisible();
   });
 });

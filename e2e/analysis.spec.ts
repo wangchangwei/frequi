@@ -15,20 +15,22 @@ test.describe('Analysis', () => {
   });
   test('Analysis navigation', async ({ page }) => {
     await page.goto('/');
-    const analysisButton = page.getByRole('button', { name: 'Analysis' });
+    // The Analysis dropdown button in NavBar has label '分析'
+    const analysisButton = page.getByRole('button', { name: '分析' });
     await expect(analysisButton).toBeInViewport();
-    await expect(page.getByText('Recursive analysis')).not.toBeInViewport();
-    await expect(page.getByText('Lookahead analysis')).not.toBeInViewport();
-    await analysisButton.click();
-    await expect(page.getByText('Recursive analysis')).toBeInViewport();
-    await expect(page.getByText('Lookahead analysis')).toBeInViewport();
+    // The dropdown shows sub-items in Chinese
+    await expect(page.getByText('递归分析')).not.toBeInViewport();
+    await expect(page.getByText('前瞻分析')).not.toBeInViewport();
+    analysisButton.click();
+    await expect(page.getByText('递归分析')).toBeInViewport();
+    await expect(page.getByText('前瞻分析')).toBeInViewport();
     // Click recursive analysis
-    await page.getByText('Recursive analysis').click();
+    await page.getByText('递归分析').click();
     await expect(page).toHaveURL(/recursive_analysis/);
     await expect(page.getByTestId('recursive-analysis-header')).toBeInViewport();
     // Click lookahead analysis
-    await page.getByRole('button', { name: 'Analysis', exact: true }).click();
-    await page.getByText('Lookahead analysis').click();
+    await page.getByRole('button', { name: '分析' }).click();
+    await page.getByText('前瞻分析').click();
     await expect(page).toHaveURL(/lookahead_analysis/);
     await expect(page.getByTestId('lookahead-analysis-header')).toBeInViewport();
   });
