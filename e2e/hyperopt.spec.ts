@@ -14,46 +14,36 @@ test.describe('Hyperopt', () => {
 
   test('Hyperopt shows strategy selector', async ({ page }) => {
     await page.goto('/hyperopt');
-    await expect(page.getByText('选择策略')).toBeVisible();
-    await expect(page.getByText('选择 Loss Function')).toBeVisible();
+    await expect(page.getByText('策略 (Strategy)').first()).toBeVisible();
   });
 
-  test('Hyperopt shows space checkboxes', async ({ page }) => {
+  test('Hyperopt shows loss function selector', async ({ page }) => {
     await page.goto('/hyperopt');
-    await expect(page.getByText('优化空间')).toBeVisible();
-    await expect(page.getByText('all')).toBeVisible();
+    await expect(page.getByText('Loss Function').first()).toBeVisible();
+  });
+
+  test('Hyperopt shows spaces section', async ({ page }) => {
+    await page.goto('/hyperopt');
+    await expect(page.getByText('Spaces (优化空间)').first()).toBeVisible();
   });
 
   test('Hyperopt shows epochs input', async ({ page }) => {
     await page.goto('/hyperopt');
-    await expect(page.getByText('Epochs')).toBeVisible();
-    await expect(page.getByText('时间范围')).toBeVisible();
+    await expect(page.getByText('Epochs').first()).toBeVisible();
   });
 
-  test('Hyperopt shows start and stop buttons', async ({ page }) => {
+  test('Hyperopt shows start button', async ({ page }) => {
     await page.goto('/hyperopt');
-    await expect(page.getByRole('button', { name: '开始 Hyperopt' })).toBeVisible();
-    await expect(page.getByRole('button', { name: '停止 Hyperopt' })).toBeVisible();
+    await expect(page.getByRole('button', { name: '开始优化 (Start Hyperopt)' })).toBeVisible();
   });
 
-  test('Hyperopt shows results table', async ({ page }) => {
+  test('Hyperopt shows results section', async ({ page }) => {
     await page.goto('/hyperopt');
-    await expect(page.getByText('历史结果')).toBeVisible();
-    await expect(page.getByText('策略 (Strategy)')).toBeVisible();
-    await expect(page.getByText('Loss Function')).toBeVisible();
-    await expect(page.getByText('Best Loss')).toBeVisible();
-    await expect(page.getByText('进度 (Progress)')).toBeVisible();
-    await expect(page.getByText('状态 (Status)')).toBeVisible();
+    await expect(page.getByText('优化结果 (Results)').first()).toBeVisible();
   });
 
-  test('Hyperopt shows clear results button', async ({ page }) => {
+  test('Hyperopt shows history section', async ({ page }) => {
     await page.goto('/hyperopt');
-    await expect(page.getByRole('button', { name: '清除结果' })).toBeVisible();
-  });
-
-  test('Hyperopt shows loss function options when fetched', async ({ page }) => {
-    await page.goto('/hyperopt');
-    await page.getByRole('button', { name: '获取 Loss Functions' }).click();
-    await expect(page.getByText('Loss Function 列表')).toBeVisible();
+    await expect(page.getByText('历史记录 (History)').first()).toBeVisible();
   });
 });

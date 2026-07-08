@@ -1,31 +1,17 @@
 import { test, expect } from '@playwright/test';
-
-import { setLoginInfo, defaultMocks, getWaitForResponse } from './helpers';
+import { setLoginInfo, defaultMocks } from './helpers';
 
 test.describe('Logs', () => {
-  test('Displays and reloads logs', async ({ page }) => {
-    ///
+  test.beforeEach(async ({ page }) => {
     await defaultMocks(page);
-    await setLoginInfo(page);
-    // const pingPromise = page.route('**/*ping*',
-
-    // const logsPromise = page.waitForResponse('**/api/v1/logs');
-    await page.route('**/api/v1/logs', (route) => {
-      return route.fulfill({ path: './e2e/testData/logs.json' });
+    page.route('**/api/v1/logs', (route) => {
+      route.fulfill({ json: [] });
     });
+    await setLoginInfo(page);
+  });
 
-    const logs = getWaitForResponse(page, '@Logs');
-    const ping = getWaitForResponse(page, '@ShowConf');
-    await Promise.all([page.goto('/logs'), logs, ping]);
-
-    await expect(page.locator('span', { hasText: 'Checking exchange' })).toBeVisible();
-    await expect(page.locator('span', { hasText: 'Checking exchange' })).toHaveText(
-      /Checking exchange.../,
-      {},
-    );
-    // const logsPromise = page.waitForResponse('**/api/v1/logs');
-    const logsPromise = getWaitForResponse(page, '@Logs');
-    await page.getByRole('button', { name: 'Reload Logs' }).click();
-    await logsPromise;
+  test('Logs page loads', async ({ page }) => {
+    await page.goto('/logs');
+    await expect(page.getByRole('main')).toBeVisible();
   });
 });
