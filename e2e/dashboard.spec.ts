@@ -18,20 +18,20 @@ test.describe('Dashboard', () => {
       page.waitForResponse('**/blacklist'),
       page.waitForResponse('**/locks'),
     ]);
-    await expect(page.locator('.drag-header', { hasText: 'Bot comparison' })).toBeVisible();
-    await expect(page.locator('.drag-header', { hasText: 'Bot comparison' })).toBeInViewport();
+    await expect(page.locator('.drag-header', { hasText: '机器人对比' })).toBeVisible();
+    await expect(page.locator('.drag-header', { hasText: '机器人对比' })).toBeInViewport();
     await expect(page.locator('.drag-header', { hasText: 'Profit over time' })).toBeVisible();
     await expect(page.locator('.drag-header', { hasText: 'Profit over time' })).toBeInViewport();
-    await expect(page.locator('.drag-header', { hasText: 'Open trades' })).toBeVisible();
-    await expect(page.locator('.drag-header', { hasText: 'Open trades' })).toBeInViewport();
-    await expect(page.locator('.drag-header', { hasText: 'Cumulative Profit' })).toBeVisible();
-    await expect(page.locator('.drag-header', { hasText: 'Cumulative Profit' })).toBeInViewport();
+    await expect(page.locator('.drag-header', { hasText: '未平仓位' })).toBeVisible();
+    await expect(page.locator('.drag-header', { hasText: '未平仓位' })).toBeInViewport();
+    await expect(page.locator('.drag-header', { hasText: '累计收益' })).toBeVisible();
+    await expect(page.locator('.drag-header', { hasText: '累计收益' })).toBeInViewport();
 
     await expect(page.locator('span').filter({ hasText: /^TestBot$/ })).toBeVisible();
     await expect(page.locator('span', { hasText: 'Summary' })).toBeVisible();
     // Scroll to bottom
     await page.locator('.drag-header', { hasText: 'Trades Log' }).scrollIntoViewIfNeeded();
-    await expect(page.locator('.drag-header', { hasText: 'Closed Trades' })).toBeInViewport();
+    await expect(page.locator('.drag-header', { hasText: '已平仓位' })).toBeInViewport();
     await expect(page.locator('.drag-header', { hasText: 'Profit Distribution' })).toBeInViewport();
 
     await expect(page.locator('.drag-header', { hasText: 'Trades Log' })).toBeInViewport();
